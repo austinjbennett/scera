@@ -1,0 +1,163 @@
+/*******************************Calendar Top Navigation*********************************/
+@media only screen and (max-width: 600px) {
+
+$slideMarg:-73.5%;
+
+.calendar{
+	// padding-bottom:15px;
+	padding-bottom:0;
+	padding-top: 12px;
+	// padding:0;
+}
+
+.calWrap{
+	width: 100%;
+	margin:0 auto;
+	overflow: hidden;
+	position: relative;	
+}
+
+div#calendar{
+	// width:1330px;
+	div.box{
+		display:none;
+	}
+	div.box-content{
+		border:none;
+		.label{
+			display:none;
+		}
+		.dates{
+			display:none;
+		} 
+		.datesMobile{
+			display:block;
+			float:none;
+			// width:825px;
+			// width:250%;
+			width:270%;			
+			// margin-left: -220px;
+			// margin-left: -73.5%;
+			margin-left: -83%;				
+			// margin-left: $slideMarg;		
+			.dayDiv{
+				background-color: #BCE0FD;
+				// background-color:red;
+				float:none;
+				width: 150px;
+				height: 150px;
+				display: inline-block;
+				margin-right: 15px;
+				display:none;
+				color:white;
+				.ymdDate{
+					display:none;
+				}
+				.cellDow{
+					display:block;
+					font-size: 1.2em;
+					margin:8px 0 28px 0;
+				}
+				// .cellContent{
+				// 	font-size: 1.9em;
+				// 	margin: 16px 0;
+				// }
+				.cellDayNum{
+					font-size: 4em;
+					margin: 16px 0;
+				}
+				.cellMonth{
+					display:block;
+					font-size: 1.2em;
+					margin-top:28px;				
+				}
+				&.show{
+					display:inline-block;
+				}
+				&.today{
+					background-color: #2699FB;
+				}				
+			}		
+			.evTxt{
+				display: none;
+			}
+			// .evTxtOutside{
+			// 	display:block;
+			// }
+			// transition: all 1s ease-in-out;
+			&.slideL{	
+				-webkit-animation: slideL 0.3s forwards;
+				animation:slideL 0.3s forwards;
+	    		// -webkit-animation-delay: 2s;				
+				// animation-delay:.1s; 
+				@-webkit-keyframes slideL{
+					100%{margin-left:calc(-83% - 165px);}
+				}
+				@keyframes slideL{
+					100%{margin-left:calc(-83% - 165px);}					
+					// 100%{margin-left:calc($slideMarg - 165px);}
+				}
+			}
+			&.slideR{	
+				-webkit-animation: slideR 0.3s forwards;
+				animation:slideR 0.3s forwards;
+	    		// -webkit-animation-delay: 2s;
+				// animation-delay:.1s; 
+				@-webkit-keyframes slideR{
+					100%{margin-left:calc(-83% + 165px);}	
+				}
+				@keyframes slideR{
+					100%{margin-left:calc(-83% + 165px);}					
+					// 100%{margin-left:calc($slideMarg + 165px);}
+				}
+			}
+		}
+	}
+}
+
+
+
+.mobileEvsDiv{
+	display:block;
+	text-align: left;
+	height: 200px;
+	overflow-y: scroll;
+	// margin-top:15px;
+	padding: 15px 0;
+	.newEvDiv{
+		cursor: pointer;
+		margin-top: 15px;
+		// margin-top: -50px;
+		// opacity: 0;
+		// transition: .2s;
+		&.evTransform{
+			// margin-top:50px;
+			// opacity: 1;
+		}		
+		.icoWrap{
+			width: 25px;
+			// min-width:20px;
+			margin: 0 16px;
+			text-align: center;
+			display:inline-block;
+			i{
+				color:#2699FB;
+				font-size: 1.6em;
+				margin-top: 5px;
+			}
+		}
+		.eventTitle{
+			display:inline-block;
+			font-size: 1.4em;
+			vertical-align: top;
+		}
+		&.newEvDiv:first-child{
+			margin-top: 0;
+		}
+	}
+}
+
+
+
+
+} /*  END MEDIA QUERY - DO NOT DELETE  */

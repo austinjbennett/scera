@@ -1,0 +1,158 @@
+// DESKTOP PAGE
+// @media only screen and (min-width: 992px) {
+@media only screen and (min-width: $deskSz) {
+
+	
+/*-----MAIN BODY STYLES-----*/
+// .container{
+
+// }
+
+/*-------COLUMN LAYOUT------*/
+@for $i from 1 through 12{
+	$w:($i/12)*100%;
+	.large-#{$i}{
+		width: $w; 
+		float:left;
+	}
+} // end loop
+
+/*-----HEADER STYLES-----*/
+
+// .logoDiv{
+// 	background: url('../img/logo.png') no-repeat;
+// 	background-size:contain;
+// 	height: 100px;
+// 	width: 80%;
+// 	bottom: 0;
+// 	margin-bottom: -10px;
+// }
+
+/*-----------NAV----------*/
+// nav{	
+// 	position: relative;
+// 	background-color: #437DAB;
+// 	width: 100%;
+// 	ul.topNav{
+// 		display: block;
+// 		padding-top: 0;
+// 		padding-bottom:0;
+// 		li{
+// 			display: inline-block;
+// 			padding: 15px;
+// 			border: none;
+// 			margin: 0;
+// 			cursor: pointer;
+// 			color: rgba(255,255,255,0.7);
+// 			a{
+// 				color: #e5e5e5;
+// 				text-decoration: none;
+// 				padding: 0;
+// 			}
+// 			ul.subNav{
+// 				position: absolute;
+// 				margin-top:15px;
+// 				margin-left:-15px;
+// 				padding:0;
+// 				li{
+// 					position: relative;
+// 					display: block;
+// 					/*margin:0 10px;*/
+// 					padding: 10px 0;
+// 					background-color: transparent;
+// 					&:first-child{
+// 						margin-top: 0;
+// 					}
+// 					&:last-child{
+// 						margin:0;
+// 					}
+// 					a{
+// 						margin: 10px 0;
+// 						padding: 10px;
+// 					}
+// 				}
+// 			}
+// 			&:hover{
+// 				background-color: $darkRed;
+// 			}
+// 		}	
+// 	}
+// }
+ 
+// .navWrap{
+// 	max-width: 1200px;
+// 	margin: 0 auto;
+// } 
+// .hbMenu{
+// 	display: none;
+// }
+// .subNav .subLi a{
+// 	color: rgba(255,255,255,0.7);
+// }
+// .subNav .active a{
+// 	color: rgba(255,255,255,0.9);
+// }
+// nav ul li:hover a{
+// 	color: white;
+// }
+// .subLi:hover a{
+// 	color: rgba(255,255,255,1);
+// }
+// .show{
+// 	display:block;
+// }
+
+/*-----CONTENT STYLES-----*/
+// .quadTile{
+// 	// width: 21%;
+// 	@include fourCols(2);
+// }
+
+
+
+/*-----CRUISES PAGE------*/
+.post{
+	height:200px;
+	margin: 40px 0;
+}
+.cruisePosts{
+	p{
+		min-height: 100px
+	}
+	img{
+		height: 200px;
+	}
+} 
+
+/*---------book page---------*/
+.bookPage{
+	input, select{
+		width: 40%;
+	}
+} 
+
+// ~~~GALLERY~~~~~~~~
+.galFlex{
+	@include flex;
+	flex-wrap: wrap;
+	figure{
+		flex-basis: 25%;
+		img{
+			width:100%;
+		}
+	}
+}
+
+/*-----FOOTER STYLES-----*/
+.foot1, .foot2, .foot3{
+	// width: 31%;
+	width: $widthThird;
+	margin: 0;
+	padding:0 .5%;
+}
+
+
+
+
+
+} // end media query

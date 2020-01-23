@@ -1,0 +1,19 @@
+// Main SCSS, there should be no CSS in this page!
+
+// CSS Reset
+@import 'partials/reset.scss';
+
+// Global Specificity
+@import 'partials/variables.scss';
+
+// Site Specificity
+@import 'partials/mixins.scss'; 
+
+// WordPress Plugins Partial
+// @import 'partials/wp-plugins.scss';
+
+// Page Specificity
+@import 'pages/phone.scss';
+@import 'pages/tablet.scss';
+@import 'pages/desktop.scss';
+@import 'pages/infoPg.scss';

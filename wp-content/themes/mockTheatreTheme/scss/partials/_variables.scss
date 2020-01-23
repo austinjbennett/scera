@@ -1,0 +1,44 @@
+// VARIABLES
+
+// MEDIA QUERIES
+$tabletSz: 600px;
+$deskSz: 1366px;
+
+// COLORS
+$mainBlue: #437DAB;
+$blackO2: rgba(0,0,0,0.2);
+$whiteO7:rgba(255,255,255,0.7); 
+$whiteO8:rgba(255,255,255,0.8);
+$mainRed: #860409; // rgba(134,4,9)
+$darkRed: #6E0307;
+$offWhite: #efefef;
+$link: rgba(255,255,255,0.7);
+$accBlue: #2699FB;
+$bgBlue: #7FC4FD;
+$medBlue: #BCE0FD;
+$lightBlue: #F1F9FF;
+
+// SIZES
+// assume 12 column grid
+$widthHalf: 6 / 12 * 100%;
+$widthQuarter: 3 / 12 * 100%;
+$widthThird: 4 / 12 * 100%;
+
+// $cols: 4;
+// @media screen and (min-width: $tabletSz) {
+// 	$cols: 8;
+// }
+// @media screen and (min-width: $deskSz) {
+// 	$cols: 12;
+// }
+
+$gutter: 16px/2;
+$tabGutter: 24px/2;
+
+$smMargin: 16px;
+$semiBold: 600;
+$bold:700;
+
+
+// OTHER
+$radius: 15px;

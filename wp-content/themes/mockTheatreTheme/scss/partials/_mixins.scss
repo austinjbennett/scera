@@ -1,0 +1,184 @@
+// MIXINS
+
+@mixin fadeIn($time){
+	-webkit-transition: opacity $time ease-in;
+	-moz-transition: opacity $time ease-in;
+	-o-transition: opacity $time ease-in;
+	-ms-transition: opacity $time ease-in;
+	transition: opacity $time ease-in;	
+}
+
+@mixin slider($sponsWidth){
+	// $sliderGutter: -1330px;
+	// $sliderTime:15s;	
+	// $sliderTime: 5s;	
+	$sliderGutter: (-$sponsWidth);	
+	$sliderTime: ($sponsWidth/1px)/90 +s;	
+	.first{		
+	    -webkit-animation: bannermove $sliderTime linear infinite;
+    	-moz-animation: bannermove $sliderTime linear infinite;
+    	-o-animation: bannermove $sliderTime linear infinite;
+    	-ms-animation: bannermove $sliderTime linear infinite;
+    	animation: bannermove $sliderTime linear infinite;	
+	}
+	@keyframes "bannermove" {
+	 0% {
+	    margin-left: 0px;
+	 }
+	 100% {
+	    margin-left: $sliderGutter;
+	 }	 
+	}	 
+	@-moz-keyframes bannermove {
+	 0% {
+	   margin-left: 0px;
+	 }
+	 100% {
+	   margin-left: $sliderGutter;
+	 }	 
+	}	 
+	@-webkit-keyframes "bannermove" {
+	 0% {
+	   margin-left: 0px;
+	 }
+	 100% {
+	   margin-left: $sliderGutter;
+	 }	 
+	}	 
+	@-ms-keyframes "bannermove" {
+	 0% {
+	   margin-left: 0px;
+	 }
+	 100% {
+	   margin-left: $sliderGutter;
+	 }	 
+	}	 
+	@-o-keyframes "bannermove" {
+	 0% {
+	   margin-left: 0px;
+	 }
+	 100% {
+	   margin-left: $sliderGutter;
+	 }	 
+	}
+}
+
+@mixin radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin flex{
+	display: flex;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+}
+
+@mixin gradient($from, $to) {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b2e3e3+0,8fd2d6+100 */
+background: $from; /* Old browsers */
+background: -moz-linear-gradient(top, $from 0%, $to 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, $from 0%, $to 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, $from 0%, $to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin partialGradient($from, $to){
+	background: $from; /* Old browsers */
+background: -moz-linear-gradient(top, $from 0%, $from 63%, $to 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, $from 0%, $from 63%, $to 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, $from 0%, $from 63%, $to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin textLink{
+	text-decoration: none;
+	// color: $mainBlue;
+	color: #efefef;
+	opacity: .8;
+	&:hover{
+		opacity: 1;
+	}
+}
+
+@mixin mainRedOpacity($opacity){
+	background-color: rgba(134,4,9,$opacity);
+}
+
+@mixin btn{
+	text-decoration: none;
+	background-color: $mainRed;
+	color: #efefef;
+	// font-weight: 600;
+	font-family:'Oswald',sans-serif;
+	border: none;
+	@include radius($radius);
+	// padding: 10px;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 0 2px 5px black;
+	}
+}
+
+@mixin defBtn{
+	text-decoration: none;
+	background-color: transparent;
+	color: $accBlue;
+	font-size: 12px;
+	font-weight:$bold;
+	border: 2px solid $accBlue;
+	border-radius: 4px;
+	padding: 20px 60px;
+	&:hover{
+		cursor: pointer;
+		background-color: $bgBlue;
+	}
+}
+
+@mixin phoneBtn{
+	text-decoration: none;
+	background-color: #437DAB;
+	color: #efefef;
+	font-weight: 600;
+	border: none;
+	@include radius($radius);
+	padding: 10px;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 0 2px 5px black;
+	}
+}
+
+@mixin tabletBtn{
+	text-decoration: none;
+	background-color: #437DAB;
+	border: none;
+	@include radius($radius);
+	padding: 10px;
+	cursor: pointer;
+	color:rgba(255,255,255,0.8);
+	font-weight: 600;
+	width: 30%;
+	&:hover{
+		color:rgba(255,255,255,1);
+		box-shadow: 0px 2px 5px black;
+	}
+}
+
+// columns: take margin as percent, do not include %
+@mixin fourCols($margin){
+	$qtrWidth: (100 - $margin * 8) / 4;
+	width: percentage($qtrWidth / 100);
+	margin-left: percentage($margin / 100);
+	margin-right: percentage($margin / 100);
+}
+
+@mixin threeCols($margin){
+	$qtrWidth: (100 - $margin * 6) / 3;
+	width: percentage($qtrWidth / 100);
+	margin-left: percentage($margin / 100);
+	margin-right: percentage($margin / 100);
+}
