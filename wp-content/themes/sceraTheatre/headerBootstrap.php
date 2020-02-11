@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Mock Theatre <?php wp_title(); ?></title>
+	<title>Scera Theatre <?php wp_title(); ?></title>
 
 	<!-- LOAD GOOGLE FONT -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet">  -->

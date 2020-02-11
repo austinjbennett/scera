@@ -1,5 +1,8 @@
 wp-config.php
 
+# ignore css files (only tracking scss)
+*.css
+
 # ignore node dependency directories
 node_modules/
 

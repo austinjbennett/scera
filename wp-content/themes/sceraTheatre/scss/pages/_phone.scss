@@ -26,6 +26,11 @@ body{
 	font-weight: 400; /*also loaded 600,700 for bold*/
 	margin: 0;
 	font-size: 14px;
+	&.logged-in {
+		.myNavbar {
+			position: static;
+		}
+	}
 }
 p{
 	// line-height: 1.4em;
