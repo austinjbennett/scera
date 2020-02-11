@@ -1,5 +1,7 @@
 // Main SCSS, there should be no CSS in this page!
-
+main {
+	display: flex; //This is a test
+}
 // CSS Reset
 @import 'partials/reset.scss';
 

@@ -2,6 +2,7 @@ wp-config.php
 
 # ignore css files (only tracking scss)
 *.css
+*.css.map
 
 # ignore node dependency directories
 node_modules/
