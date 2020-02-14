@@ -1,0 +1,22 @@
+.wpoverwatch,
+.wpoverwatch-ticket {
+
+  @media (max-width: 1500px), (min-width: 2500px), (max-height: 750px){
+    .ow-logo.ow-logo-side{
+      display: none;
+    }
+  }
+
+  .ow-logo-side{
+    filter: sepia(1);
+  }
+
+  form:focus-within .ow-logo-side {
+      filter: sepia(1) blur(1px);
+  }
+
+}
+
+.wpoverwatch .ow-logo-side{
+  filter: sepia(1) drop-shadow(-1px -1px .5px #eee);
+}

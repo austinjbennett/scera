@@ -44,7 +44,6 @@ function sass() {
             ]),
         )
         .pipe(sourcemaps.write('.'))
-        // .pipe(gulpConcat('styles.css'))
         .pipe(
             gulp.dest(`${THEME_BASE}/css`, {
                 overwrite: true,

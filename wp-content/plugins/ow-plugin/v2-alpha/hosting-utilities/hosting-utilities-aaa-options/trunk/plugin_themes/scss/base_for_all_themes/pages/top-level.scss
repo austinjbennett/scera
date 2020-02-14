@@ -1,0 +1,49 @@
+.wpoverwatch #wpcontent #wrap{
+
+  $gap-width: 175px;
+  $box-height: 50px;
+
+  display: grid;
+  grid-template-columns: $gap-width $gap-width;
+  gap: calc(50vh - 200px) calc(30vw - #{$gap-width});
+  max-width: none;
+  padding: 35px 25px;
+  border-radius: 20px;
+  border-color: #fff6;
+
+  position: relative;
+
+  @media (min-width: 1000px){
+    gap: calc(150px) calc(200px);
+  }
+
+  a{
+    font-size: 18px;
+    padding: 30px;
+    text-align: center;
+    line-height: 1.2em;
+    height: $box-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fcfcfc;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  // a:hover{
+  //   background: #fff;
+  //   box-shadow: inset 0 -8px 20px 8px #f9f9f9,
+  //                     0 2px 5px -1px #aaa;
+  //   transition: box-shadow .15s;
+  // }
+
+}
+
+
+@media (max-width: 550px) {
+  .wpoverwatch #wpcontent #wrap{
+    grid-template-columns: 100%;
+    gap: 35px;
+  }
+}

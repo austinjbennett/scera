@@ -1,0 +1,30 @@
+.ticket-received{
+
+  background: #4559a7;
+  background: #555;
+  color: #dfdfdf;
+
+  @media(min-width: 1000px){
+    padding-left: 30px;
+  }
+  p,
+  a{
+    margin-left: 22px;
+    font-family: Roboto,"Open Sans","Ubuntu",arial,sans-serif;
+    letter-spacing: .6px;
+  }
+  a,
+  a:visited{
+    color: #f9ff00;
+    text-decoration: none;
+    margin-left: 30px;
+    //border-bottom: 1px dotted #bbbf0055;
+    border-bottom: 1px solid transparent;
+    padding-left: 1px;
+    transition: all .16s;
+  }
+  a:hover{
+    border-bottom: 1px solid #f9ff00;
+  }
+
+}

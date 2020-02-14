@@ -1,0 +1,1 @@
+purify.min.js is DOMPurify from https://github.com/cure53/DOMPurify used to sanatize a string containing html.

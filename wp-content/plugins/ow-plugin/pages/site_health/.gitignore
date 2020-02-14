@@ -1,0 +1,4 @@
+# It is very important this config file does not get commited. If it does,
+# then everyone who received the plugin update will have their configuration overwritten.
+# (Until they refresh their changes)
+dashboard/config.js

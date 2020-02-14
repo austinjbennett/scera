@@ -1,0 +1,173 @@
+<!--
+For use in an iframe.
+Waits for missioncontrol.wp-overwatch.com to send data to the iframe, so we can make the appropriate request to login
+We need this extra step because of same origin policy preventing us from logging in if the post request does not originate from inside the iframe
+-->
+
+<html>
+
+<head>
+    <title>Logging In...</title>
+    <style>
+    #adminmenuwrap{
+        width: 166px;
+        height: 100%;
+        position: absolute;
+        z-index: 9;
+        top: 5px;
+        left: -9px;
+    }
+
+    #wpadminbar{
+        margin-top: -3px;
+        margin-left: -2px;
+        width: calc(100% + 7px);
+        height: 35px;
+        overflow-x: hidden;
+    }
+
+    #adminmenuwrap,
+    #wpadminbar{
+        background: #1A1E22;
+        filter: blur(1px);
+    }
+
+    body{
+        margin: 0;
+        background: #f9f9f9; /* WP background is F1F1F1, but it is mixed with a lot of white blocks */
+        overflow-y: hidden;
+        overflow-x: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        font-weight: 300;
+    }
+    main{
+        padding-left: 190px;
+        padding-top: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id=wpadminbar></div>
+    <div id=adminmenuwrap></div>
+    <main>
+        <p>Loading...</p>
+        <div id=loading></div>
+    </main>
+
+    <script>
+
+    /**
+    * sends a request to the specified url from a form. this will change the window location.
+    * @param {string} path the path to send the post request to
+    * @param {object} params the paramiters to add to the url
+    * @param {string} [method=post] the method to use on the form
+    */
+
+   function post(path, params) {
+
+       var form = document.createElement("form");
+       form.setAttribute("method", "post");
+       form.setAttribute("action", path);
+
+       for(var key in params) {
+           if(params.hasOwnProperty(key)) {
+               var hiddenField = document.createElement("input");
+               hiddenField.setAttribute("type", "hidden");
+               hiddenField.setAttribute("name", key);
+               hiddenField.setAttribute("value", params[key]);
+
+               form.appendChild(hiddenField);
+           }
+       }
+
+       document.body.appendChild(form);
+       form.submit();
+   }
+
+   function ajaxPost(url, data, success) {
+
+        var params = typeof data == 'string' ? data : Object.keys(data).map(
+                function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+            ).join('&');
+
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        xhr.open('POST', url);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+        };
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(params);
+        return xhr;
+    }
+
+    function ajaxGet(url, success) {
+
+         var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+         xhr.open('GET', url);
+         xhr.onreadystatechange = function() {
+             if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+         };
+         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+         xhr.setRequestHeader('Content-Type', 'text/plain');
+         xhr.send();
+         return xhr;
+     }
+
+    function login(postData){
+        // login and redirect to the appropriate location
+        redirect_href = postData['redirect']
+        delete postData['redirect']
+        ajaxPost( '/wp-content/plugins/ow-plugin/rest/v1/auth/login.php', postData, function(){redirect(redirect_href);} )
+        //post('/wp-content/plugins/ow-plugin/rest/v1/auth/login.php', event.data)
+    }
+    function redirect(location){
+        if (! location){
+            window.location = window.location.origin + '/wp-admin'
+            return
+        }
+        const url = new URL(location);
+        url.searchParams.append('gotoDashboardOnFailure', 'true')
+        newUrl = url.origin + url.pathname + '?' + url.searchParams.toString()
+        window.location = newUrl
+    }
+
+    window.already_logged_in = undefined
+
+    window.addEventListener('message', function(event) {
+
+        // Ensure the request came from mission control center
+        if (~event.origin.indexOf('https://missioncontrol.wp-overwatch.com')) {
+
+            function wait_for_logged_in_check(){
+                if (window.already_logged_in === undefined){
+                    setTimeout(wait_for_logged_in_check, 50)
+                    return
+                }
+
+                if (window.already_logged_in === true || window.already_logged_in === 'true'){
+                    redirect(event.data.redirect)
+                } else{
+                    login(event.data)
+                }
+
+            }
+
+            wait_for_logged_in_check()
+
+        } else {
+            alert('You are not allowed to login from ' + event.origin)
+        }
+    });
+
+    setTimeout(function(){
+        document.getElementById('loading').innerText = "Hmm, something must have gone wrong. We should have progressed to the next step in the login process by now.";
+    }, 6000);
+
+    ajaxGet('/wp-content/plugins/ow-plugin/rest/v1/auth/is_user_logged_in.php', function(resp){ window.already_logged_in = resp  })
+
+    </script>
+
+</body>
+</html>

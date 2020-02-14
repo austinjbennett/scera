@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install>
+    <modules>
+		<mod code = "license" active = "1" type_id = "6"  label = "license" />
+		<mod code = "ab_testing" active = "1" type_id = "6"  label = "ab_testing" />
+		<mod code = "layered_popup" active = "1" type_id = "6"  label = "layered_popup" />
+		<mod code = "pro_tpls" active = "1" type_id = "6"  label = "pro_tpls" />
+		<mod code = "on_exit" active = "1" type_id = "6"  label = "on_exit" />
+		<mod code = "fonts" active = "1" type_id = "6"  label = "fonts" />
+		<mod code = "add_options" active = "1" type_id = "6"  label = "add_options" />
+		<mod code = "sub_social" active = "1" type_id = "6"  label = "sub_social" />
+		<mod code = "access" active = "1" type_id = "6"  label = "access" />
+		<mod code = "sub_fields" active = "1" type_id = "6"  label = "sub_fields" />
+		<mod code = "constantcontact" active = "1" type_id = "6"  label = "constantcontact" />
+		<mod code = "campaignmonitor" active = "1" type_id = "6"  label = "campaignmonitor" />
+		<mod code = "sendgrid" active = "1" type_id = "6"  label = "sendgrid" />
+		<mod code = "verticalresponse" active = "1" type_id = "6"  label = "verticalresponse" />
+		<mod code = "arpreach" active = "1" type_id = "6"  label = "arpreach" />
+		<mod code = "sgautorepondeur" active = "1" type_id = "6"  label = "sgautorepondeur" />
+		<mod code = "get_response" active = "1" type_id = "6"  label = "get_response" />
+		<mod code = "activecampaign" active = "1" type_id = "6"  label = "activecampaign" />
+		<mod code = "mailrelay" active = "1" type_id = "6"  label = "mailrelay" />
+		<mod code = "benchmarkemail" active = "1" type_id = "6"  label = "benchmarkemail" />
+		<mod code = "login" active = "1" type_id = "6"  label = "login" />
+		<mod code = "icontact" active = "1" type_id = "6"  label = "icontact" />
+		<mod code = "infusionsoft" active = "1" type_id = "6"  label = "infusionsoft" />
+		<mod code = "salesforce" active = "1" type_id = "6"  label = "salesforce" />
+		<mod code = "convertkit" active = "1" type_id = "6"  label = "convertkit" />
+		<mod code = "myemma" active = "1" type_id = "6"  label = "myemma" />
+	</modules>
+</install>

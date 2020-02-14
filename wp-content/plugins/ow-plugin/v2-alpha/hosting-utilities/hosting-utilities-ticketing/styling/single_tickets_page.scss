@@ -1,0 +1,57 @@
+body.wpoverwatch-ticket .single-ticket{
+   .text *{
+    max-width: 100%;
+  }
+
+  .text img{
+    height: auto !important;
+  }
+
+  .metadata{
+    border-top: 1px solid #aaa;
+    margin-top: 30px;
+  }
+
+  .metadata h4{
+    margin-top: 3px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: #888;
+  }
+
+  .message .text pre{
+    white-space: pre-wrap;
+  }
+  .message .text{
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f3f0e0;
+    overflow-x: auto;
+  }
+  .message.admin .text{
+    background: #b5d4d4;
+  }
+
+  .created-by{
+  font-family: "Open Sans";
+  font-weight: bold;
+  background: #888;
+  color: #fff;
+  margin-bottom: 0;
+  padding: 4px;
+  padding-left: 7px;
+  border-bottom: 1px solid #777;
+  }
+
+  .reply-form{
+    background: #e5e5e5;
+  }
+  #wp-ticketmessage-wrap{
+    padding: 15px;
+    padding-bottom: 0;
+  }
+  .reply-form input[type=submit]{
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,217 @@
+
+$mobile-breakpoint: 1000px;
+
+/*         *
+*   Logo   *
+*          */
+
+@media (min-width: $mobile-breakpoint){
+  .custom-logo-link{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+}
+
+@media (max-width: $mobile-breakpoint){
+  .custom-logo-link img{
+    padding-top: 25px;
+    display: block;
+  }
+
+  .custom-logo-link img{
+    margin: auto;
+    display: block;
+  }
+}
+
+/*             *
+*   wrappers   *
+*              */
+
+html{
+  box-shadow: inset 0 0 100px 20px #ccc9;
+}
+
+body{
+  background: repeating-linear-gradient( 90deg, transparent 0px, transparent 160px, #fafafa 240px, #fafafa 560px, transparent 640px), linear-gradient(to bottom, #fff, #f1f1f1);
+  //background-image: linear-gradient(white 2px, transparent 2px), linear-gradient(90deg, white 2px, transparent 2px), linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+}
+
+#login{
+  padding: 0;
+  //margin-top: calc(47vh - 264px/2);
+  margin-top: 10px;
+  /*padding-top: calc(40vh - 20%);*/
+  //padding-top: 20%;
+}
+
+@media (min-width: $mobile-breakpoint){
+  body{
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: $mobile-breakpoint){
+  html{
+      background: #f8f8f8;
+  }
+  body{
+      background: #f8f8f8; /* things where breaking without this. So this is my workaround. */
+  }
+  #login{
+    margin-top: 0;
+    padding-top: 30px;
+  }
+}
+
+/*         *
+*   Form   *
+*          */
+
+// .login h1 a{
+//   display: none;
+//   background: #f6f6f6;
+// }
+
+.login form{
+  border: 0px solid #eee;
+  box-shadow: 0 0 150px 20px #f7f7f7, inset 0 0 3px 0px #c2c2c2, inset 0 0 1px 0px #777;
+  box-shadow: 0px 5px 20px -11px black;
+
+  background: transparent;
+  box-shadow: none;
+}
+
+#nav{
+  text-align: center;
+  font-style: italic;
+}
+
+#backtoblog{
+  display: none;
+}
+
+/*                *
+*   Form Fields   *
+*                 */
+
+.login label{
+  font-size: 13px;
+}
+
+.login input[type=checkbox],
+.login .forgetmenot label {
+  color: #777;
+  transition: .1s border-color ease-in-out;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.login input[type=checkbox]{
+  border: 1px solid #c1c1c1;
+  box-shadow: none;
+  background: #fff;
+  border-radius: 1px;
+  text-shadow: 1px 1px 1px #eeed;
+}
+#user_login,
+#user_pass{
+  background: #fff;
+  box-shadow: none;
+  transition: .15s;
+  border-radius: 1px;
+  margin-top: 3px;
+  background: repeating-linear-gradient(45deg, rgba(96, 109, 188, 0.0135) 0px, rgba(96, 109, 188, 0.0135) 3px, rgba(100, 100, 100, 0.00) 4px, rgba(100, 100, 100, 0.00) 5px);
+  border: 1px solid #ddd;
+  border-left: 1px solid #ededed;
+  border-right: 1px solid #ededed;
+  background: #f0f0f0;
+}
+#user_pass{
+  margin-bottom: 17px;
+}
+#user_login:focus,
+#user_pass:focus{
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: inset -1px -1px 5px -2px #5552, 0px 0px 3px 0px #086799;
+}
+#loginform>p{
+  position: relative;
+}
+#loginform>p:nth-of-type(1)::after {
+    content: "\f110";
+}
+#loginform>p:nth-of-type(2)::after{
+  content: "\f160";
+}
+/* Remove icons if LastPass was loaded */
+#loginform.lastpass-installed>p::after {
+    /* leave room for the lastpass icons if lastpass was loaded */
+    /*margin-right: 22px;
+    margin-top: -1px; */
+    display: none;
+}
+#loginform>p:nth-of-type(1)::after,
+#loginform>p:nth-of-type(2)::after{
+  font-family: "dashicons";
+  position: absolute;
+  right: 4px;
+  top: 30px;
+  font-size: 20px;
+  color: #555;
+}
+
+#wp-submit{
+  text-transform: uppercase;
+  border-radius: 0;
+  background: #008ec2;
+  border-color: #008ec2;
+  transition: .08s;
+  transition-timing-function: cubic-bezier(0, 0.17, 1, 0.24);
+  width: 100px;
+  width: 100%;
+  margin-top: 5px;
+}
+#wp-submit:hover{
+  background: #0077a9;
+  border-color: #0077a9;
+}
+
+.login .forgetmenot{
+  display: none;
+}
+
+
+/*           *
+*   Foooter  *
+*            */
+
+.ow-login-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  background: #ebebeb;
+  padding: 13px 18px;
+  box-sizing: border-box;
+  box-shadow: 0 0 2px #bebebe;
+
+  a{
+    text-decoration: none;
+    letter-spacing: .2px;
+  }
+
+}
+
+@media (max-width: $mobile-breakpoint){
+  .ow-login-footer{
+    position: static;
+    margin-top: 60px;
+  }
+}
+@media (max-width: $mobile-breakpoint) and (min-height: 730px){
+  .ow-login-footer{
+    display: none;
+  }
+}

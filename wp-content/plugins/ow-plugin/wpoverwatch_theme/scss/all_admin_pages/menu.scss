@@ -1,0 +1,122 @@
+#wpadminbar #wp-admin-bar-it-sales-acc{
+    display: none;
+}
+
+#adminmenu{
+
+    & > li.wp-first-item{
+        /*border-top: 2px solid #555;*/ /* TODO uncomment once ticket system is no longer highlighted in orange (when we have a chat system) */
+        background: #e44b2f;
+        text-shadow: 0px 0px 1px #0003;
+        &:hover{
+            background: #ff6347;
+        }
+    }
+    & > li.wp-first-item a{
+        font-weight: bold;
+        transition: .11s color ease-out, .07 background;
+        &:hover{
+            color: #006b88;
+            text-shadow: none;
+        }
+        &:active,
+        &:focus{
+            transition: none;
+            background: #ff6f53;
+            color: #055C74;
+        }
+    }
+
+    & > .wp-first-item:not(:hover) .wp-menu-image{
+        filter: brightness(2);
+    }
+
+  #toplevel_page_SiteSmash,
+  #toplevel_page_wpoverwatch {
+    border-bottom: 2px solid #555;
+    font-family: "Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    background: darken(#24282D, 2%);
+  }
+  #toplevel_page_SiteSmash .wp-first-item,
+  #toplevel_page_wpoverwatch .wp-first-item{
+      display: none;
+  }
+  .wp-has-current-submenu#toplevel_page_SiteSmash,
+  .wp-has-current-submenu#toplevel_page_wpoverwatch {
+    box-shadow: -3px 0px 3px 0px #111;
+  }
+
+  #toplevel_page_SiteSmash hr,
+  #toplevel_page_wpoverwatch hr{
+    border-top: 1px solid #6b6d6f;
+    border-bottom: 1px solid #b7bcc2;
+    margin: 2px 0;
+  }
+  .wp-not-current-submenu#toplevel_page_SiteSmash hr,
+  .wp-not-current-submenu#toplevel_page_wpoverwatch hr{
+    border-top-color: #3b3d3f;
+    border-bottom-color: #878c92;
+    margin-right: 13px;
+  }
+
+
+  #toplevel_page_SiteSmash a[href="admin.php?page=SiteSmash-separator"],
+  #toplevel_page_wpoverwatch a[href="admin.php?page=wpoverwatch-separator"],
+  #adminmenu .ow-more > a:first-of-type{
+    pointer-events: none;
+    cursor: default; //does not seem to work in Chrome when pointer-events is none. Don't know about the other browsers, but I'm leaving this here in case it does work in other browsers, or in case it works in the future
+    display: flex;
+    align-items: center;
+    height: 20px;
+  }
+  #toplevel_page_SiteSmash a[href="admin.php?page=SiteSmash-separator"] hr,
+  #toplevel_page_wpoverwatch a[href="admin.php?page=wpoverwatch-separator"] hr,
+  #adminmenu .ow-more > a:first-of-type{
+    width: 100%;
+  }
+
+  #toplevel_page_SiteSmash a[href="admin.php?page=SiteSmash-separator"]:active hr,
+  #toplevel_page_wpoverwatch a[href="admin.php?page=wpoverwatch-separator"]:active hr,
+  #adminmenu .ow-more > a:first-of-type{
+    border-color: red;
+  }
+
+  /* Hide the following pages. They are all displayed in the Wp Overwatch Menu */
+  .toplevel_page_itsec:not(.wp-has-current-submenu),
+  .toplevel_page_pb_backupbuddy_backup:not(.wp-has-current-submenu),
+  .toplevel_page_ithemes-sales-acc:not(.wp-has-current-submenu),
+  .toplevel_page_Wordfence:not(.wp-has-current-submenu),
+  .toplevel_page_smush:not(.wp-has-current-submenu){
+      display: none;
+  }
+
+  .toplevel_page_SiteSmash li,
+  .toplevel_page_wpoverwatch li{
+      transition: height .1s ease-out, opacity .12s ease-out;
+      height: 28px;
+      opacity: 1;
+  }
+  /* The menu was loading before the ow-more class was added, preventing us from knowing what needed to be hid/shown for a breif moment
+     This presented with a choice of either expanding or shrinking the menu when it loaded. Expanding looks better, so we start everything with 0 height
+     Until the ow-more class is loaded
+  */
+  .toplevel_page_SiteSmash ul:not(.ow-more-added) li,
+  .toplevel_page_wpoverwatch ul:not(.ow-more-added) li{
+      height: 0;
+      opacity: 0;
+  }
+  .ow-more ~ li{
+      height: 0;
+      opacity: 0;
+  }
+
+}
+
+@media(min-width: 1700px){
+  body:not(.sticky-menu),
+  body:not(.folded){
+    #collapse-menu{
+      display: none !important;
+    }
+  }
+}

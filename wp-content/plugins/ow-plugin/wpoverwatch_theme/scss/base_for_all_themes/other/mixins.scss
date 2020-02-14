@@ -1,0 +1,26 @@
+@mixin all-pages {
+  body.wpoverwatch,
+  body.wpoverwatch-tickets,
+  body.wpoverwatch-submit-ticket,
+  /*body.wpoverwatch-site-health-dashboard, ignore this page */
+  body.wpoverwatch-plan,
+  body.wpoverwatch-roadmap,
+  body.wpoverwatch-options,
+  body.wpoverwatch-my-tickets,
+  body.wpoverwatch-ticket {
+    @content
+  }
+}
+
+@mixin all-pages-including-iframe-pages {
+  body.wpoverwatch,
+  body.wpoverwatch-tickets,
+  body.wpoverwatch-site-health-dashboard,
+  body.wpoverwatch-plan,
+  body.wpoverwatch-roadmap,
+  body.wpoverwatch-options,
+  body.wpoverwatch-my-tickets,
+  body.wpoverwatch-ticket {
+    @content
+  }
+}

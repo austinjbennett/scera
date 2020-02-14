@@ -1,0 +1,34 @@
+.wpoverwatch-site-health-dashboard {
+  #wpcontent{
+    padding-left: 0;
+    background: #121212;
+  }
+  iframe{
+      width: 100%;
+      height: 100%;
+  }
+
+  #wrap-inner{
+    height: calc(100vh - 32px);
+    width: 100%;
+    overflow-y: hidden;
+  }
+
+  #wpbody-content{
+    padding-bottom: 0;
+  }
+  #wpfooter{
+    display: none;
+  }
+
+  /* Hide the scrollbar, while still allowing scrolling. Users need to be able to scroll long admin sidebars,
+  but we don't want to have a second sidebar for this. The iframe already has it's own scrollbar, and the second scrollbar looks buggy.*/
+  overflow-x: hidden;
+  #wpwrap{
+    width: calc(100% + 17px); /* Width plus the width of the scrollbar, so we can hide it */
+    height: 100%;
+    overflow-y: auto;
+    background: #121212; /* color of the overflow area when we scroll below the iframe */
+  }
+
+}

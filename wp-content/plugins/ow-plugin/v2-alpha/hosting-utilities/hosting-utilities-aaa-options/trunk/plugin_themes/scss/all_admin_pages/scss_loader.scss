@@ -1,0 +1,6 @@
+@import '../base_for_all_themes/other/mixins';
+@import 'menu';
+
+.message-bar-wptc{ /* Hide WP Time Capsule auto update notifications */
+	display: none;
+}

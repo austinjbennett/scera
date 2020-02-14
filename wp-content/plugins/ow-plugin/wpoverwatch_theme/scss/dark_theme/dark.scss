@@ -1,0 +1,35 @@
+@import  '../base_for_all_themes/base';
+
+@import  'wpoverwatch_top_page.scss';
+
+$sidebar-color: #24282D; /* The default WP sidebar color */
+$bckgrd-color: darken($sidebar-color, 1%);
+
+@include all-pages{
+
+  #wpwrap{
+    background: $bckgrd-color;
+  }
+  ul#adminmenu a.wp-has-current-submenu:after,
+  ul#adminmenu>li.current>a.current:after{
+    border-right-color: $bckgrd-color;
+    filter: drop-shadow(-1px 0px 0px #0e0e0e);
+    right: -1px;
+  }
+
+  #wrap{
+    box-shadow: 0 0 100px 0px #777;
+    background: #eee;
+  }
+
+  #adminmenuback{
+    filter: drop-shadow(1px 0px 1px #202020);
+  }
+
+}
+
+.wpoverwatch-my-tickets #wpbody h1, 
+.wpoverwatch-tickets #wpbody h1,
+.wpoverwatch-ticket #wpbody h1{
+  color: #ccc;
+}

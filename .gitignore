@@ -1,5 +1,7 @@
 wp-config.php
 
+wp-content/uploads
+
 # ignore css files (only tracking scss)
 *.css
 *.css.map

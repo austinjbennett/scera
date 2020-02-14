@@ -1,0 +1,34 @@
+@import  '../base_for_all_themes/base.scss';
+
+@import  'wpoverwatch_top_page.scss';
+
+@include all-pages{
+
+  #wpwrap{
+    background: linear-gradient(45deg, #f0a8cc, #ecc1ac) !important;
+  }
+
+  #wrap{
+    box-shadow: 0 0 100px 0px white;
+  }
+
+  ul#adminmenu a.wp-has-current-submenu:after, ul#adminmenu>li.current>a.current:after{
+    border-right-color: #f0abca;
+  }
+
+}
+
+.wpoverwatch-ticket  #wpbody h1{
+  color: #3e393b;
+}
+
+
+
+
+
+
+@media (min-width: 1500px){
+  body.wpoverwatch #wpcontent #wrap{
+    width: calc(75% - 200px);
+  }
+}

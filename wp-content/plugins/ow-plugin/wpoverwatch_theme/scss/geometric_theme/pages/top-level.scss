@@ -1,0 +1,76 @@
+.wpoverwatch{
+
+  #wpwrap #wpcontent,
+  #wpwrap #wpcontent:before{
+    //transition: 9.3s;
+    transition: background .3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  #wrap a:nth-of-type(1){
+    transform: skewX(-15deg);
+    .inner{
+      transform: skewX(15deg);
+    }
+  }
+
+  #wrap a:nth-of-type(2){
+    transform: skewY(-10deg);
+    .inner{
+      transform: skewY(10deg);
+    }
+  }
+
+  #wrap a:nth-of-type(3){
+    transform: skewY(10deg);
+    .inner{
+      transform: skewY(-10deg);
+    }
+  }
+
+  #wrap a:nth-of-type(4){
+    transform: skewX(15deg);
+    .inner{
+      transform: skewX(-15deg);
+    }
+  }
+
+  #wpcontent #wrap{
+    background: none;
+    box-shadow: none;
+    border: none;
+    @media (max-width: 700px) and (min-width: 550px){
+      gap: calc(48px) calc(30vw - 175px);
+    }
+  }
+
+  #wrap a{
+    box-shadow: 0 0 100px 0px #fff9;
+    position: relative;
+    border: 2px solid #ccc;
+    outline: 1px solid #b4b4b4;
+    box-shadow: 0 0 100px 0px #fff9,
+                inset 0 -8px 20px 8px #f9f9f9,
+                0 2px 5px -1px #aaa;
+    transition: box-shadow .15s;
+  }
+
+  #wrap a:before{
+    $spacing: 15px;
+    content: '';
+    position: absolute;
+    top: -$spacing;
+    bottom: -$spacing;
+    right: -$spacing;
+    left: -$spacing;
+    border: 1px solid #f4f4f4;
+    border: 1px solid #f6eef5a5;
+    border-radius: 4px;
+  }
+  #wrap a:hover{
+    background: #fff;
+    box-shadow: inset 0 -8px 20px 8px #f9f9f9,
+                0 2px 5px -1px #aaa;
+  }
+
+}

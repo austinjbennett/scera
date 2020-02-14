@@ -1,0 +1,71 @@
+@import  '../base_for_all_themes/base';
+
+$bckgrd-color: #f1f1f1;
+
+@include all-pages{
+  #wpbody{
+    padding-top: 30px;
+  }
+  #wpwrap,
+  #wrap{
+    background: $bckgrd-color;
+  }
+  #wrap{
+    border: none;
+  }
+  #wrap-inner{
+    box-shadow: none;
+    border: none;
+  }
+  @media (min-width: 1200px){
+    #wrap {
+      width: 1000px;
+      max-width: 1000px;
+    }
+  }
+
+  /* Revert back to default looking buttons */
+  .ow-btn{
+    background-color: #fafafa;
+    width: auto;
+    height: 28px;
+    box-shadow: 0 1px 0 #ccc;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    color: #555;
+    text-transform: none;
+    font-family: inherit;
+    margin-top: 7px;
+  }
+
+}
+
+/* Use white overlay for the my tickets hover color */
+.wpoverwatch-my-tickets #wrap a.ticket:hover:before,
+.wpoverwatch-my-tickets #wrap a.ticket:hover:after{
+    background: rgba(255, 255, 255, 0.42) !important;
+}
+
+@media (min-width: 1200px){
+  body.wpoverwatch #wrap{
+    width: 550px;
+    max-width: none;
+  }
+  .wpoverwatch-tickets .ticket-form{
+    width: 800px;
+  }
+  .wpoverwatch-tickets .ticket-form,
+  .wpoverwatch-tickets h1{
+    padding-left: 100px;
+  }
+}
+
+.wpoverwatch #wpcontent #wrap a{
+  border: 1px solid #e1e1e1;
+}
+
+/* Add background to my plans page */
+body.wpoverwatch-plan #wrap{
+    background: white;
+    border: 1px solid #eee;
+}
