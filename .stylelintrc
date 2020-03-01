@@ -1,18 +1,30 @@
 {
-  "extends": ["stylelint-config-recommended-scss"],
-  "rules": {
-    "unit-blacklist": ["px"],
-    "indentation": "tab",
-    "property-no-vendor-prefix": true,
-    "block-opening-brace-space-before": "always",
-    "declaration-block-semicolon-space-after": "always-single-line",
-    "declaration-colon-space-after": "always",
-    "no-descending-specificity": [true, {
-      "severity": "warning"
-    }],
-    "block-no-empty": [true, {
-      "severity": "warning"
-    }]
-  },
-  "ignoreFiles": ["**/*.css"]
+	"extends": [
+		"stylelint-config-recommended-scss/"
+	],
+	"rules": {
+		"unit-blacklist": [
+			"px"
+		],
+		"indentation": "tab",
+		"property-no-vendor-prefix": true,
+		"block-opening-brace-space-before": "always",
+		"declaration-block-semicolon-space-after": "always-single-line",
+		"declaration-colon-space-after": "always",
+		"no-descending-specificity": [
+			true,
+			{
+				"severity": "warning"
+			}
+		],
+		"block-no-empty": [
+			true,
+			{
+				"severity": "warning"
+			}
+		]
+	},
+	"ignoreFiles": [
+		"**/*.css"
+	]
 }

@@ -1,8 +1,16 @@
 // VARIABLES
 
 // MEDIA QUERIES
-$tabletSz: 600px;
-$deskSz: 1366px;
+// stylelint-disable unit-blacklist
+$max-xs: 599px;
+$min-sm: 600px;
+$max-sm: 991px;
+$min-md: 992px;
+$max-md: 1239px;
+$min-lg: 1240px;
+$max-lg: 1439px;
+$min-xl: 1440px;
+// stylelint-enable unit-blacklist
 
 // COLORS
 $mainBlue: #437DAB;
@@ -32,13 +40,13 @@ $widthThird: 4 / 12 * 100%;
 // 	$cols: 12;
 // }
 
-$gutter: 16px/2;
-$tabGutter: 24px/2;
+$gutter: 1.6rem/2;
+$tabGutter: 2.4rem/2;
 
-$smMargin: 16px;
+$smMargin: 1.6rem;
 $semiBold: 600;
-$bold:700;
+$bold: 700;
 
 
 // OTHER
-$radius: 15px;
+$radius: 1.5rem;

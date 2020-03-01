@@ -7,12 +7,13 @@
 	},
 	"rules": {
 		"arrow-body-style": [0, "as-needed"],
+		"indent": [2, "tab", { "SwitchCase": 1 }],
 		"no-tabs": [1, { "allowIndentationTabs": true }],
-		"indent": [2, "tab"],
+		"no-console": [2, { "allow": ["error"] }],
 		"space-before-function-paren": 2,
 		"no-underscore-dangle": 1,
 		"no-new": 1,
-		"no-console": 1,
-		"max-len": 0
+		"max-len": [1, { "code": 200, "tabWidth": 1 }],
+		"no-param-reassign": [1, { "props": false }]
 	}
 }
