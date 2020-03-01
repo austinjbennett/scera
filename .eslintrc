@@ -1,0 +1,18 @@
+{
+	"extends": ["airbnb-base"],
+	"env": {
+		"node": true,
+		"es6": true,
+		"browser": true
+	},
+	"rules": {
+		"arrow-body-style": [0, "as-needed"],
+		"no-tabs": [1, { "allowIndentationTabs": true }],
+		"indent": [2, "tab"],
+		"space-before-function-paren": 2,
+		"no-underscore-dangle": 1,
+		"no-new": 1,
+		"no-console": 1,
+		"max-len": 0
+	}
+}

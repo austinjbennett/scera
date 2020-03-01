@@ -15,59 +15,59 @@
 	$sliderGutter: (-$sponsWidth);	
 	$sliderTime: ($sponsWidth/1px)/90 +s;	
 	.first{		
-	    -webkit-animation: bannermove $sliderTime linear infinite;
-    	-moz-animation: bannermove $sliderTime linear infinite;
-    	-o-animation: bannermove $sliderTime linear infinite;
-    	-ms-animation: bannermove $sliderTime linear infinite;
-    	animation: bannermove $sliderTime linear infinite;	
+		-webkit-animation: bannermove $sliderTime linear infinite;
+		-moz-animation: bannermove $sliderTime linear infinite;
+		-o-animation: bannermove $sliderTime linear infinite;
+		-ms-animation: bannermove $sliderTime linear infinite;
+		animation: bannermove $sliderTime linear infinite;	
 	}
 	@keyframes "bannermove" {
-	 0% {
-	    margin-left: 0px;
-	 }
-	 100% {
-	    margin-left: $sliderGutter;
-	 }	 
+		0% {
+			margin-left: 0px;
+		}
+		100% {
+			margin-left: $sliderGutter;
+		}	 
 	}	 
 	@-moz-keyframes bannermove {
-	 0% {
-	   margin-left: 0px;
-	 }
-	 100% {
-	   margin-left: $sliderGutter;
-	 }	 
+		0% {
+			margin-left: 0px;
+		}
+		100% {
+			margin-left: $sliderGutter;
+		}	 
 	}	 
 	@-webkit-keyframes "bannermove" {
-	 0% {
-	   margin-left: 0px;
-	 }
-	 100% {
-	   margin-left: $sliderGutter;
-	 }	 
+		0% {
+			margin-left: 0px;
+		}
+		100% {
+			margin-left: $sliderGutter;
+		}	 
 	}	 
 	@-ms-keyframes "bannermove" {
-	 0% {
-	   margin-left: 0px;
-	 }
-	 100% {
-	   margin-left: $sliderGutter;
-	 }	 
+		0% {
+			margin-left: 0px;
+		}
+		100% {
+			margin-left: $sliderGutter;
+		}	 
 	}	 
 	@-o-keyframes "bannermove" {
-	 0% {
-	   margin-left: 0px;
-	 }
-	 100% {
-	   margin-left: $sliderGutter;
-	 }	 
+		0% {
+			margin-left: 0px;
+		}
+		100% {
+			margin-left: $sliderGutter;
+		}	 
 	}
 }
 
 @mixin radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
 
 @mixin flex{
@@ -80,18 +80,18 @@
 
 @mixin gradient($from, $to) {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b2e3e3+0,8fd2d6+100 */
-background: $from; /* Old browsers */
-background: -moz-linear-gradient(top, $from 0%, $to 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, $from 0%, $to 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, $from 0%, $to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=0 ); /* IE6-9 */
+	background: $from; /* Old browsers */
+	background: -moz-linear-gradient(top, $from 0%, $to 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, $from 0%, $to 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, $from 0%, $to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=0 ); /* IE6-9 */
 }
 
 @mixin partialGradient($from, $to){
 	background: $from; /* Old browsers */
-background: -moz-linear-gradient(top, $from 0%, $from 63%, $to 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, $from 0%, $from 63%, $to 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, $from 0%, $from 63%, $to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top, $from 0%, $from 63%, $to 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, $from 0%, $from 63%, $to 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, $from 0%, $from 63%, $to 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin textLink{

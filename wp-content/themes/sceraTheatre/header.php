@@ -75,7 +75,6 @@
 			</div>			
 	</header> -->
 	<nav class="navbar myNavbar">
-		
 		<div class="navWrap2">
 			<div class="navCol navL">
 				<div class="hbMenu" id="hbMenu" onclick="menuClick(this)">
@@ -109,7 +108,16 @@
 				<i class="fas fa-search fa-lg"></i>
 			</form>	
 		</div> -->
-		<?php wp_nav_menu(array('menu_id' => 'myTopNav','menu_class' => 'topNav'));?>	
+		<?php
+		wp_nav_menu(
+			array(
+				'menu_id'        => 'myTopNav',
+				'menu_class'     => 'topNav nav-menu',
+				'theme_location' => 'primary',
+//				'menu_class'     => 'nav-menu',
+			)
+		);
+		?>
 
 	</nav>
 	<div class='behindNav'></div>

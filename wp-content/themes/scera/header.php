@@ -47,7 +47,7 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '283932068677653'); 
+fbq('init', '283932068677653');
 fbq('track', 'PageView');
 </script>
 <noscript>
@@ -66,40 +66,48 @@ src="https://www.facebook.com/tr?id=283932068677653&ev=PageView
 <div class="right-curtain">
 <div id="page" class="hfeed site">
 <div class="page-inner">
-	<div class="totop">
-		<a href="#">
-			<img src="<?php bloginfo('template_directory'); ?>/images/backtotop.png" />
-		</a>
-	</div>
+<!--	<div class="totop">-->
+<!--		<a href="#">-->
+<!--			<img src="--><?php //bloginfo('template_directory'); ?><!--/images/backtotop.png" />-->
+<!--		</a>-->
+<!--	</div>-->
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<a href="<?php bloginfo('url'); ?>"><img class="logo" src="<?php bloginfo('template_directory'); ?>/images/logo.png" /></a>
+			<a href="<?php bloginfo( 'url' ); ?>"><img class="logo" src="<?php bloginfo( 'template_directory' ); ?>/images/logo.png" /></a>
 		</hgroup>
 
 		<div class="social-icons">
-			<a class="facebook" href="<?php the_field( 'facebook', 'options'); ?>"></a>
-			<a class="pinterest" href="<?php the_field( 'pinterest', 'options'); ?>"></a>
-			<a class="twitter" href="<?php the_field( 'twitter', 'options'); ?>"></a>
-			<a class="instagram" href="<?php the_field( 'instagram', 'options'); ?>"></a>
+			<a class="facebook" href="<?php the_field( 'facebook', 'options' ); ?>"></a>
+			<a class="pinterest" href="<?php the_field( 'pinterest', 'options' ); ?>"></a>
+			<a class="twitter" href="<?php the_field( 'twitter', 'options' ); ?>"></a>
+			<a class="instagram" href="<?php the_field( 'instagram', 'options' ); ?>"></a>
 		</div>
 
 		<div class="top-header">
-			 <?php get_search_form(  ); ?>
-			 <div class="lights">
-				<img class="h-call" src="<?php bloginfo('template_directory'); ?>/images/h-info.png">
-				<a href="<?php the_field('header_tickets', 'options'); ?>"><img class="h-buy" src="<?php bloginfo('template_directory'); ?>/images/h-buy.png"></a>
-			 </div>
+			<?php get_search_form(); ?>
+			<div class="lights">
+				<img class="h-call" src="<?php bloginfo( 'template_directory' ); ?>/images/h-info.png">
+				<a href="<?php the_field( 'header_tickets', 'options' ); ?>"><img class="h-buy" src="<?php bloginfo( 'template_directory' ); ?>/images/h-buy.png" alt="" /></a>
+			</div>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'menu_class'     => 'nav-menu',
+				)
+			);
+			?>
 		</nav><!-- #site-navigation -->
 		<script>
 		jQuery(document).ready(function(){
 			jQuery('ul.sub-menu').wrap('<div class="sub-menu-wrapper" />');
 		});
 		</script>
-		<?php $header_image = get_header_image();
+		<?php
+		$header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 		<?php endif; ?>

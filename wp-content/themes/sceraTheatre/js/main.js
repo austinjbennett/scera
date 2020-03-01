@@ -2,10 +2,10 @@
 
 // Mobile Menu Button
 function menuClick(x){
-	x.classList.toggle("change");
+	x.classList.toggle('change');
 };
 
-//ASSIGN CLASSES TO PARENT AND SUB NAV
+// ASSIGN CLASSES TO PARENT AND SUB NAV
 var navPars = document.querySelectorAll('.menu-item-has-children');
 for(var i=0;i<navPars.length;i++){
 	var navPar = navPars[i];
