@@ -24,4 +24,5 @@ jobs:
         script: |
           cd public_html/scera
           git pull
+          npm install
           npm run build
