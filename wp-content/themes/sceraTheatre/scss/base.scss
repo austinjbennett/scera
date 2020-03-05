@@ -32,152 +32,137 @@ body {
 p {
 	line-height: 1.4;
 }
-.behindNav {
+
+img {
+	max-width: 100%;
+}
+
+.main-header {
 	background-color: $accBlue;
 	height: 5.6rem;
-}
-.container {
-	max-width: 120rem;
-	margin: 0 $smMargin;
-	padding-bottom: 6rem;
-}
-.removePad {
-	padding: 0;
-}
-i.icoLgPlus {
-	font-size: 1.7rem;
-}
-i.fa-ticket-alt {
-	transform: rotate(-45deg);
-	font-size: 1.6rem;
-}
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 2.4rem;
+	.shortstack {
+		width: 3.2rem;
+		height: 3.2rem;
+		cursor: pointer;
+		position: absolute;
+		left: 2.4rem;
+		//top: 50%;
+		//right: 2rem;
+		//transform: translateY(-50%);
+		z-index: 10;
 
-.navCol {
-	display: inline-block;
-	&.navL {
-		width: 32%;
-		padding-left: 1.6rem;
-	}
-	&.navM {
-		width: 33%;
-		vertical-align: top;
-		text-align: center;
-		color: white;
-		font-weight: $bold;
-		.navLogo {
-			padding-top: 1.5rem;
+		&:after, &:before, span {
+			display: block;
+			background: #fff;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: .3rem;
+			transition: all .3s;
+		}
+		&:after, &:before {
+			content: '';
+			transition-delay: .1s;
+		}
+		&:after {
+			bottom: .4rem;
+			width: 60%;
+		}
+		&:before {
+			top: .4rem;
+		}
+		span {
+			top: 50%;
+			margin-top: -.15rem;
+		}
+		//@media (min-width: $sm-min) {
+		//	display: none;
+		//}
+
+		&.open {
+			span {
+
+				&:first-child {
+					transform: rotate(45deg);
+					transition-delay: .1s;
+				}
+				&:last-child {
+					transform: rotate(-45deg);
+					transition-delay: .1s;
+				}
+				&:after {
+					margin-top: -.3rem;
+				}
+			}
+			&:before, &:after {
+				opacity: 0;
+				transition: all .3s;
+			}
+			&:before {
+				top: 50%;
+			}
+			&:after {
+				bottom: 50%;
+			}
 		}
 	}
-	&.navR {
-		width: 32%;
-		vertical-align: top;
-		.icons {
-			padding-top: 1.7rem;
-			text-align: right;
-			.icon {
-				display: inline-block;
-				color: white;
-				margin: 0 1.6rem 0 0;
-				border: none;
-				padding: 0;
+	.header-logo {
+		width: 6.5rem;
+	}
+	.right-nav {
+		position: absolute;
+		right: 2.4rem;
+		a {
+			display: inline-block;
+			width: 2.3rem;
+			height: 2.3rem;
+			margin-left: 1rem;
+		}
+		i {
+			color: $color-white;
+			font-size: 2rem;
+			&.fa-ticket-alt {
+				transform: rotate(-45deg);
 			}
 		}
 	}
 }
-.navWrap2 {
-	height: 5.3rem;
-}
 
-/*-------------NAV------------*/
-.myNavbar {
-	background-color: $accBlue;
-	z-index: 60;
-	padding: .3rem 0 0 0;
-	min-height: 5.6rem;
-	position: fixed;
+#nav-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 0;
+	opacity: 0;
+	position: absolute;
 	top: 0;
-	width: 100%;
-	ul {
-		li {
-			list-style-type: none;
-			margin: 0 4.8rem;
-			padding: 1.4rem 0;
-			border-bottom: .1rem solid rgba(255,255,255,0.5);
-			.subNav {
-				margin-top: $smMargin;
-				background-color: $bgBlue;
-			}
-			a {
-				color: white;
-				text-decoration: none;
-				font-size: 1.5rem;
-			}
-			&:hover {
-				a {
-					color: rgba(255,255,255,1);
-				}
-				ul.subNav li {
-					a {
-						color: rgba(255,255,255,0.7);
-					}
-					&:hover a {
-						color: white;
-					}
-				}
-			}
-			&.current-menu-item {
-				a {
-					color: rgba(255,255,255,1);
-				}
-			}
-			&:last-child {
-				border: none;
-			}
-		}
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $color-blue-accent;
+	padding: 5.6rem 1rem 4.3rem;
+	transition: opacity .2s;
+	&.open {
+		height: auto;
+		opacity: 1;
+		transition: opacity .2s;
 	}
+}
+#mega-menu-nav {
+	display: flex;
+	flex-direction: column;
 }
 
-.topNav {
-	display: none;
-	// padding-top: 10px;
-	margin: 0;
-	// margin-top:16px;
-	// padding: 0px 0 10px 20px;
-	height: 100vh;
-}
 
-.hbMenuWrap {
-	padding-left: 0;
-	padding-right: 0;
-}
-.hbMenu {
-	display: inline-block;
-	cursor: pointer;
-	// padding: 5px 2%;
-	padding: 1rem 2% 0 2%;
-}
-.bar1, .bar2, .bar3 {
-	background-color: white;
-	margin: .6rem 0;
-	width: 3rem;
-	height: .3rem;
-	transition: 0.4s;
-}
-.bar3 {
-	width: 1.5rem;
-	transition: .1s;
-}
-.change {
-	.bar1 {
-		transform: translate(0, .9rem) rotate(-45deg);
-	}
-	.bar2 {
-		transform: rotate(45deg);
-	}
-	.bar3 {
-		width: 0;
-	}
-}
+
+
+
+/**********************/
+/***** Old Styles *****/
+/**********************/
 .subNav {
 	@include mainRedOpacity(.7);
 	border: none;

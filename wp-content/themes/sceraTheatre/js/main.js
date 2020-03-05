@@ -1,5 +1,21 @@
 // JS FILE
 
+
+document.getElementById('nav-toggle').addEventListener('click', (e) => {
+	const shortstack = e.target;
+	const nav = document.getElementById('nav-wrapper');
+	if (!shortstack.classList.contains('open')) {
+		shortstack.classList.add('open');
+		// shortstack.nextElementSibling.classList.add('open');
+		nav.classList.add('open');
+	} else {
+		shortstack.classList.remove('open');
+		// shortstack.nextElementSibling.classList.remove('open');
+		nav.classList.remove('open');
+	}
+});
+
+
 // Mobile Menu Button
 function menuClick(x) {
 	x.classList.toggle('change');

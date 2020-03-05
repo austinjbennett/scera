@@ -2,17 +2,22 @@
 
 // MEDIA QUERIES
 // stylelint-disable unit-blacklist
-$max-xs: 599px;
-$min-sm: 600px;
-$max-sm: 991px;
-$min-md: 992px;
-$max-md: 1239px;
-$min-lg: 1240px;
-$max-lg: 1439px;
-$min-xl: 1440px;
+$xs-max: 599px;
+$sm-min: 600px;
+$sm-max: 991px;
+$md-min: 992px;
+$md-max: 1239px;
+$lg-min: 1240px;
+$lg-max: 1439px;
+$xl-min: 1440px;
 // stylelint-enable unit-blacklist
 
 // COLORS
+$color-white: #ffffff;
+$color-blue: #437DAB;
+$color-blue-accent: #2699FB;
+
+// Old Colors
 $mainBlue: #437DAB;
 $blackO2: rgba(0,0,0,0.2);
 $whiteO7:rgba(255,255,255,0.7); 
