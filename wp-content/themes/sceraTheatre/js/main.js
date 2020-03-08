@@ -1,25 +1,22 @@
-// JS FILE
-
-
-document.getElementById('nav-toggle').addEventListener('click', (e) => {
-	const shortstack = e.target;
+function toggleNav() {
 	const nav = document.getElementById('nav-wrapper');
-	if (!shortstack.classList.contains('open')) {
-		shortstack.classList.add('open');
+	if (!this.classList.contains('open')) {
+		this.classList.add('open');
 		// shortstack.nextElementSibling.classList.add('open');
 		nav.classList.add('open');
 	} else {
-		shortstack.classList.remove('open');
+		this.classList.remove('open');
 		// shortstack.nextElementSibling.classList.remove('open');
 		nav.classList.remove('open');
 	}
-});
+}
+document.getElementById('nav-toggle').addEventListener('click', toggleNav);
 
 
 // Mobile Menu Button
-function menuClick(x) {
-	x.classList.toggle('change');
-}
+// function menuClick(x) {
+// 	x.classList.toggle('change');
+// }
 
 // ASSIGN CLASSES TO PARENT AND SUB NAV
 const navPars = document.querySelectorAll('.menu-item-has-children');
