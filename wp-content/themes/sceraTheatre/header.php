@@ -90,7 +90,7 @@
 			$menu_parameters = array(
 				'menu_id'        => '',
 				'menu_class'     => '',
-				'theme_location' => 'primary',
+				'theme_location' => 'headerNav',
 				'items_wrap'     => '<nav id="%1$s" class="%2$s">%3$s</nav>',
 				'echo'           => false,
 //				'container'      => 'nav',

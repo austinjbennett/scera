@@ -56,7 +56,7 @@ remove_filter( 'the_excerpt', 'wpautop' );
 // CREATE MENU.
 register_nav_menus(
 	array(
-		'primary'   => __( 'Primary Menu', 'THEMENAME' ),
+		'headerNav' => __( 'Header Navigation', 'THEMENAME' ),
 		'user_menu' => 'User Menu',
 		'footerNav' => 'Footer Nav',
 	)
