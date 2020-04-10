@@ -3,6 +3,8 @@
 
 // Small Screens Style
 @media only screen and (max-width: 767px) {
+	
+	// Sponsors Section Style
 	.sponsors {
 		position: absolute;
 		bottom: 7.2rem;
@@ -26,58 +28,59 @@
 			}
 		}
 	}
+	// footerWrap Style
 	.footerWrap {
 		position: fixed;
 		height: 7.2rem;
 		bottom: 0;
 		width: 100%;
 		padding: 2rem 0 1.6rem 0;
-		// background-image: url(../img/vertical_cloth.png);
 		background-color: $color-blue-accent;
 		color: $color-white;
-
+		// Hide the footerNav on small screens
 		.footerNav {
 			display: none;
 		}
-		a {
-			@include textLink();
+		// Social Icons Style
+		.socialIcons {
+			text-align: center;
+		}
+		.socialIcons i {
+			padding: 0 1.5rem;
+			cursor: pointer;
+		}
+		.fa-twitter:hover {
+			opacity: 1;
+			color: $color-blue;
+		}
+		.fa-facebook-f:hover {
+			opacity: 1;
+			color: $color-blue;
+		}
+		.fa-instagram:hover {
+			opacity: 1;
+			color: $color-blue;
+		}
+		.fa-youtube:hover {
+			opacity: 1;
+			color: $color-blue;
+		}
+		// Copyright Style
+		footer {
+			text-align: center;
+			padding-top: 1.6rem;
+			font-size: 1.2rem;
+		}
+		// Hide hr line on Small Screens
+		hr {
+			display: none;
+		}
+		// Hide footerSearchWrap on Small Screens
+		.footerSearchWrap {
+			display: none;
 		}
 	}
-	// Social Icons Style
-	.socialIcons {
-		text-align: center;
-	}
-	.socialIcons i {
-		padding: 0 1.5rem;
-		cursor: pointer;
-	}
-	.fa-twitter:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-facebook-f:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-instagram:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-youtube:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	footer {
-		text-align: center;
-		padding-top: 1.6rem;
-		font-size: 1.2rem;
-	}
-	hr {
-		display: none;
-	}
-	.footerSearchWrap {
-		display: none;
-	}
+	
 	/*------OTHER------*/
 	.keepOpen {
 		clear: both;
@@ -88,6 +91,7 @@
 
 // Medium Screens Style
 @media only screen and (min-width: 768px) {
+	// Sponsors Section Style
 	.sponsors {
 		position: absolute;
 		bottom: 16.5rem;
@@ -113,6 +117,7 @@
 			}
 		}
 	}
+	// footerWrap Style
 	.footerWrap {
 		position: fixed;
 		height: 16.5rem;
@@ -121,7 +126,7 @@
 		padding: 3.8rem 0 1.6rem 0;
 		background-color: $color-blue-accent;
 		color: $color-white;
-
+		// Hide the footerNav on Medium Screens
 		.footerNav {
 			display: none;
 		}
@@ -134,7 +139,7 @@
 		text-align: center;
 	}
 	.socialIcons i {
-		padding: 0 1.5rem;
+		padding: 0 1.8rem;
 		cursor: pointer;
 		font-size: 4rem;
 	}
@@ -154,14 +159,17 @@
 		opacity: 1;
 		color: $color-blue;
 	}
+	// Copyright Style
 	footer {
 		text-align: center;
 		padding-top: 1.6rem;
 		font-size: 2.4rem;
 	}
+	// Hide the hr line on Medium Screens
 	hr {
 		display: none;
 	}
+	// Hide the footerSearchWrap on Medium Screens
 	.footerSearchWrap {
 		display: none;
 	}
@@ -175,6 +183,7 @@
 
 // Large Screens Style
 @media only screen and (min-width: 1200px) {
+	// Sponsors Section Style
 	.sponsors {
 		position: absolute;
 		bottom: 60rem;
@@ -200,6 +209,7 @@
 			}
 		}
 	}
+	// footerWrap Style
 	.footerWrap {
 		position: fixed;
 		height: 60rem;
@@ -208,7 +218,7 @@
 		padding: 3.8rem 0 1.6rem 0;
 		background-color: $color-blue-accent;
 		color: $color-white;
-
+		// Show footerNav on Large Screens
 		.footerNav {
 			overflow: hidden;
 			font-size: 3.2rem;
@@ -235,7 +245,7 @@
 		text-align: center;
 	}
 	.socialIcons i {
-		padding: 0 1.5rem;
+		padding: 0 4.6rem;
 		cursor: pointer;
 		font-size: 12rem;
 	}
@@ -255,16 +265,19 @@
 		opacity: 1;
 		color: $color-blue;
 	}
+	// Copyright Style
 	footer {
 		text-align: center;
 		padding: 3.8rem 0;
 		font-size: 3.2rem;
 	}
+	// Show hr line on Large Screens
 	hr {
 		display: inherit;
 		width: 95%;
 		margin: 4.8rem auto;
 	}
+	// Show footerSearchWrap on Large Screens
 	.footerSearchWrap {
 		display: flex;
 		padding-bottom: 4.8rem;
@@ -302,7 +315,7 @@
 		}
 	}
 	/*------OTHER------*/
-	#keepOpen {
+	.keepOpen {
 		clear: both;
 		content: "";
 		display: table;
