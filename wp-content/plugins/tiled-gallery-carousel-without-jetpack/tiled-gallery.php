@@ -4,12 +4,12 @@
 Plugin Name: Tiled Galleries Carousel Without Jetpack
 Plugin URL: https://themepacific.com/
 Description: Transform your standard image galleries into an immersive full-screen experience without Jetpack.This plugin is made from Jetpack Modules. You can get the tiled galleries with Full screen carousel with out connecting to wordpress.com account.
-Version: 3.0
+Version: 3.1
 Author: Raja CRN
 Author URI: https://themepacific.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tested up to: 4.9.4
+Tested up to: 5.4
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of

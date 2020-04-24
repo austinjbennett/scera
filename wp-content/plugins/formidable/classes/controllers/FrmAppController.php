@@ -373,7 +373,6 @@ class FrmAppController {
 
 		$dependecies = array(
 			'formidable_admin_global',
-			'formidable',
 			'jquery',
 			'jquery-ui-core',
 			'jquery-ui-draggable',
@@ -403,7 +402,6 @@ class FrmAppController {
 
 			wp_enqueue_script( 'admin-widgets' );
 			wp_enqueue_style( 'widgets' );
-			wp_enqueue_script( 'formidable' );
 			wp_enqueue_script( 'formidable_admin' );
 			FrmAppHelper::localize_script( 'admin' );
 
@@ -416,6 +414,11 @@ class FrmAppController {
 				if ( empty( $settings->old_css ) ) {
 					wp_enqueue_style( 'formidable-grids' );
 				}
+			}
+
+			if ( 'formidable-entries' === $page ) {
+				// Load front end js for entries.
+				wp_enqueue_script( 'formidable' );
 			}
 
 			do_action( 'frm_enqueue_builder_scripts' );
@@ -539,7 +542,8 @@ class FrmAppController {
 		$frmdb->uninstall();
 
 		//disable the plugin and redirect after uninstall so the tables don't get added right back
-		deactivate_plugins( FrmAppHelper::plugin_folder() . '/formidable.php', false, false );
+		$plugins = array( FrmAppHelper::plugin_folder() . '/formidable.php', 'formidable-pro/formidable-pro.php' );
+		deactivate_plugins( $plugins, false, false );
 		echo esc_url_raw( admin_url( 'plugins.php?deactivate=true' ) );
 
 		wp_die();

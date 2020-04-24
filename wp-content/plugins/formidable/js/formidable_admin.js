@@ -1578,20 +1578,49 @@ function frmAdminBuildJS() {
 	}
 
 	function popProductFields( field ) {
-		var options = [], fields, i, selected, current;
+		var i, checked, id,
+			options = [],
+			current = getCurrentProductFields( field ),
+			fName = field.getAttribute( 'data-frmfname' ),
+			products = getFieldList( 'product' ),
+			quantities = getFieldList( 'quantity' ),
+			isSelect = field.tagName === 'SELECT', // for reverse compatibility.
+			// whether we have just 1 product and 1 quantity field & should therefore attach the latter to the former
+			auto = 1 === quantities.length && 1 === products.length;
 
-		current = field.getAttribute( 'data-frmcurrent' );
+		if ( isSelect ) {
+			// This fallback can be removed after 4.05.
+			current = field.getAttribute( 'data-frmcurrent' );
+		}
 
-		fields = getFieldList( 'product' );
-
-		options.push( '<option value="">' + frm_admin_js.select_a_field + '</option>' );
-
-		for ( i = 0; i < fields.length; i++ ) {
-			selected = current == fields[ i ].fieldId ? ' selected' : '';
-			options.push( '<option value="'+ fields[ i ].fieldId +'"' + selected + '>'+ fields[ i ].fieldName +'</option>' );
+		for ( i = 0 ; i < products.length ; i++ ) {
+			// let's be double sure it's string, else indexOf will fail
+			id = products[ i ].fieldId.toString();
+			checked = auto || -1 !== current.indexOf( id );
+			if ( isSelect ) {
+				// This fallback can be removed after 4.05.
+				checked = checked ? ' selected' : '';
+				options.push( '<option value="'+ id +'"' + checked + '>'+ products[ i ].fieldName +'</option>' );
+			} else {
+				checked = checked ? ' checked' : '';
+				options.push( '<label class="frm6">' );
+				options.push( '<input type="checkbox" name="'+ fName +'" value="'+ id +'"' + checked + '> ' + products[ i ].fieldName );
+				options.push( '</label>' );
+			}
 		}
 
 		field.innerHTML = options.join( '' );
+	}
+
+	function getCurrentProductFields( prodFieldOpt ) {
+		var products = prodFieldOpt.querySelectorAll( '[type="checkbox"]:checked' ),
+			idsArray = [];
+
+		for ( var i = 0; i < products.length; i++ ) {
+			idsArray.push( products[ i ].value );
+		}
+
+		return idsArray;
 	}
 
 	function popAllProductFields() {
@@ -1602,25 +1631,17 @@ function frmAdminBuildJS() {
 	}
 
 	function maybeSetProductField( field ) {
-		var productFields, quantityFields, fieldsList, productFieldOpt, fieldId;
-
-		fieldsList = jQuery( field ).closest( 'ul.frm_sorting' );
-		productFields = fieldsList.children( '.edit_field_type_product' );
-		quantityFields = fieldsList.children( '.edit_field_type_quantity' );
-
-		if ( 1 === quantityFields.length && 1 === productFields.length ) {
-			fieldId = field.getAttribute( 'data-fid' );
+		var fieldId = field.getAttribute( 'data-fid' ),
 			productFieldOpt = document.getElementById( 'field_options[product_field_' + fieldId + ']' );
-			if ( null === productFieldOpt ) {
-				return; // very unlikely though
-			}
 
-			productFieldOpt.setAttribute( 'data-frmcurrent', productFields[0].getAttribute( 'data-fid' ) );
-			popProductFields( productFieldOpt );
-			// in order to move its settings to that LHS panel where
-			// the update form resides, else it'll lose this setting
-			moveFieldSettings( document.getElementById( 'frm-single-settings-' + fieldId ) );
+		if ( null === productFieldOpt ) {
+			return;
 		}
+
+		popProductFields( productFieldOpt );
+		// in order to move its settings to that LHS panel where
+		// the update form resides, else it'll lose this setting
+		moveFieldSettings( document.getElementById( 'frm-single-settings-' + fieldId ) );
 	}
 
 	/**
@@ -2559,7 +2580,7 @@ function frmAdminBuildJS() {
 		}
 		var sourceID = atts.sourceID,
 			placeholder = atts.placeholder,
-			isProduct = isProductField( sourceID )
+			isProduct = isProductField( sourceID ),
 			showOther = atts.other;
 
 		removeDropdownOpts( field );
@@ -4378,52 +4399,54 @@ function frmAdminBuildJS() {
 	function startFormMigration( event ) {
 		event.preventDefault();
 
-		var checkedBoxes = jQuery( '#frm_form_importer input:checked' );
-		if ( checkedBoxes.length ) {
-
-			var ids = [];
-			checkedBoxes.each( function( i ) {
-				ids[i] = this.value;
-			} );
-
-			// Begin the import process.
-			importForms( ids );
+		var checkedBoxes = jQuery( event.target ).find( 'input:checked' );
+		if ( ! checkedBoxes.length ) {
+			return;
 		}
+
+		var ids = [];
+		checkedBoxes.each( function( i ) {
+			ids[i] = this.value;
+		} );
+
+		// Begin the import process.
+		importForms( ids, event.target );
 	}
 
 	/**
 	 * Begins the process of importing the forms.
 	 */
-	function importForms( forms ) {
+	function importForms( forms, targetForm ) {
 
-		var $processSettings = jQuery( '#frm-importer-process' );
+		// Hide the form select section.
+		var $form = jQuery( targetForm ),
+			$processSettings = $form.next( '.frm-importer-process' );
 
 		// Display total number of forms we have to import.
 		$processSettings.find( '.form-total' ).text( forms.length );
 		$processSettings.find( '.form-current' ).text( '1' );
 
-		// Hide the form select section.
-		jQuery( '#frm_form_importer' ).hide();
+		$form.hide();
 
 		// Show processing status.
-		$processSettings.show();
+		// '.process-completed' might have been shown earlier during a previous import, so hide now.
 		$processSettings.find( '.process-completed' ).hide();
+		$processSettings.show();
 
 		// Create global import queue.
 		s.importQueue = forms;
 		s.imported = 0;
 
 		// Import the first form in the queue.
-		importForm();
+		importForm( $processSettings );
 	}
 
 	/**
 	 * Imports a single form from the import queue.
 	 */
-	function importForm() {
-		var $processSettings = jQuery( '#frm-importer-process' ),
-			formID = s.importQueue[0],
-			provider = jQuery( 'input[name="slug"]' ).val(),
+	function importForm( $processSettings ) {
+		var formID = s.importQueue[0],
+			provider = $processSettings.closest( '.welcome-panel-content' ).find( 'input[name="slug"]' ).val(),
 			data = {
 				action: 'frm_import_' + provider,
 				form_id: formID,
@@ -4458,7 +4481,7 @@ function frmAdminBuildJS() {
 				} else {
 					// Import next form in the queue.
 					$processSettings.find( '.form-current' ).text( s.imported + 1 );
-					importForm();
+					importForm( $processSettings );
 				}
 			}
 		} );
@@ -5038,6 +5061,14 @@ function frmAdminBuildJS() {
 		setTimeout( success, 1000 );
 	}
 
+	function invisible(classes) {
+		jQuery(classes).css('visibility', 'hidden');
+	}
+
+	function visible(classes) {
+		jQuery(classes).css('visibility', 'visible');
+	}
+
 	function initModal( id, width ) {
 		var $info = jQuery( id );
 		if ( $info.length < 1 ) {
@@ -5372,9 +5403,6 @@ function frmAdminBuildJS() {
 			$builderForm.on( 'change', 'select[name^="field_options[form_select_"]', maybeChangeEmbedFormMsg );
 
 			popAllProductFields();
-			jQuery( document ).on( 'change', '.frmjs_prod_field_opt', function () {
-				this.setAttribute( 'data-frmcurrent', this.options[ this.selectedIndex ].value );
-			} );
 
 			jQuery( document ).on( 'change', '.frmjs_prod_data_type_opt', toggleProductType );
 
@@ -5463,9 +5491,9 @@ function frmAdminBuildJS() {
 			var $loggedIn = document.getElementById( 'logged_in' );
 			jQuery( $loggedIn ).change( function() {
 				if ( this.checked ) {
-					frmFrontForm.visible( '.hide_logged_in' );
+					visible( '.hide_logged_in' );
 				} else {
-					frmFrontForm.invisible( '.hide_logged_in' );
+					invisible( '.hide_logged_in' );
 				}
 			} );
 
@@ -5481,9 +5509,9 @@ function frmAdminBuildJS() {
 			var $singleEntry = document.getElementById( 'single_entry' );
 			jQuery( $singleEntry ).change( function() {
 				if ( this.checked ) {
-					frmFrontForm.visible( '.hide_single_entry' );
+					visible( '.hide_single_entry' );
 				} else {
-					frmFrontForm.invisible( '.hide_single_entry' );
+					invisible( '.hide_single_entry' );
 				}
 
 				if ( this.checked && jQuery( document.getElementById( 'frm_single_entry_type' ) ).val() === 'cookie' ) {
@@ -5782,7 +5810,7 @@ function frmAdminBuildJS() {
 		},
 
 		exportInit: function() {
-			jQuery( '#frm_form_importer' ).submit( startFormMigration );
+			jQuery( '.frm_form_importer' ).submit( startFormMigration );
 			jQuery( document.getElementById( 'frm_export_xml' ) ).submit( validateExport );
 			jQuery( '#frm_export_xml input, #frm_export_xml select' ).change( removeExportError );
 			jQuery( 'input[name="frm_import_file"]' ).change( checkCSVExtension );

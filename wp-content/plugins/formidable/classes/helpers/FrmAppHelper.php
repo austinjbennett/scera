@@ -11,7 +11,7 @@ class FrmAppHelper {
 	/**
 	 * @since 2.0
 	 */
-	public static $plug_version = '4.04';
+	public static $plug_version = '4.04.03';
 
 	/**
 	 * @since 1.07.02
@@ -886,6 +886,9 @@ class FrmAppHelper {
 		if ( ! isset( $atts['close'] ) || empty( $atts['close'] ) ) {
 			$atts['close'] = admin_url( 'admin.php?page=formidable' );
 		}
+		if ( ! isset( $atts['import_link'] ) ) {
+			$atts['import_link'] = false;
+		}
 
 		include( self::plugin_path() . '/classes/views/shared/admin-header.php' );
 	}
@@ -1508,20 +1511,8 @@ class FrmAppHelper {
 		);
 
 		if ( $key_check || is_numeric( $key_check ) ) {
-			$suffix = 2;
-			do {
-				$alt_post_name = substr( $key, 0, 200 - ( strlen( $suffix ) + 1 ) ) . $suffix;
-				$key_check     = FrmDb::get_var(
-					$table_name,
-					array(
-						$column => $alt_post_name,
-						'ID !'  => $id,
-					),
-					$column
-				);
-				$suffix ++;
-			} while ( $key_check || is_numeric( $key_check ) );
-			$key = $alt_post_name;
+			// Create a unique field id if it has already been used.
+			$key = $key . substr( md5( microtime() . rand() ), 0, 10 );
 		}
 
 		return $key;
@@ -1572,7 +1563,10 @@ class FrmAppHelper {
 	private static function prepare_field_arrays( $fields, $record, array &$values, $args ) {
 		if ( ! empty( $fields ) ) {
 			foreach ( (array) $fields as $field ) {
-				$field->default_value   = apply_filters( 'frm_get_default_value', $field->default_value, $field, true );
+				if ( ! self::is_admin_page() ) {
+					// Don't prep default values on the form settings page.
+					$field->default_value = apply_filters( 'frm_get_default_value', $field->default_value, $field, true );
+				}
 				$args['parent_form_id'] = isset( $args['parent_form_id'] ) ? $args['parent_form_id'] : $field->form_id;
 				self::fill_field_defaults( $field, $record, $values, $args );
 			}

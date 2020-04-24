@@ -1,0 +1,70 @@
+[24-Apr-2020 01:52:49 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[24-Apr-2020 01:52:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[24-Apr-2020 01:52:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[24-Apr-2020 01:52:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[24-Apr-2020 01:52:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[24-Apr-2020 01:52:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[24-Apr-2020 01:52:50 UTC] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php:660
+Stack trace:
+#0 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/UberMenu.class.php(134): UberSparkOptions->op('wpmega-style-pr...')
+#1 /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/standard/UberMenuStandard.class.php(100): UberMenu->loadCSS()
+#2 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): UberMenuStandard->loadCSS('')
+#3 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_filters(NULL, Array)
+#4 /home/skaduusc/public_html/scera/wp-includes/plugin.php(478): WP_Hook->do_action(Array)
+#5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
+#6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
+#7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
