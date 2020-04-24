@@ -679,7 +679,7 @@ class ODB_Cleaner {
 	  <?php								
 				} // if ($action == 'analyze_detail' || $action == 'run_detail')
 
-				// LOOP THROUGH THE ORPHANS THEM
+				// LOOP THROUGH THE OEMBEDS
 				$total_deleted = $this->odb_delete_oembed($results, $scheduler, $action);
 				
 				if ($scheduler) $odb_class->log_arr["oembeds"] = $total_deleted;
@@ -714,6 +714,7 @@ class ODB_Cleaner {
 		 ****************************************************************************************/
 		if($odb_class->odb_rvg_options['clear_orphans'] == 'Y') {
 		
+			// POSTMETA AND MEDIA ORPHANS
 			$results = $this->odb_get_orphans($scheduler);
 			
 			 if (count($results) > 0) {
@@ -764,6 +765,7 @@ class ODB_Cleaner {
         <th align="left" class="odb-border-bottom"><?php _e('id', $odb_class->odb_txt_domain);?></th>
         <th align="left" class="odb-border-bottom"><?php _e('title', $odb_class->odb_txt_domain);?></th>
         <th align="left" nowrap="nowrap" class="odb-border-bottom"><?php _e('modified', $odb_class->odb_txt_domain);?></th>
+        <th align="left" class="odb-border-bottom"><?php _e('taxonomy', $odb_class->odb_txt_domain);?></th>
         <th align="left" class="odb-border-bottom"><?php _e('meta key', $odb_class->odb_txt_domain);?></th>
         <th align="left" class="odb-border-bottom"><?php _e('meta value', $odb_class->odb_txt_domain);?></th>
       </tr>
@@ -793,7 +795,6 @@ class ODB_Cleaner {
 				} // if (!$scheduler)
 			} // if (count($results) > 0)
 		} // if($odb_class->odb_rvg_options['clear_orphans'] == 'Y')
-		
 	?>
 		<div class="odb-found-number">
 		  <?php _e('TOTAL NUMBER OF ITEMS: ', $odb_class->odb_txt_domain);?>
@@ -1801,6 +1802,7 @@ function odb_confirm_delete() {
 				'post' AS type,
 				`post_title`,
 				`post_modified`,
+				 '' AS term_taxonomy_id,
 				 '' AS meta_key,
 				 '' AS meta_value
 			  FROM %sposts
@@ -1814,13 +1816,16 @@ function odb_confirm_delete() {
 				array_push($res_arr, $results[$j]);
 			} // for ($j = 0; $j < count($results); $j++)
 			
-			// DELETE POSTMETA ORPHANS
+			// FIND POSTMETA ORPHANS
 			$sql = sprintf ("
 			SELECT '%s' AS site,
 				`post_id` AS ID, 
 				'meta' AS type,
 				'' AS post_title,
-				'' AS post_modified,`meta_key`, `meta_value`
+				'' AS post_modified,
+				'' AS term_taxonomy_id,
+				`meta_key`,
+				`meta_value`
 			  FROM %spostmeta
 			 WHERE post_id NOT IN (SELECT ID FROM %sposts)
 			 ORDER BY `meta_key`
@@ -1830,10 +1835,35 @@ function odb_confirm_delete() {
 			for ($j = 0; $j < count($results); $j++) {
 				array_push($res_arr, $results[$j]);
 			} // for ($j = 0; $j < count($results); $j++)
+			
+			// FIND TERM RELATIONSHIP ORPHANS
+			$sql = sprintf ("
+			SELECT '%s' AS site,
+				`object_id` AS ID,
+				'term relationship' AS type,
+				`name` AS post_title,
+				'' AS post_modified,
+				r.term_taxonomy_id AS term_taxonomy_id,
+				'' AS meta_key,
+				'' AS meta_value
+			  FROM %sterm_relationships r,
+			  	   %sterm_taxonomy x,
+				   %sterms t
+			 WHERE r.term_taxonomy_id = x.term_taxonomy_id
+			 AND   x.term_id = t.term_id
+			 AND   `object_id` NOT IN (SELECT ID FROM %sposts)
+			 ORDER BY `object_id`
+			", $prefix, $prefix, $prefix, $prefix, $prefix);
+			// echo $sql . '<br>';
+
+			$results = $wpdb->get_results($sql, ARRAY_A);
+			for ($j = 0; $j < count($results); $j++) {
+				array_push($res_arr, $results[$j]);
+			} // for ($j = 0; $j < count($results); $j++)
 		} // for($i = 0; $i < count($odb_class->odb_ms_prefixes); $i++)
 		return $res_arr;
 	} // odb_get_orphans()
-	 
+	
 	 
 	/********************************************************************************************
 	 *
@@ -1845,16 +1875,18 @@ function odb_confirm_delete() {
 		global $wpdb, $odb_class;
 
 		$total_deleted = count($results);
+
 		for($i = 0; $i < count($results); $i++) {
 			if (!$scheduler && ($action == 'analyze_detail' || $action == 'run_detail')) {
 	?>
 	<tr>
-	  <td align="right" valign="top"><?php echo ($i + 1); ?></td>
-	  <td align="left" valign="top"><?php echo $results[$i]['site']?></td>
+	  <td valign="top" align="right"><?php echo ($i + 1); ?></td>
+	  <td valign="top" align="left"><?php echo $results[$i]['site']?></td>
 	  <td valign="top"><?php echo $results[$i]['type']?></td>           
 	  <td valign="top"><?php echo $results[$i]['ID']?></td>      
 	  <td valign="top"><?php echo $results[$i]['post_title']?></td>
 	  <td valign="top" nowrap="nowrap"><?php echo substr($results[$i]['post_modified'], 0, 10); ?></td>
+      <td valign="top" align="left"><?php echo $results[$i]['term_taxonomy_id']?></td>
       <td valign="top" nowrap="nowrap"><?php echo $results[$i]['meta_key']; ?></td>
       <td valign="top" nowrap="nowrap"><?php echo $results[$i]['meta_value']; ?></td>
 	</tr>
@@ -1864,7 +1896,7 @@ function odb_confirm_delete() {
 			if ($scheduler || $action == 'run_summary' || $action == 'run_detail') {
 				for($j = 0; $j < count($results); $j++) {
 					// DELETE METADATA FOR THIS COMMENT (IF ANY)
-					if ($results[$j]['type'] == 'meta') {
+					if ($results[$j]['type'] == 'post meta') {
 						$sql = sprintf ("
 						DELETE FROM %spostmeta
 						 WHERE `post_id` = %d
@@ -1873,7 +1905,14 @@ function odb_confirm_delete() {
 						$sql = sprintf ("
 						DELETE FROM %sposts
 						 WHERE `ID` = %d
-						", $results[$j]['site'], $results[$j]['ID']);		
+						", $results[$j]['site'], $results[$j]['ID']);
+					} else if ($results[$j]['type'] == 'term relationship') {
+						//print_r($results[$j]);
+						$sql = sprintf ("
+						DELETE FROM %sterm_relationships
+						 WHERE `object_id` = %d
+						   AND `term_taxonomy_id` = %d
+						 ", $results[$j]['site'], $results[$j]['ID'], $results[$j]['term_taxonomy_id']);
 					} // if ($results[$j]['type'] == 'meta')
 					$wpdb->get_results($sql);
 				} // for($j = 0; $j < count($results); $j++)

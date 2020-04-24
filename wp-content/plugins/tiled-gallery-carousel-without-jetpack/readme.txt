@@ -2,14 +2,16 @@
 Contributors:raja3c, themepacific
 Tags: Tiled gallery, carousel, gallery carousel, jetpack, Lightbox, Jetpack Lite
 Requires at least: 3.4.1
-Tested up to: 4.9.4
-Stable tag: 3.0
+Tested up to: 5.4
+Stable tag: 3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Tiled Gallery with Full Screen Carousel slideshow without Jetpack.
 
 == Description ==
+
+*Working on Gutenberg version of Tiled Gallery. Soon, We'll Release it. Until then, You can use this Tiled Gallery Plugin with Classi WP Editor.*
 
 There is no doubt that JetPack packed with tons of features. However, many users don't want all that monstrous codes in their blog for one or two modules. Also, You should connect your blog to wordpress.com to get the JetPack features.
 
@@ -36,6 +38,10 @@ This plugin will be updated whenever JetPack releases new version.
  
 
 == Changelog ==
+
+= 3.1 =
+
+* Supports Upto 5.4
 
 = 3.0 =
 
