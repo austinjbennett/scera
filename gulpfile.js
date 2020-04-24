@@ -56,7 +56,7 @@ exports.scss = scss;
 
 
 const watch = () => {
-	gulp.watch(`${THEME_BASE}/scss/*.scss`, scss);
+	gulp.watch(`${THEME_BASE}/scss/**/*.scss`, scss);
 	gulp.watch([`${THEME_BASE}/*.php`, `${THEME_BASE}/js/*.js`], reload);
 };
 
