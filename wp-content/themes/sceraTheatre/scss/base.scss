@@ -145,6 +145,7 @@ img {
 	background-color: $color-blue-accent;
 	padding: 5.6rem 1rem 4.3rem;
 	transition: opacity .2s;
+	z-index: 8;
 	&.open {
 		height: auto;
 		opacity: 1;
@@ -159,23 +160,6 @@ img {
 	flex-direction: column;
 }
 
-
-
-
-
-/**********************/
-/***** Old Styles *****/
-/**********************/
-.subNav {
-	@include mainRedOpacity(.7);
-	border: none;
-	display: none;
-}
-
-.pagination {
-	margin-top: 2rem;
-	justify-content: center;
-}
 .searchWrap {
 	padding-bottom: 2rem;
 	border-bottom: .1rem solid rgba(255,255,255,0.5);
@@ -203,337 +187,355 @@ img {
 }
 
 
-/*-----CONTENT STYLES-----*/
-h1 {
-	font-size: 2rem;
-	margin: 2.5rem 0 1rem;
-}
-h2 {
-	font-size: 1.5rem;
-	margin: 1.5rem 0 1rem;
-}
-h3 {
-	font-size: 1.2rem;
-	margin: 1rem 0 0 0;
-	font-weight: 400;
-}
-
-.homeImg {
-	width: 100%;
-}
-.altText {
-	color: #666;
-	background-color: #999;
-	padding: 5rem 2rem;
-
-}
-
-.subHead {
-	// font-size: 1.1em;
-	font-weight: 600;
-	margin-top: 1rem;
-}
-.testSq {
-	width: 15rem;
-	height: 5rem;
-	background-color: gray;
-	margin: 0 auto;
-}
-
-// --------- HOME ELEMENTS -----------
-.homeSection {
-	margin: 0 (-$smMargin);
-	padding: 5rem 0;
-	text-align: center;
-	h2 {
-		margin: 0;
-		padding-bottom: 2rem;
-		font-size: 3rem;
-		font-weight: $bold;
-		color: $accBlue;
-	}
-	.content {
-		margin: 0 $smMargin;
-	}
-	&.events {
-		background-color: $lightBlue;
-		.content {
-			margin: 0 $smMargin/2;
-			h2 {
-				padding: 0;
-			}
-			.event {
-				margin-top: 1.6rem;
-				display: inline-block;
-				width: 50%;
-				padding: 0 $smMargin/2;
-				.eventImg {
-					background-color: $medBlue;
-					width: 100%;
-					height: 16.4rem;
-					i {
-						margin-top: 6rem;
-						color: white;
-					}
-				}
-				.caption {
-					i {
-						float: right;
-						margin: 1rem .5rem;
-						color: $accBlue;
-					}
-					.title {
-						margin: 0;
-						text-align: left;
-						font-weight: $bold;
-						color: $accBlue;
-					}
-					.dates {
-						text-align: left;
-						line-height: 1;
-						font-size: 1.2rem;
-
-					}
-				}
-			}
-			.audition {
-				margin: 5rem auto 0;
-				max-width: 50%;
-				p {
-					color: $accBlue;
-					font-size: 2rem;
-					font-weight: $bold;
-					i {
-						font-size: 1.8rem;
-					}
-				}
-			}
-		}
-	}
-	&.features {
-		.ctaBtn {
-			@include defBtn;
-			margin-top: 3rem;
-		}
-		button {
-			@include defBtn;
-			margin-top: 3rem;
-		}
-	}
-	&.venues {
-		background-color: $accBlue;
-		.venue {
-			margin: 0 auto;
-			width: 50%;
-			.venueImg {
-				background-color: $medBlue;
-				width: 100%;
-				height: 16.4rem;
-				i {
-					margin-top: 6rem;
-				}
-			}
-			p {
-				font-size: 1.4em;
-				margin: .8rem 0 1.6rem 0;
-			}
-		}
-		h2,
-		p,
-		i {
-			color: white;
-		}
-	}
-	&.sponsors {
-		.sliderWrap {
-			width: 100%;
-			margin: 0 auto;
-			overflow: hidden;
-			position: relative;
-		}
-		.sponsorsSlider {
-			$sponsWidth: 228rem;
-			width: $sponsWidth;
-			.sponsorImg {
-				background-color: $medBlue;
-				width: 8rem;
-				height: 8rem;
-				display: inline-block;
-				margin-right: 1.5rem;
-				i {
-					margin-top: 2rem;
-					color: white;
-				}
-			}
-			@include slider($sponsWidth);
-		}
-	}
-}
-
-.movieRow {
-	padding-top: 1rem;
-	margin-top: 3rem;
-	border-top: .1rem solid rgba(0,0,0,0.5);
-	h2 {
-		margin: 0;
-	}
-	.movieImgWrap {
-		float: right;
-		max-width: 50%;
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-	.showTimesTitle {
-		margin-top: 2rem;
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-}
-.templateLink {
-	text-decoration: none;
-	color: inherit;
-}
-.singlePost {
-	margin-top: 2rem;
-	.movieImgWrap {
-		float: right;
-		max-width: 40%;
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-	.showTimesTitle {
-		margin-top: 2rem;
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-}
-.readMore {
-	@include phoneBtn();
-	font-size: .8rem;
-	float: right;
-	margin-top: 1rem;
-}
-
-
-.card {}
-.cards img {
-	width: 100%;
-	height: 15rem;
-	object-fit: cover;
-}
-.cardSubTitle {
-	font-size: 1em;
-	font-weight: 600;
-}
-.eventPage img {
-	width: 100%;
-}
 
 
 
-// ~~~GALLERY~~~~~~~~
-.galFlex {
-	@include flex;
-	flex-wrap: wrap;
-	figure {
-		flex-basis: 50%;
-		padding: 1rem 2%;
-		img {
-			width: 100%;
-		}
-	}
-}
-legend {
-	font-size: 1rem;
-	margin: 0;
-}
+/**********************/
+/***** Old Styles *****/
+/**********************/
+//.subNav {
+//	@include mainRedOpacity(.7);
+//	border: none;
+//	display: none;
+//}
+//
+//.pagination {
+//	margin-top: 2rem;
+//	justify-content: center;
+//}
 
-// LAZY GAL
-.fullWidthImg {
-	width: 100%;
-	img {
-		width: 100%;
-		// opacity: 0;
-		// @include fadeIn(.5s);
-	}
-}
-
-/*-----FOOTER STYLES-----*/
-.footerWrap {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	// margin-top: 20px;
-	padding: 2rem 0 1.6rem 0;
-	// background-image: url(../img/vertical_cloth.png);
-	background-color: $accBlue;
-	color: white;
-	a {
-		@include textLink();
-	}
-	.newsLetterForm {
-		.emailInputG {
-			input {
-				border-radius: 1.5rem 0 0 1.5rem;
-				border: none;
-			}
-			.inputBtn {
-				@include btn();
-				border-radius: 0 1.5rem 1.5rem 0;
-			}
-		}
-	}
-}
-
-.socialIcons {
-	// margin: 10px 0;
-	text-align: center;
-	// margin-top: 16px;
-}
-.socialIcons i {
-	padding: 0 1.5rem;
-	// opacity: .8;
-	opacity: 1;
-	cursor: pointer;
-}
-.fa-twitter-square:hover {
-	opacity: 1;
-	color: #38A1F3;
-}
-.fa-facebook-square:hover {
-	opacity: 1;
-	color: #3b5998;
-}
-.fa-instagram:hover {
-	opacity: 1;
-	color: #e95950;
-}
-.fa-google-plus-square:hover {
-	opacity: 1;
-	color: #DD4B39;
-}
-.fa-youtube-square:hover {
-	opacity: 1;
-	color: #ff0000;
-}
-
-footer {
-	text-align: center;
-	padding-top: 1.6rem;
-	font-size: 1.2rem;
-}
-.footLogo {
-	display: none;
-}
-/*------OTHER------*/
-.keepOpen {
-	clear: both;
-	content: "";
-	display: table;
-}
+//
+///*-----CONTENT STYLES-----*/
+//h1 {
+//	font-size: 2rem;
+//	margin: 2.5rem 0 1rem;
+//}
+//h2 {
+//	font-size: 1.5rem;
+//	margin: 1.5rem 0 1rem;
+//}
+//h3 {
+//	font-size: 1.2rem;
+//	margin: 1rem 0 0 0;
+//	font-weight: 400;
+//}
+//
+//.homeImg {
+//	width: 100%;
+//}
+//.altText {
+//	color: #666;
+//	background-color: #999;
+//	padding: 5rem 2rem;
+//
+//}
+//
+//.subHead {
+//	// font-size: 1.1em;
+//	font-weight: 600;
+//	margin-top: 1rem;
+//}
+//.testSq {
+//	width: 15rem;
+//	height: 5rem;
+//	background-color: gray;
+//	margin: 0 auto;
+//}
+//
+//// --------- HOME ELEMENTS -----------
+//.homeSection {
+//	margin: 0 (-$smMargin);
+//	padding: 5rem 0;
+//	text-align: center;
+//	h2 {
+//		margin: 0;
+//		padding-bottom: 2rem;
+//		font-size: 3rem;
+//		font-weight: $bold;
+//		color: $accBlue;
+//	}
+//	.content {
+//		margin: 0 $smMargin;
+//	}
+//	&.events {
+//		background-color: $lightBlue;
+//		.content {
+//			margin: 0 $smMargin/2;
+//			h2 {
+//				padding: 0;
+//			}
+//			.event {
+//				margin-top: 1.6rem;
+//				display: inline-block;
+//				width: 50%;
+//				padding: 0 $smMargin/2;
+//				.eventImg {
+//					background-color: $medBlue;
+//					width: 100%;
+//					height: 16.4rem;
+//					i {
+//						margin-top: 6rem;
+//						color: white;
+//					}
+//				}
+//				.caption {
+//					i {
+//						float: right;
+//						margin: 1rem .5rem;
+//						color: $accBlue;
+//					}
+//					.title {
+//						margin: 0;
+//						text-align: left;
+//						font-weight: $bold;
+//						color: $accBlue;
+//					}
+//					.dates {
+//						text-align: left;
+//						line-height: 1;
+//						font-size: 1.2rem;
+//
+//					}
+//				}
+//			}
+//			.audition {
+//				margin: 5rem auto 0;
+//				max-width: 50%;
+//				p {
+//					color: $accBlue;
+//					font-size: 2rem;
+//					font-weight: $bold;
+//					i {
+//						font-size: 1.8rem;
+//					}
+//				}
+//			}
+//		}
+//	}
+//	&.features {
+//		.ctaBtn {
+//			@include defBtn;
+//			margin-top: 3rem;
+//		}
+//		button {
+//			@include defBtn;
+//			margin-top: 3rem;
+//		}
+//	}
+//	&.venues {
+//		background-color: $accBlue;
+//		.venue {
+//			margin: 0 auto;
+//			width: 50%;
+//			.venueImg {
+//				background-color: $medBlue;
+//				width: 100%;
+//				height: 16.4rem;
+//				i {
+//					margin-top: 6rem;
+//				}
+//			}
+//			p {
+//				font-size: 1.4em;
+//				margin: .8rem 0 1.6rem 0;
+//			}
+//		}
+//		h2,
+//		p,
+//		i {
+//			color: white;
+//		}
+//	}
+//	&.sponsors {
+//		.sliderWrap {
+//			width: 100%;
+//			margin: 0 auto;
+//			overflow: hidden;
+//			position: relative;
+//		}
+//		.sponsorsSlider {
+//			$sponsWidth: 228rem;
+//			width: $sponsWidth;
+//			.sponsorImg {
+//				background-color: $medBlue;
+//				width: 8rem;
+//				height: 8rem;
+//				display: inline-block;
+//				margin-right: 1.5rem;
+//				i {
+//					margin-top: 2rem;
+//					color: white;
+//				}
+//			}
+//			@include slider($sponsWidth);
+//		}
+//	}
+//}
+//
+//.movieRow {
+//	padding-top: 1rem;
+//	margin-top: 3rem;
+//	border-top: .1rem solid rgba(0,0,0,0.5);
+//	h2 {
+//		margin: 0;
+//	}
+//	.movieImgWrap {
+//		float: right;
+//		max-width: 50%;
+//		img {
+//			width: 100%;
+//			height: 100%;
+//		}
+//	}
+//	.showTimesTitle {
+//		margin-top: 2rem;
+//		font-size: 1.1rem;
+//		font-weight: 600;
+//	}
+//}
+//.templateLink {
+//	text-decoration: none;
+//	color: inherit;
+//}
+//.singlePost {
+//	margin-top: 2rem;
+//	.movieImgWrap {
+//		float: right;
+//		max-width: 40%;
+//		img {
+//			width: 100%;
+//			height: 100%;
+//		}
+//	}
+//	.showTimesTitle {
+//		margin-top: 2rem;
+//		font-size: 1.1rem;
+//		font-weight: 600;
+//	}
+//}
+//.readMore {
+//	@include phoneBtn();
+//	font-size: .8rem;
+//	float: right;
+//	margin-top: 1rem;
+//}
+//
+//
+//.card {}
+//.cards img {
+//	width: 100%;
+//	height: 15rem;
+//	object-fit: cover;
+//}
+//.cardSubTitle {
+//	font-size: 1em;
+//	font-weight: 600;
+//}
+//.eventPage img {
+//	width: 100%;
+//}
+//
+//
+//
+//// ~~~GALLERY~~~~~~~~
+//.galFlex {
+//	@include flex;
+//	flex-wrap: wrap;
+//	figure {
+//		flex-basis: 50%;
+//		padding: 1rem 2%;
+//		img {
+//			width: 100%;
+//		}
+//	}
+//}
+//legend {
+//	font-size: 1rem;
+//	margin: 0;
+//}
+//
+//// LAZY GAL
+//.fullWidthImg {
+//	width: 100%;
+//	img {
+//		width: 100%;
+//		// opacity: 0;
+//		// @include fadeIn(.5s);
+//	}
+//}
+//
+///*-----FOOTER STYLES-----*/
+//.footerWrap {
+//	position: fixed;
+//	bottom: 0;
+//	width: 100%;
+//	// margin-top: 20px;
+//	padding: 2rem 0 1.6rem 0;
+//	// background-image: url(../img/vertical_cloth.png);
+//	background-color: $accBlue;
+//	color: white;
+//	a {
+//		@include textLink();
+//	}
+//	.newsLetterForm {
+//		.emailInputG {
+//			input {
+//				border-radius: 1.5rem 0 0 1.5rem;
+//				border: none;
+//			}
+//			.inputBtn {
+//				@include btn();
+//				border-radius: 0 1.5rem 1.5rem 0;
+//			}
+//		}
+//	}
+//}
+//
+//.socialIcons {
+//	// margin: 10px 0;
+//	text-align: center;
+//	// margin-top: 16px;
+//}
+//.socialIcons i {
+//	padding: 0 1.5rem;
+//	// opacity: .8;
+//	opacity: 1;
+//	cursor: pointer;
+//}
+//.fa-twitter-square:hover {
+//	opacity: 1;
+//	color: #38A1F3;
+//}
+//.fa-facebook-square:hover {
+//	opacity: 1;
+//	color: #3b5998;
+//}
+//.fa-instagram:hover {
+//	opacity: 1;
+//	color: #e95950;
+//}
+//.fa-google-plus-square:hover {
+//	opacity: 1;
+//	color: #DD4B39;
+//}
+//.fa-youtube-square:hover {
+//	opacity: 1;
+//	color: #ff0000;
+//}
+//
+//footer {
+//	text-align: center;
+//	padding-top: 1.6rem;
+//	font-size: 1.2rem;
+//}
+//.footLogo {
+//	display: none;
+//}
+///*------OTHER------*/
+//.keepOpen {
+//	clear: both;
+//	content: "";
+//	display: table;
+//}
 
 
