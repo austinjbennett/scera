@@ -1,6 +1,6 @@
-wp.blocks.registerBlockType('scera/scera-slider', {
-	title: 'Scera Custom Slider',
-	icon: 'smiley',
+wp.blocks.registerBlockType('scera/scera-events-calendar', {
+	title: 'Scera Events Calendar',
+	icon: 'calendar',
 	category: 'common',
 	attributes: {
 		content: { type: 'string' },

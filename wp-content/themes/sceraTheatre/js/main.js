@@ -1,17 +1,41 @@
+function fadeIn(element) {
+	let op = 0.1; // initial opacity
+	element.style.display = 'initial';
+	const timer = setInterval(() => {
+		if (op >= 1) {
+			clearInterval(timer);
+		}
+		element.style.opacity = op;
+		op += 0.1;
+	}, 10);
+}
+function fadeOut(element) {
+	let op = 1; // initial opacity
+	const timer = setInterval(() => {
+		if (op <= 0.1) {
+			clearInterval(timer);
+		}
+		element.style.opacity = op;
+		op -= 0.1;
+	}, 50);
+	element.style.display = 'none';
+}
+
 function toggleNav() {
 	const nav = document.getElementById('nav-wrapper');
 	if (!this.classList.contains('open')) {
 		this.classList.add('open');
 		// shortstack.nextElementSibling.classList.add('open');
+		// fadeIn(nav);
 		nav.classList.add('open');
 	} else {
 		this.classList.remove('open');
 		// shortstack.nextElementSibling.classList.remove('open');
+		// fadeOut(nav);
 		nav.classList.remove('open');
 	}
 }
 document.getElementById('nav-toggle').addEventListener('click', toggleNav);
-
 
 // Mobile Menu Button
 // function menuClick(x) {
