@@ -195,9 +195,6 @@ $nav-height: 5.6rem;
 }
 
 
-
-
-
 /**********************/
 /***** Old Styles *****/
 /**********************/
@@ -472,78 +469,3 @@ $nav-height: 5.6rem;
 //	}
 //}
 //
-///*-----FOOTER STYLES-----*/
-//.footerWrap {
-//	position: fixed;
-//	bottom: 0;
-//	width: 100%;
-//	// margin-top: 20px;
-//	padding: 2rem 0 1.6rem 0;
-//	// background-image: url(../img/vertical_cloth.png);
-//	background-color: $accBlue;
-//	color: white;
-//	a {
-//		@include textLink();
-//	}
-//	.newsLetterForm {
-//		.emailInputG {
-//			input {
-//				border-radius: 1.5rem 0 0 1.5rem;
-//				border: none;
-//			}
-//			.inputBtn {
-//				@include btn();
-//				border-radius: 0 1.5rem 1.5rem 0;
-//			}
-//		}
-//	}
-//}
-//
-//.socialIcons {
-//	// margin: 10px 0;
-//	text-align: center;
-//	// margin-top: 16px;
-//}
-//.socialIcons i {
-//	padding: 0 1.5rem;
-//	// opacity: .8;
-//	opacity: 1;
-//	cursor: pointer;
-//}
-//.fa-twitter-square:hover {
-//	opacity: 1;
-//	color: #38A1F3;
-//}
-//.fa-facebook-square:hover {
-//	opacity: 1;
-//	color: #3b5998;
-//}
-//.fa-instagram:hover {
-//	opacity: 1;
-//	color: #e95950;
-//}
-//.fa-google-plus-square:hover {
-//	opacity: 1;
-//	color: #DD4B39;
-//}
-//.fa-youtube-square:hover {
-//	opacity: 1;
-//	color: #ff0000;
-//}
-//
-//footer {
-//	text-align: center;
-//	padding-top: 1.6rem;
-//	font-size: 1.2rem;
-//}
-//.footLogo {
-//	display: none;
-//}
-///*------OTHER------*/
-//.keepOpen {
-//	clear: both;
-//	content: "";
-//	display: table;
-//}
-
-
