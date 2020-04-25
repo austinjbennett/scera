@@ -37,19 +37,19 @@ img {
 	max-width: 100%;
 }
 
+$nav-height: 5.6rem;
 .main-header {
 	background-color: $accBlue;
-	height: 5.6rem;
+	height: $nav-height;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	padding: 0 2.4rem;
 	.shortstack {
 		width: 3.2rem;
 		height: 3.2rem;
 		cursor: pointer;
 		position: absolute;
-		left: 2.4rem;
+		right: 2.4rem;
 		//top: 50%;
 		//right: 2rem;
 		//transform: translateY(-50%);
@@ -69,7 +69,7 @@ img {
 			transition-delay: .1s;
 		}
 		&:after {
-			bottom: .4rem;
+			bottom: .3rem;
 			width: 60%;
 		}
 		&:before {
@@ -111,81 +111,73 @@ img {
 		}
 	}
 	.header-logo {
-		width: 6.5rem;
+		width: 10rem;
 	}
-	.right-nav {
-		position: absolute;
-		right: 2.4rem;
-		a {
-			display: inline-block;
-			width: 2.3rem;
-			height: 2.3rem;
-			margin-left: 1rem;
-		}
-		i {
-			color: $color-white;
-			font-size: 2rem;
-			&.fa-ticket-alt {
-				transform: rotate(-45deg);
-			}
-		}
-	}
+	//.right-nav {
+	//	position: absolute;
+	//	right: 2.4rem;
+	//	a {
+	//		display: inline-block;
+	//		width: 2.3rem;
+	//		height: 2.3rem;
+	//		margin-left: 1rem;
+	//	}
+	//	i {
+	//		color: $color-white;
+	//		font-size: 2rem;
+	//		&.fa-ticket-alt {
+	//			transform: rotate(-45deg);
+	//		}
+	//	}
+	//}
 }
 
 #nav-wrapper {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	height: 0;
 	opacity: 0;
 	position: absolute;
-	top: 0;
+	top: $nav-height;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	background-color: $color-blue-accent;
-	padding: 5.6rem 1rem 4.3rem;
-	transition: opacity .2s;
+	transition: opacity .2s, padding 1s;
+	z-index: 8;
 	&.open {
+		display: flex;
 		height: auto;
 		opacity: 1;
 		transition: opacity .2s;
+		padding-bottom: 4.3rem;
 	}
 }
 .admin-bar #nav-wrapper {
 	padding-top: 8.8rem;
 }
-#menu-header-navigation {
+#menu-main-header-navigation {
 	display: flex;
 	flex-direction: column;
+	padding: 1rem 4.5rem 0;
+	a {
+		color: $color-white;
+		padding: 1.5rem 0;
+		border-bottom: .1rem solid $color-white-border;
+		text-decoration: none;
+	}
 }
 
-
-
-
-
-/**********************/
-/***** Old Styles *****/
-/**********************/
-.subNav {
-	@include mainRedOpacity(.7);
-	border: none;
-	display: none;
-}
-
-.pagination {
-	margin-top: 2rem;
-	justify-content: center;
-}
 .searchWrap {
-	padding-bottom: 2rem;
-	border-bottom: .1rem solid rgba(255,255,255,0.5);
+	padding: 0 1rem 2rem;
+	border-bottom: .1rem solid $color-white-border;
 	.searchArea {
 		color: $accBlue;
+		position: relative;
 		input {
 			font-size: 1.4rem;
-			width: 96%;
-			margin: 0 -1.8rem 0 $smMargin/2;
-			padding: 1.7rem 1.6rem 1.5rem;
+			width: 100%;
+			padding: 1.7rem 5rem 1.5rem 1.6rem;
 			border: .1rem solid $lightBlue;
 			border-radius: .5rem;
 			&::placeholder {
@@ -194,276 +186,286 @@ img {
 			}
 		}
 		i {
-			margin-left: -1.8rem;
-			transform: translateY(.3rem);
+			position: absolute;
+			top: 50%;
+			right: 2rem;
+			transform: translateY(-50%);
 		}
 	}
 }
 
 
-/*-----CONTENT STYLES-----*/
-h1 {
-	font-size: 2rem;
-	margin: 2.5rem 0 1rem;
-}
-h2 {
-	font-size: 1.5rem;
-	margin: 1.5rem 0 1rem;
-}
-h3 {
-	font-size: 1.2rem;
-	margin: 1rem 0 0 0;
-	font-weight: 400;
-}
+/**********************/
+/***** Old Styles *****/
+/**********************/
+//.subNav {
+//	@include mainRedOpacity(.7);
+//	border: none;
+//	display: none;
+//}
+//
+//.pagination {
+//	margin-top: 2rem;
+//	justify-content: center;
+//}
 
-.homeImg {
-	width: 100%;
-}
-.altText {
-	color: #666;
-	background-color: #999;
-	padding: 5rem 2rem;
-
-}
-
-.subHead {
-	// font-size: 1.1em;
-	font-weight: 600;
-	margin-top: 1rem;
-}
-.testSq {
-	width: 15rem;
-	height: 5rem;
-	background-color: gray;
-	margin: 0 auto;
-}
-
-// --------- HOME ELEMENTS -----------
-.homeSection {
-	margin: 0 (-$smMargin);
-	padding: 5rem 0;
-	text-align: center;
-	h2 {
-		margin: 0;
-		padding-bottom: 2rem;
-		font-size: 3rem;
-		font-weight: $bold;
-		color: $accBlue;
-	}
-	.content {
-		margin: 0 $smMargin;
-	}
-	&.events {
-		background-color: $lightBlue;
-		.content {
-			margin: 0 $smMargin/2;
-			h2 {
-				padding: 0;
-			}
-			.event {
-				margin-top: 1.6rem;
-				display: inline-block;
-				width: 50%;
-				padding: 0 $smMargin/2;
-				.eventImg {
-					background-color: $medBlue;
-					width: 100%;
-					height: 16.4rem;
-					i {
-						margin-top: 6rem;
-						color: white;
-					}
-				}
-				.caption {
-					i {
-						float: right;
-						margin: 1rem .5rem;
-						color: $accBlue;
-					}
-					.title {
-						margin: 0;
-						text-align: left;
-						font-weight: $bold;
-						color: $accBlue;
-					}
-					.dates {
-						text-align: left;
-						line-height: 1;
-						font-size: 1.2rem;
-
-					}
-				}
-			}
-			.audition {
-				margin: 5rem auto 0;
-				max-width: 50%;
-				p {
-					color: $accBlue;
-					font-size: 2rem;
-					font-weight: $bold;
-					i {
-						font-size: 1.8rem;
-					}
-				}
-			}
-		}
-	}
-	&.features {
-		.ctaBtn {
-			@include defBtn;
-			margin-top: 3rem;
-		}
-		button {
-			@include defBtn;
-			margin-top: 3rem;
-		}
-	}
-	&.venues {
-		background-color: $accBlue;
-		.venue {
-			margin: 0 auto;
-			width: 50%;
-			.venueImg {
-				background-color: $medBlue;
-				width: 100%;
-				height: 16.4rem;
-				i {
-					margin-top: 6rem;
-				}
-			}
-			p {
-				font-size: 1.4em;
-				margin: .8rem 0 1.6rem 0;
-			}
-		}
-		h2,
-		p,
-		i {
-			color: white;
-		}
-	}
-	&.sponsors {
-		.sliderWrap {
-			width: 100%;
-			margin: 0 auto;
-			overflow: hidden;
-			position: relative;
-		}
-		.sponsorsSlider {
-			$sponsWidth: 228rem;
-			width: $sponsWidth;
-			.sponsorImg {
-				background-color: $medBlue;
-				width: 8rem;
-				height: 8rem;
-				display: inline-block;
-				margin-right: 1.5rem;
-				i {
-					margin-top: 2rem;
-					color: white;
-				}
-			}
-			@include slider($sponsWidth);
-		}
-	}
-}
-
-.movieRow {
-	padding-top: 1rem;
-	margin-top: 3rem;
-	border-top: .1rem solid rgba(0,0,0,0.5);
-	h2 {
-		margin: 0;
-	}
-	.movieImgWrap {
-		float: right;
-		max-width: 50%;
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-	.showTimesTitle {
-		margin-top: 2rem;
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-}
-.templateLink {
-	text-decoration: none;
-	color: inherit;
-}
-.singlePost {
-	margin-top: 2rem;
-	.movieImgWrap {
-		float: right;
-		max-width: 40%;
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-	.showTimesTitle {
-		margin-top: 2rem;
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-}
-.readMore {
-	@include phoneBtn();
-	font-size: .8rem;
-	float: right;
-	margin-top: 1rem;
-}
-
-
-.card {}
-.cards img {
-	width: 100%;
-	height: 15rem;
-	object-fit: cover;
-}
-.cardSubTitle {
-	font-size: 1em;
-	font-weight: 600;
-}
-.eventPage img {
-	width: 100%;
-}
-
-
-
-// ~~~GALLERY~~~~~~~~
-.galFlex {
-	@include flex;
-	flex-wrap: wrap;
-	figure {
-		flex-basis: 50%;
-		padding: 1rem 2%;
-		img {
-			width: 100%;
-		}
-	}
-}
-legend {
-	font-size: 1rem;
-	margin: 0;
-}
-
-// LAZY GAL
-.fullWidthImg {
-	width: 100%;
-	img {
-		width: 100%;
-		// opacity: 0;
-		// @include fadeIn(.5s);
-	}
-}
-/*------OTHER------*/
-.keepOpen {
-	clear: both;
-	content: "";
-	display: table;
-}
-
-
+//
+///*-----CONTENT STYLES-----*/
+//h1 {
+//	font-size: 2rem;
+//	margin: 2.5rem 0 1rem;
+//}
+//h2 {
+//	font-size: 1.5rem;
+//	margin: 1.5rem 0 1rem;
+//}
+//h3 {
+//	font-size: 1.2rem;
+//	margin: 1rem 0 0 0;
+//	font-weight: 400;
+//}
+//
+//.homeImg {
+//	width: 100%;
+//}
+//.altText {
+//	color: #666;
+//	background-color: #999;
+//	padding: 5rem 2rem;
+//
+//}
+//
+//.subHead {
+//	// font-size: 1.1em;
+//	font-weight: 600;
+//	margin-top: 1rem;
+//}
+//.testSq {
+//	width: 15rem;
+//	height: 5rem;
+//	background-color: gray;
+//	margin: 0 auto;
+//}
+//
+//// --------- HOME ELEMENTS -----------
+//.homeSection {
+//	margin: 0 (-$smMargin);
+//	padding: 5rem 0;
+//	text-align: center;
+//	h2 {
+//		margin: 0;
+//		padding-bottom: 2rem;
+//		font-size: 3rem;
+//		font-weight: $bold;
+//		color: $accBlue;
+//	}
+//	.content {
+//		margin: 0 $smMargin;
+//	}
+//	&.events {
+//		background-color: $lightBlue;
+//		.content {
+//			margin: 0 $smMargin/2;
+//			h2 {
+//				padding: 0;
+//			}
+//			.event {
+//				margin-top: 1.6rem;
+//				display: inline-block;
+//				width: 50%;
+//				padding: 0 $smMargin/2;
+//				.eventImg {
+//					background-color: $medBlue;
+//					width: 100%;
+//					height: 16.4rem;
+//					i {
+//						margin-top: 6rem;
+//						color: white;
+//					}
+//				}
+//				.caption {
+//					i {
+//						float: right;
+//						margin: 1rem .5rem;
+//						color: $accBlue;
+//					}
+//					.title {
+//						margin: 0;
+//						text-align: left;
+//						font-weight: $bold;
+//						color: $accBlue;
+//					}
+//					.dates {
+//						text-align: left;
+//						line-height: 1;
+//						font-size: 1.2rem;
+//
+//					}
+//				}
+//			}
+//			.audition {
+//				margin: 5rem auto 0;
+//				max-width: 50%;
+//				p {
+//					color: $accBlue;
+//					font-size: 2rem;
+//					font-weight: $bold;
+//					i {
+//						font-size: 1.8rem;
+//					}
+//				}
+//			}
+//		}
+//	}
+//	&.features {
+//		.ctaBtn {
+//			@include defBtn;
+//			margin-top: 3rem;
+//		}
+//		button {
+//			@include defBtn;
+//			margin-top: 3rem;
+//		}
+//	}
+//	&.venues {
+//		background-color: $accBlue;
+//		.venue {
+//			margin: 0 auto;
+//			width: 50%;
+//			.venueImg {
+//				background-color: $medBlue;
+//				width: 100%;
+//				height: 16.4rem;
+//				i {
+//					margin-top: 6rem;
+//				}
+//			}
+//			p {
+//				font-size: 1.4em;
+//				margin: .8rem 0 1.6rem 0;
+//			}
+//		}
+//		h2,
+//		p,
+//		i {
+//			color: white;
+//		}
+//	}
+//	&.sponsors {
+//		.sliderWrap {
+//			width: 100%;
+//			margin: 0 auto;
+//			overflow: hidden;
+//			position: relative;
+//		}
+//		.sponsorsSlider {
+//			$sponsWidth: 228rem;
+//			width: $sponsWidth;
+//			.sponsorImg {
+//				background-color: $medBlue;
+//				width: 8rem;
+//				height: 8rem;
+//				display: inline-block;
+//				margin-right: 1.5rem;
+//				i {
+//					margin-top: 2rem;
+//					color: white;
+//				}
+//			}
+//			@include slider($sponsWidth);
+//		}
+//	}
+//}
+//
+//.movieRow {
+//	padding-top: 1rem;
+//	margin-top: 3rem;
+//	border-top: .1rem solid rgba(0,0,0,0.5);
+//	h2 {
+//		margin: 0;
+//	}
+//	.movieImgWrap {
+//		float: right;
+//		max-width: 50%;
+//		img {
+//			width: 100%;
+//			height: 100%;
+//		}
+//	}
+//	.showTimesTitle {
+//		margin-top: 2rem;
+//		font-size: 1.1rem;
+//		font-weight: 600;
+//	}
+//}
+//.templateLink {
+//	text-decoration: none;
+//	color: inherit;
+//}
+//.singlePost {
+//	margin-top: 2rem;
+//	.movieImgWrap {
+//		float: right;
+//		max-width: 40%;
+//		img {
+//			width: 100%;
+//			height: 100%;
+//		}
+//	}
+//	.showTimesTitle {
+//		margin-top: 2rem;
+//		font-size: 1.1rem;
+//		font-weight: 600;
+//	}
+//}
+//.readMore {
+//	@include phoneBtn();
+//	font-size: .8rem;
+//	float: right;
+//	margin-top: 1rem;
+//}
+//
+//
+//.card {}
+//.cards img {
+//	width: 100%;
+//	height: 15rem;
+//	object-fit: cover;
+//}
+//.cardSubTitle {
+//	font-size: 1em;
+//	font-weight: 600;
+//}
+//.eventPage img {
+//	width: 100%;
+//}
+//
+//
+//
+//// ~~~GALLERY~~~~~~~~
+//.galFlex {
+//	@include flex;
+//	flex-wrap: wrap;
+//	figure {
+//		flex-basis: 50%;
+//		padding: 1rem 2%;
+//		img {
+//			width: 100%;
+//		}
+//	}
+//}
+//legend {
+//	font-size: 1rem;
+//	margin: 0;
+//}
+//
+//// LAZY GAL
+//.fullWidthImg {
+//	width: 100%;
+//	img {
+//		width: 100%;
+//		// opacity: 0;
+//		// @include fadeIn(.5s);
+//	}
+//}
+//
