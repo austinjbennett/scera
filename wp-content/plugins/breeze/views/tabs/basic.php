@@ -148,4 +148,26 @@ $basic = breeze_get_option( 'basic_settings', true );
             </select>
         </td>
     </tr>
+    <tr>
+    <td>
+        <label class="breeze_tool_tip"><?php _e('Enable cache for loggedin users', 'breeze'); ?></label>
+    </td>
+        <td>
+            <ul>
+                <li>
+                    <input type="checkbox" name="breeze-admin-cache" id="breeze-admin-cache"
+                           value="0" <?php checked($basic['breeze-disable-admin'], '0') ?>/>
+                    <label class="breeze_tool_tip" for="breeze-admin-cache">
+				        <?php _e('Enable cache for WP standard user roles: Administrator, Editor, Author, Contributor.', 'breeze') ?>
+
+                    </label>
+                    <br/>
+                    <span>
+						<b><?php esc_html_e( 'Note', 'breeze' ); ?>:&nbsp;</b>
+						<span style="color: #ff0000"><?php echo esc_html__( 'This option might not work properly with some page builders.', 'breeze' ) ?></span>
+					</span>
+                </li>
+            </ul>
+        </td>
+    </tr>
 </table>

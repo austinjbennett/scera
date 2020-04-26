@@ -6,14 +6,14 @@
  * Author: Austin
  */
 ?>
-<?php 
+<?php
 
-	// MYCALENDAR PLUGIN
-	// include(plugin_dir_path( __FILE__ ).'calShortcodes.php');
-	include(plugin_dir_path( __FILE__ ).'src/main.php');
-	include(plugin_dir_path( __FILE__ ).'src/evCalFunctions.php');
-	include(plugin_dir_path( __FILE__ ).'src/calendar.php');
-	// include(plugin_dir_path( __FILE__ ).'src/calAjaxHandler.php');
- 
+    // MYCALENDAR PLUGIN
+    // include(plugin_dir_path( __FILE__ ).'calShortcodes.php');
+    include(plugin_dir_path( __FILE__ ).'src/main.php');
+    include(plugin_dir_path( __FILE__ ).'src/evCalFunctions.php');
+    include(plugin_dir_path( __FILE__ ).'src/calendar.php');
+    // include(plugin_dir_path( __FILE__ ).'src/calAjaxHandler.php');
+
 
 ?>
