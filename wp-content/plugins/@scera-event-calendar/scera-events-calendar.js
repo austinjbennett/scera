@@ -26,7 +26,14 @@ wp.blocks.registerBlockType('scera/scera-events-calendar', {
 			onChangeComplete: updateColor,
 		}));
 	},
-	save() {
-		return null;
+	// save() {
+	// 	return null;
+	// },
+	save(props) {
+		return wp.element.createElement('h3', {
+			style: {
+				border: '5px solid '.concat(props.attributes.color),
+			},
+		}, props.attributes.content);
 	},
 });

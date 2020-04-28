@@ -9,8 +9,8 @@
 function loadMyBlockFiles()
 {
     wp_enqueue_script(
-        'my-super-unique-handle',
-        plugin_dir_url(__FILE__) . 'scera-slider.js',
+        'scera-events-calendar',
+        plugin_dir_url(__FILE__) . 'scera-events-calendar.js',
         array('wp-blocks', 'wp-i18n', 'wp-editor'),
         true
     );
@@ -24,14 +24,14 @@ add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
 */
 
 
-function borderBoxOutput($props)
-{
-    return '<h3 style="border: 5px solid' . $props['color'] . '">' . $props['content'] . '</h3>';
-}
-
-register_block_type('scera/scera-event-calendar', array(
-    'render_callback' => 'borderBoxOutput',
-));
+//function borderBoxOutput($props)
+//{
+//    return '<h3 style="border: 5px solid' . $props['color'] . '">' . $props['content'] . '</h3>';
+//}
+//
+//register_block_type('scera/scera-events-calendar', array(
+//    'render_callback' => 'borderBoxOutput',
+//));
 
 
 /* To Save Post Meta from your block uncomment
