@@ -1,0 +1,10 @@
+RewriteEngine On
+
+#do not serve the following files
+RewriteRule .*\.md - [R=403,L]
+RewriteRule .*\.pem - [R=403,L]
+RewriteRule .*\.crt - [R=403,L]
+RewriteRule .*\.cert - [R=403,L]
+RewriteRule .*composer.(json|lock) - [R=403,L]
+RewriteRule .*vendor/?$ - [R=403,L]
+RewriteRule .*\.token - [R=403,L]

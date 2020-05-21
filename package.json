@@ -1,40 +1,40 @@
 {
-  "name": "sceratheatre",
-  "version": "1.0.0",
-  "description": "<!DOCTYPE html> <html lang=\"en\"> <head> \t<meta name=\"viewport\" content=\"width=device-width\" /> \t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> \t<title>WordPress &#8250; ReadMe</title> \t<link rel=\"stylesheet\" href=\"wp-admin/css/install.css?ver=20100228\" type=\"text/css\" /> </head> <body> <h1 id=\"logo\"> \t<a href=\"https://wordpress.org/\"><img alt=\"WordPress\" src=\"wp-admin/images/wordpress-logo.png\" /></a> </h1> <p style=\"text-align: center\">Semantic Personal Publishing Platform</p>",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "watch": "gulp",
-    "eslint": "eslint --fix wp-content/themes/sceraTheatre/js/*.js",
-    "stylelint": "stylelint --fix wp-content/themes/sceraTheatre/**/*.scss"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/skaduusch/scera.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/skaduusch/scera/issues"
-  },
-  "homepage": "https://github.com/skaduusch/scera#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "postcss-preset-env": "^6.7.0",
-    "stylelint": "^13.2.1",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-scss": "^3.16.0"
-  }
+	"name": "sceratheatre",
+	"version": "1.0.0",
+	"description": "<!DOCTYPE html> <html lang=\"en\"> <head> \t<meta name=\"viewport\" content=\"width=device-width\" /> \t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> \t<title>WordPress &#8250; ReadMe</title> \t<link rel=\"stylesheet\" href=\"wp-admin/css/install.css?ver=20100228\" type=\"text/css\" /> </head> <body> <h1 id=\"logo\"> \t<a href=\"https://wordpress.org/\"><img alt=\"WordPress\" src=\"wp-admin/images/wordpress-logo.png\" /></a> </h1> <p style=\"text-align: center\">Semantic Personal Publishing Platform</p>",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "gulp build",
+		"watch": "gulp",
+		"eslint": "eslint --fix wp-content/themes/sceraTheatre/js/*.js",
+		"stylelint": "stylelint --fix wp-content/themes/sceraTheatre/**/*.scss"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/skaduusch/scera.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/skaduusch/scera/issues"
+	},
+	"homepage": "https://github.com/skaduusch/scera#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"browser-sync": "^2.26.7",
+		"del": "^5.1.0",
+		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.1.0",
+		"eslint-plugin-import": "^2.20.2",
+		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.1.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"postcss-preset-env": "^6.7.0",
+		"stylelint": "^13.2.1",
+		"stylelint-config-recommended-scss": "^4.2.0",
+		"stylelint-scss": "^3.16.0"
+	}
 }
