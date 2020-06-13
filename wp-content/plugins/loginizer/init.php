@@ -5,8 +5,8 @@ if(!function_exists('add_action')){
 	exit;
 }
 
-define('LOGINIZER_VERSION', '1.4.3');
-define('LOGINIZER_DIR', WP_PLUGIN_DIR.'/'.basename(dirname(LOGINIZER_FILE)));
+define('LOGINIZER_VERSION', '1.4.4');
+define('LOGINIZER_DIR', dirname(LOGINIZER_FILE));
 define('LOGINIZER_URL', plugins_url('', LOGINIZER_FILE));
 define('LOGINIZER_PRO_URL', 'https://loginizer.com/features#compare');
 define('LOGINIZER_DOCS', 'https://loginizer.com/docs/');
@@ -170,6 +170,12 @@ global $wpdb;
 	// Save the new Version
 	update_option('loginizer_version', LOGINIZER_VERSION);
 	
+	// In Sitepad Math Captcha is enabled by default
+	if(defined('SITEPAD') && get_option('loginizer_captcha') === false){
+		$option['captcha_no_google'] = 1;
+		add_option('loginizer_captcha', $option);
+	}
+	
 }
 
 // Add the action to load the plugin 
@@ -185,6 +191,11 @@ function loginizer_load_plugin(){
 	
 	// Set the array
 	$loginizer = array();
+	
+	$loginizer['prefix'] = !defined('SITEPAD') ? 'Loginizer ' : 'SitePad ';
+	$loginizer['app'] = !defined('SITEPAD') ? 'WordPress' : 'SitePad';
+	$loginizer['login_basename'] = !defined('SITEPAD') ? 'wp-login.php' : 'login.php';
+	$loginizer['wp-includes'] = !defined('SITEPAD') ? 'wp-includes' : 'site-inc';
 	
 	// The IP Method to use
 	$loginizer['ip_method'] = get_option('loginizer_ip_method');
@@ -710,32 +721,54 @@ function loginizer_admin_menu() {
 	
 	global $wp_version, $loginizer;
 	
-	// Add the menu page
-	add_menu_page(__('Loginizer Dashboard'), __('Loginizer Security'), 'activate_plugins', 'loginizer', 'loginizer_page_dashboard');
+	if(!defined('SITEPAD')){
 	
-	// Dashboard
-	add_submenu_page('loginizer', __('Loginizer Dashboard'), __('Dashboard'), 'activate_plugins', 'loginizer', 'loginizer_page_dashboard');
+		// Add the menu page
+		add_menu_page(__('Loginizer Dashboard'), __('Loginizer Security'), 'activate_plugins', 'loginizer', 'loginizer_page_dashboard');
+	
+		// Dashboard
+		add_submenu_page('loginizer', __('Loginizer Dashboard'), __('Dashboard'), 'activate_plugins', 'loginizer', 'loginizer_page_dashboard');
+	
+	}else{
+	
+		// Add the menu page
+		add_menu_page(__('Security'), __('Security'), 'activate_plugins', 'loginizer', 'loginizer_page_security', 'dashicons-shield', 85);
+	
+		// Rename Login
+		add_submenu_page('loginizer', __('Security Settings'), __('Rename Login'), 'activate_plugins', 'loginizer', 'loginizer_page_security');
+		
+	}
 	
 	// Brute Force
-	add_submenu_page('loginizer', __('Loginizer Brute Force Settings'), __('Brute Force'), 'activate_plugins', 'loginizer_brute_force', 'loginizer_page_brute_force');
+	add_submenu_page('loginizer', __('Brute Force Settings'), __('Brute Force'), 'activate_plugins', 'loginizer_brute_force', 'loginizer_page_brute_force');
 	
 	if(defined('LOGINIZER_PREMIUM')){
 	
 		// PasswordLess
-		add_submenu_page('loginizer', __('Loginizer PasswordLess Settings'), __('PasswordLess'), 'activate_plugins', 'loginizer_passwordless', 'loginizer_page_passwordless');
+		add_submenu_page('loginizer', __($loginizer['prefix'].'PasswordLess Settings'), __('PasswordLess'), 'activate_plugins', 'loginizer_passwordless', 'loginizer_page_passwordless');
 		
-		// Two Factor Auth
-		add_submenu_page('loginizer', __('Loginizer Two Factor Authentication'), __('Two Factor Auth'), 'activate_plugins', 'loginizer_2fa', 'loginizer_page_2fa');
+		// Security Settings
+		if(!defined('SITEPAD')){
+		
+			// Two Factor Auth
+			add_submenu_page('loginizer', __($loginizer['prefix'].' Two Factor Authentication'), __('Two Factor Auth'), 'activate_plugins', 'loginizer_2fa', 'loginizer_page_2fa');
+		
+		}
 		
 		// reCaptcha
-		add_submenu_page('loginizer', __('Loginizer reCAPTCHA Settings'), __('reCAPTCHA'), 'activate_plugins', 'loginizer_recaptcha', 'loginizer_page_recaptcha');
+		add_submenu_page('loginizer', __($loginizer['prefix'].'reCAPTCHA Settings'), __('reCAPTCHA'), 'activate_plugins', 'loginizer_recaptcha', 'loginizer_page_recaptcha');
 		
 		// Security Settings
-		add_submenu_page('loginizer', __('Loginizer Security Settings'), __('Security Settings'), 'activate_plugins', 'loginizer_security', 'loginizer_page_security');
+		if(!defined('SITEPAD')){
 		
-		// Security Settings
-		add_submenu_page('loginizer', __('Loginizer File Checksums'), __('File Checksums'), 'activate_plugins', 'loginizer_checksums', 'loginizer_page_checksums');
-	
+			// Security Settings
+			add_submenu_page('loginizer', __($loginizer['prefix'].'Security Settings'), __('Security Settings'), 'activate_plugins', 'loginizer_security', 'loginizer_page_security');
+			
+			// File Checksums
+			add_submenu_page('loginizer', __('Loginizer File Checksums'), __('File Checksums'), 'activate_plugins', 'loginizer_checksums', 'loginizer_page_checksums');
+		
+		}
+		
 	}elseif(!defined('LOGINIZER_PREMIUM') && !empty($loginizer['ins_time']) && $loginizer['ins_time'] < (time() - (30*24*3600))){
 		
 		// Go Pro link
@@ -747,17 +780,6 @@ function loginizer_admin_menu() {
 
 // The Loginizer Admin Options Page
 function loginizer_page_header($title = 'Loginizer'){
-	/*wp_enqueue_script('common');
-	wp_enqueue_script('wp-lists');
-	wp_enqueue_script('postbox');
-	wp_nonce_field('closedpostboxes', 'closedpostboxesnonce', false);
-	
-	echo '
-<script>
-jQuery(document).ready( function() {
-	//add_postbox_toggles("loginizer");
-});
-</script>';*/
 
 ?>
 <style>
@@ -778,10 +800,17 @@ jQuery(document).ready( function() {
 	
 	<table cellpadding="2" cellspacing="1" width="100%" class="fixed" border="0">
 		<tr>
-			<td valign="top"><h3>'.$title.'</h3></td>
-			<td align="right"><a target="_blank" class="button button-primary" href="https://wordpress.org/support/view/plugin-reviews/loginizer">Review Loginizer</a></td>
+			<td valign="top"><h3>'.$loginizer['prefix'].$title.'</h3></td>';
+			
+	if(!defined('SITEPAD')){
+			
+		echo '<td align="right"><a target="_blank" class="button button-primary" href="https://wordpress.org/support/view/plugin-reviews/loginizer">Review Loginizer</a></td>
 			<td align="right" width="40"><a target="_blank" href="https://twitter.com/loginizer"><img src="'.LOGINIZER_URL.'/twitter.png" /></a></td>
-			<td align="right" width="40"><a target="_blank" href="https://www.facebook.com/Loginizer-815504798591884"><img src="'.LOGINIZER_URL.'/facebook.png" /></a></td>
+			<td align="right" width="40"><a target="_blank" href="https://www.facebook.com/Loginizer-815504798591884"><img src="'.LOGINIZER_URL.'/facebook.png" /></a></td>';
+			
+	}
+			
+		echo '
 		</tr>
 	</table>
 	<hr />
@@ -798,10 +827,12 @@ function loginizer_page_footer(){
 	
 	echo '</td>
 	<td width="200" valign="top" id="loginizer-right-bar">';
+			
+	if(!defined('SITEPAD')){
 	
-	if(!defined('LOGINIZER_PREMIUM')){
+		if(!defined('LOGINIZER_PREMIUM')){
 		
-		echo '
+			echo '
 		<div class="postbox" style="min-width:0px !important;">
 			<h2 class="hndle ui-sortable-handle">
 				<span>Premium Version</span>
@@ -822,9 +853,9 @@ function loginizer_page_footer(){
 			</div>
 		</div>';
 		
-	}else{
+		}else{
 	
-		echo '
+			echo '
 		<div class="postbox" style="min-width:0px !important;">
 			<h2 class="hndle ui-sortable-handle">
 				<span>Recommendations</span>
@@ -841,12 +872,17 @@ function loginizer_page_footer(){
 				</ul>
 			</div>
 		</div>';
+		}
+	
 	}
 	
 	echo '</td>
 	</tr>
-	</table>
-	<br />
+	</table>';
+	
+	if(!defined('SITEPAD')){
+	
+		echo '<br />
 	<div style="width:45%;background:#FFF;padding:15px; margin:auto">
 		<b>Let your friends know that you have secured your website :</b>
 		<form method="get" action="https://twitter.com/intent/tweet" id="tweet" onsubmit="return dotweet(this);">
@@ -865,8 +901,11 @@ function loginizer_page_footer(){
 	</script>
 	
 	<hr />
-	<a href="http://loginizer.com" target="_blank">Loginizer</a> v'.LOGINIZER_VERSION.'. You can report any bugs <a href="http://wordpress.org/support/plugin/loginizer" target="_blank">here</a>.
-
+	<a href="http://loginizer.com" target="_blank">Loginizer</a> v'.LOGINIZER_VERSION.'. You can report any bugs <a href="http://wordpress.org/support/plugin/loginizer" target="_blank">here</a>.';
+	
+	}
+	
+	echo '
 </div>	
 </div>
 </div>
@@ -945,7 +984,7 @@ function loginizer_page_dashboard_T(){
 	
 	global $loginizer, $lz_error, $lz_env;
 
-	loginizer_page_header('Loginizer Dashboard');
+	loginizer_page_header('Dashboard');
 ?>
 <style>
 .welcome-panel{
@@ -1207,7 +1246,7 @@ function loginizer_page_brute_force(){
 	}
 	
 	// BEGIN THEME
-	loginizer_page_header('Loginizer - Brute Force Settings');
+	loginizer_page_header('Brute Force Settings');
 	
 	// Load the blacklist and whitelist
 	$loginizer['blacklist'] = get_option('loginizer_blacklist');

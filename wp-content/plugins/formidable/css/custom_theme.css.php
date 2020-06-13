@@ -15,8 +15,19 @@ if ( ! isset( $frm_style ) ) {
 $styles = $frm_style->get_all();
 $default_style = $frm_style->get_default_style( $styles );
 $defaults = FrmStylesHelper::get_settings_for_output( $default_style );
+$important = empty( $defaults['important_style'] ) ? '' : ' !important';
 
+$vars = array( 'bg_color_disabled', 'text_color_disabled', 'border_color_disabled' );
 ?>
+.with_frm_style {
+	<?php
+	foreach ( $vars as $var ) {
+		?>
+		--<?php echo esc_html( str_replace( '_', '-', $var ) ); ?>:<?php echo esc_html( $defaults[ $var ] ); ?>;
+		<?php
+	}
+	?>
+}
 
 .frm_hidden,
 .frm_add_form_row.frm_hidden,
@@ -65,6 +76,20 @@ legend.frm_hidden{
 
 .with_frm_style input[type=file]{
 	display:initial;
+}
+
+.with_frm_style input[disabled],
+.with_frm_style select[disabled],
+.with_frm_style textarea[disabled],
+.with_frm_style input[readonly],
+.with_frm_style select[readonly],
+.with_frm_style textarea[readonly]{
+	background-color:<?php echo esc_html( $defaults['bg_color_disabled'] ); ?>;
+	background-color:var(--bg-color-disabled)<?php echo esc_html( $important ); ?>;
+	color:<?php echo esc_html( $defaults['text_color_disabled'] ); ?>;
+	color:var(--text-color-disabled)<?php echo esc_html( $important ); ?>;
+	border-color:<?php echo esc_html( $defaults['border_color_disabled'] ); ?>;
+	border-color:var(--border-color-disabled)<?php echo esc_html( $important ); ?>;
 }
 
 .frm_preview_page:before{
@@ -412,7 +437,9 @@ a.frm_save_draft{
 	padding:5px;
 	border-width:1px;
 	border-style:solid;
-	border-color:<?php echo esc_html( $defaults['border_color'] ); ?>;
+	<?php if ( ! empty( $defaults['border_color'] ) ) { ?>
+		border-color:<?php echo esc_html( $defaults['border_color'] ); ?>;
+	<?php } ?>
 	border-top:none;
 	border-left:none;
 	border-right:none;
@@ -451,9 +478,13 @@ table.form_results.with_frm_style{
 
 table.form_results.with_frm_style tr td{
 	text-align:left;
-	color:<?php echo esc_html( $defaults['text_color'] ); ?>;
+	<?php if ( ! empty( $defaults['text_color'] ) ) { ?>
+		color:<?php echo esc_html( $defaults['text_color'] ); ?>;
+	<?php } ?>
 	padding:7px 9px;
-	border-top:1px solid <?php echo esc_html( $defaults['border_color'] ); ?>;
+	<?php if ( ! empty( $defaults['border_color'] ) ) { ?>
+		border-top:1px solid <?php echo esc_html( $defaults['border_color'] ); ?>;
+	<?php } ?>
 }
 
 table.form_results.with_frm_style tr.frm_even,
@@ -463,8 +494,22 @@ table.form_results.with_frm_style tr.frm_even,
 
 table.form_results.with_frm_style tr.frm_odd,
 .frm-grid .frm_odd{
-	background-color:<?php echo esc_html( FrmStylesHelper::adjust_brightness( $defaults['border_color'], 45 ) ); ?>;
+	<?php if ( ! empty( $defaults['border_color'] ) ) { ?>
+		background-color:<?php echo esc_html( FrmStylesHelper::adjust_brightness( $defaults['border_color'], 45 ) ); ?>;
+	<?php } ?>
 }
+
+<?php if ( ! empty( $defaults['border_color'] ) ) { ?>
+.frm_color_block {
+	background-color:<?php echo esc_html( FrmStylesHelper::adjust_brightness( $defaults['border_color'], 45 ) ); ?>;
+	padding: 40px;
+}
+
+.with_frm_style .frm-show-form .frm_color_block.frm_section_heading h3,
+.frm_color_block.frm_section_heading h3 {
+	border-width: 0 !important;
+}
+<?php } ?>
 
 .frm_collapse .ui-icon{
 	display:inline-block;
@@ -535,7 +580,9 @@ table.form_results.with_frm_style tr.frm_odd,
 
 <?php if ( ! empty( $defaults['bg_color'] ) ) { ?>
 #frm_loading .progress-striped .progress-bar{
-	background-image:linear-gradient(45deg, <?php echo esc_html( $defaults['border_color'] ); ?> 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, <?php echo esc_html( $defaults['border_color'] ); ?> 50%, <?php echo esc_html( $defaults['border_color'] ); ?> 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+	<?php if ( ! empty( $defaults['border_color'] ) ) { ?>
+		background-image:linear-gradient(45deg, <?php echo esc_html( $defaults['border_color'] ); ?> 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, <?php echo esc_html( $defaults['border_color'] ); ?> 50%, <?php echo esc_html( $defaults['border_color'] ); ?> 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+	<?php } ?>
 	background-size:40px 40px;
 }
 <?php } ?>
@@ -589,7 +636,9 @@ select.frm_loading_lookup{
 	padding:5px;
 	border-width:1px;
 	border-style:solid;
-	border-color:<?php echo esc_html( $defaults['border_color'] ); ?>;
+	<?php if ( ! empty( $defaults['border_color'] ) ) { ?>
+		border-color:<?php echo esc_html( $defaults['border_color'] ); ?>;
+	<?php } ?>
 	border-left:none;
 	border-right:none;
 }
@@ -620,14 +669,18 @@ select.frm_loading_lookup{
 	margin-top:20px;
 }
 
+<?php if ( ! empty( $defaults['bg_color'] ) ) { ?>
 .frm_grid_first,
 .frm_grid_odd{
 	background-color:<?php echo esc_html( $defaults['bg_color'] ); ?>;
 }
+<?php } ?>
 
+<?php if ( ! empty( $defaults['bg_color_active'] ) ) { ?>
 .frm_grid{
 	background-color:<?php echo esc_html( $defaults['bg_color_active'] ); ?>;
 }
+<?php } ?>
 
 .frm_grid .frm_primary_label,
 .frm_grid_first .frm_primary_label,
@@ -849,6 +902,8 @@ select.frm_loading_lookup{
 	box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
 
+.frm_form_field.frm_total_big input,
+.frm_form_field.frm_total_big textarea,
 .frm_form_field.frm_total input,
 .frm_form_field.frm_total textarea{
 	opacity:1;
@@ -858,17 +913,22 @@ select.frm_loading_lookup{
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
 	width:auto !important;
+	height:auto !important;
 	box-shadow:none !important;
 	display:inline;
 	-moz-appearance:textfield;
 	padding:0;
 }
 
+.frm_form_field.frm_total_big input::-webkit-outer-spin-button,
+.frm_form_field.frm_total_big input::-webkit-inner-spin-button,
 .frm_form_field.frm_total input::-webkit-outer-spin-button,
 .frm_form_field.frm_total input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
 
+.frm_form_field.frm_total_big input:focus,
+.frm_form_field.frm_total_big textarea:focus,
 .frm_form_field.frm_total input:focus,
 .frm_form_field.frm_total textarea:focus{
 	background-color:transparent;

@@ -2,7 +2,7 @@
 /*
 mu-options.php
 
-Provides mu support to the Permalink Finder plugin
+Provides mu support to the Link Fixer plugin
 
 This hooks the options functions of wp in order to update one option from blog #1`
 

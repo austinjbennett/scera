@@ -1,6 +1,6 @@
 <?php
 /*
-	Permalink Finder Plugin 
+	Link Fixer Plugin 
 	Options Setup Page
 */
 if (!defined('ABSPATH')) exit; // just in case
@@ -267,7 +267,7 @@ if (!defined('ABSPATH')) exit; // just in case
 	}
 ?>
 <div class="wrap">
-  <h2>Permalink-Finder Options</h2>
+  <h2>Link Fixer Options</h2>
   <h3>Version 2.3</h3>
   <h4><?php echo $totredir; ?> Permalinks redirected</h4>
   <?php
@@ -283,7 +283,7 @@ if (!defined('ABSPATH')) exit; // just in case
 	   $nonce=wp_create_nonce('kpg_pf_update');
  
 ?>
-  <p style="font-weight:bold;">The Permalink-Finder Plugin is installed and working correctly.</p>
+  <p style="font-weight:bold;">The Link Fixer Plugin is installed and working correctly.</p>
   <p style="font-weight:bold;"><a href="" onclick="window.location.href=window.location.href;return false;">Refresh</a></p>
   <hr/>
   <h4>For questions and support please check my website <a href="https://www.facebook.com/BlogsEye/">BlogsEye FB Page</a>.</h4>
@@ -315,8 +315,8 @@ if (!defined('ABSPATH')) exit; // just in case
 			}
 		}
 	?>
-    <h3>Permalink Finder Options:</h3>
-    <p>You can control how the Permalink Finder finds the correct match when a 404 occurs.</p>
+    <h3>Link Fixer Options:</h3>
+    <p>You can control how the Link Fixer finds the correct match when a 404 occurs.</p>
     <table align="center" cellspacing="2" style="background-color:#CCCCCC;font-size:.9em;">
       <tr bgcolor="white">
         <td width="20%" valign="top"><strong>Finding Permalinks:&nbsp;</strong></td>
@@ -484,12 +484,12 @@ if (!defined('ABSPATH')) exit; // just in case
   ?>
   <br/>
   <h3>Redirection Overrides:</h3>
-  <p>You can manually specify a redirection link. If permalink finder is consistently sending a link to the wrong page you can manuall specify the link that you want redirected. The link does not have to exist.<br/>
+  <p>You can manually specify a redirection link. If Link Fixer is consistently sending a link to the wrong page you can manually specify the link that you want redirected. The link does not have to exist.<br/>
     You can specify the type redirect code, 301, 307, etc. <br/>
     You can specify whether the match has to be exact or not. If you choose inexact, you can have any link that has the partial link to anew location. For instance, you might redirect /tv/startrek to http://yoursite.com/tv/star-trek.<br/>
     You must enter the target link. This does not have to be on your site. You can sepcify that anyone who tries to access a page will be redirected to an affiliate link or wikipedia, for instance.<br/>
-    You can delete a link if it is not workin.<br/>
-    Be careful how you enter the target link. If it is not found, the permalink finder might start looping, continually searching for a link that does not exist. Test yur links! </p>
+    You can delete a link if it is not working.<br/>
+    Be careful how you enter the target link. If it is not found, the Link Fixer Plugin might start looping, continually searching for a link that does not exist. Test yur links! </p>
   <fieldset style="border thin black solid;" >
   <legend>Add Override:</legend>
   <form method="POST" action="">
