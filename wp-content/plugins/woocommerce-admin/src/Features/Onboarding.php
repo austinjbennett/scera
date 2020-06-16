@@ -124,6 +124,7 @@ class Onboarding {
 	private function add_filters() {
 		// Rest API hooks need to run before is_admin() checks.
 		add_filter( 'woocommerce_rest_prepare_themes', array( $this, 'add_uploaded_theme_data' ) );
+		add_filter( 'woocommerce_admin_plugins_whitelist', array( $this, 'get_onboarding_allowed_plugins' ), 10, 2 );
 
 		if ( ! is_admin() ) {
 			return;
@@ -134,7 +135,6 @@ class Onboarding {
 		add_filter( 'woocommerce_components_settings', array( $this, 'component_settings' ), 20 );
 		// New settings injection.
 		add_filter( 'woocommerce_shared_settings', array( $this, 'component_settings' ), 20 );
-		add_filter( 'woocommerce_component_settings_preload_endpoints', array( $this, 'add_preload_endpoints' ) );
 		add_filter( 'woocommerce_admin_preload_options', array( $this, 'preload_options' ) );
 		add_filter( 'woocommerce_admin_preload_settings', array( $this, 'preload_settings' ) );
 		add_filter( 'woocommerce_admin_is_loading', array( $this, 'is_loading' ) );
@@ -149,7 +149,7 @@ class Onboarding {
 
 		if ( 'wc-setup' === $current_page ) {
 			delete_transient( '_wc_activation_redirect' );
-			wp_safe_redirect( wc_admin_url() );
+			wp_safe_redirect( wc_admin_url( '&reset_profiler=1' ) );
 		}
 	}
 
@@ -270,6 +270,31 @@ class Onboarding {
 	}
 
 	/**
+	 * Sort themes returned from WooCommerce.com
+	 *
+	 * @param  array $themes Array of themes from WooCommerce.com.
+	 * @return array
+	 */
+	public static function sort_woocommerce_themes( $themes ) {
+		usort(
+			$themes,
+			function ( $product_1, $product_2 ) {
+				if ( ! property_exists( $product_1, 'id' ) || ! property_exists( $product_1, 'slug' ) ) {
+					return 1;
+				}
+				if ( ! property_exists( $product_2, 'id' ) || ! property_exists( $product_2, 'slug' ) ) {
+					return 1;
+				}
+				if ( in_array( 'Storefront', array( $product_1->slug, $product_2->slug ), true ) ) {
+					return 'Storefront' === $product_1->slug ? -1 : 1;
+				}
+				return $product_1->id < $product_2->id ? 1 : -1;
+			}
+		);
+		return $themes;
+	}
+
+	/**
 	 * Get a list of themes for the onboarding wizard.
 	 *
 	 * @return array
@@ -281,18 +306,11 @@ class Onboarding {
 			$themes     = array();
 
 			if ( ! is_wp_error( $theme_data ) ) {
-				$theme_data = json_decode( $theme_data['body'] );
-				usort(
-					$theme_data->products,
-					function ( $product_1, $product_2 ) {
-						if ( 'Storefront' === $product_1->slug ) {
-							return -1;
-						}
-						return $product_1->id < $product_2->id ? 1 : -1;
-					}
-				);
+				$theme_data    = json_decode( $theme_data['body'] );
+				$woo_themes    = property_exists( $theme_data, 'products' ) ? $theme_data->products : array();
+				$sorted_themes = self::sort_woocommerce_themes( $woo_themes );
 
-				foreach ( $theme_data->products as $theme ) {
+				foreach ( $sorted_themes as $theme ) {
 					$slug                                       = sanitize_title_with_dashes( $theme->slug );
 					$themes[ $slug ]                            = (array) $theme;
 					$themes[ $slug ]['is_installed']            = false;
@@ -464,8 +482,6 @@ class Onboarding {
 
 		// Only fetch if the onboarding wizard OR the task list is incomplete.
 		if ( self::should_show_profiler() || self::should_show_tasks() ) {
-			$settings['onboarding']['activePlugins']            = self::get_active_plugins();
-			$settings['onboarding']['installedPlugins']         = PluginsHelper::get_installed_plugin_slugs();
 			$settings['onboarding']['stripeSupportedCountries'] = self::get_stripe_supported_countries();
 			$settings['onboarding']['euCountries']              = WC()->countries->get_european_union_countries();
 			$settings['onboarding']['connectNonce']             = wp_create_nonce( 'connect' );
@@ -531,20 +547,6 @@ class Onboarding {
 	}
 
 	/**
-	 * Preload data from API endpoints.
-	 *
-	 * @param array $endpoints Array of preloaded endpoints.
-	 * @return array
-	 */
-	public function add_preload_endpoints( $endpoints ) {
-		if ( ! class_exists( 'Jetpack' ) ) {
-			return $endpoints;
-		}
-		$endpoints['jetpackStatus'] = '/jetpack/v4/connection';
-		return $endpoints;
-	}
-
-	/**
 	 * Returns a list of Stripe supported countries. This method can be removed once merged to core.
 	 *
 	 * @return array
@@ -589,11 +591,13 @@ class Onboarding {
 	/**
 	 * Gets an array of plugins that can be installed & activated via the onboarding wizard.
 	 *
+	 * @param array $plugins Array of plugin slugs to be allowed.
+	 *
 	 * @return array
 	 * @todo Handle edgecase of where installed plugins may have versioned folder names (i.e. `jetpack-master/jetpack.php`).
 	 */
-	public static function get_allowed_plugins() {
-		return apply_filters(
+	public static function get_onboarding_allowed_plugins( $plugins ) {
+		$onboarding_plugins = apply_filters(
 			'woocommerce_admin_onboarding_plugins_whitelist',
 			array(
 				'facebook-for-woocommerce'            => 'facebook-for-woocommerce/facebook-for-woocommerce.php',
@@ -611,15 +615,7 @@ class Onboarding {
 				'woocommerce-payments'                => 'woocommerce-payments/woocommerce-payments.php',
 			)
 		);
-	}
-
-	/**
-	 * Get a list of active plugins, relevent to the onboarding wizard.
-	 *
-	 * @return array
-	 */
-	public static function get_active_plugins() {
-		return array_values( array_intersect( PluginsHelper::get_active_plugin_slugs(), array_keys( self::get_allowed_plugins() ) ) );
+		return array_merge( $plugins, $onboarding_plugins );
 	}
 
 	/**

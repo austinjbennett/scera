@@ -1,0 +1,8 @@
+# limit this file to the following origins
+Header add Access-Control-Allow-Origin "https://missioncontrol.wp-overwatch.com"
+Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+Header add Access-Control-Allow-Headers: "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+
+#do not serve the following files
+RewriteRule Readme.md - [R=403,L]
+RewriteRule login-functions.php - [R=403,L]

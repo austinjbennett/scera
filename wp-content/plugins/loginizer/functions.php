@@ -150,16 +150,7 @@ function lz_POSTselect($name, $value, $default = false){
 
 function lz_inputsec($string){
 
-	if(!get_magic_quotes_gpc()){
-	
-		$string = addslashes($string);
-	
-	}else{
-	
-		$string = stripslashes($string);
-		$string = addslashes($string);
-	
-	}
+	$string = addslashes($string);
 	
 	// This is to replace ` which can cause the command to be executed in exec()
 	$string = str_replace('`', '\`', $string);

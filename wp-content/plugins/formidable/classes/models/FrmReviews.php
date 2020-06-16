@@ -6,6 +6,8 @@ class FrmReviews {
 
 	private $review_status = array();
 
+	private $inbox_key = 'review';
+
 	/**
 	 * Add admin notices as needed for reviews
 	 *
@@ -98,8 +100,49 @@ class FrmReviews {
 			$name = ' ' . $name;
 		}
 
+		$title = sprintf(
+			/* translators: %s: User name, %2$d: number of entries */
+			esc_html__( 'Congratulations%1$s! You have collected %2$d form submissions.', 'formidable' ),
+			esc_html( $name ),
+			absint( $entries )
+		);
+
+		$this->add_to_inbox( $title );
+
 		// We have a candidate! Output a review message.
 		include( FrmAppHelper::plugin_path() . '/classes/views/shared/review.php' );
+	}
+
+	private function add_to_inbox( $title ) {
+		$message = new FrmInbox();
+		$message->add_message(
+			array(
+				'key'     => $this->inbox_key,
+				'force'   => true,
+				'message' => __( 'If you are enjoying Formidable, could you do me a BIG favor and give us a review to help me grow my little business and boost our motivation?', 'formidable' ) . '<br/>' .
+					'- Steph Wells<br/>' .
+					'<span>' . esc_html__( 'Founder and Lead Developer of Formidable Forms', 'formidable' ) . '<span>',
+				'subject' => $title,
+				'cta'     => '<a href="https://wordpress.org/support/plugin/formidable/reviews/?filter=5#new-post" class="frm-dismiss-review-notice frm-review-out button-secondary frm-button-secondary" data-link="yes" target="_blank" rel="noopener noreferrer">' .
+					esc_html__( 'Ok, you deserve it', 'formidable' ) . '</a>',
+			)
+		);
+	}
+
+	/**
+	 * @since 4.05.01
+	 */
+	private function set_inbox_dismissed() {
+		$message = new FrmInbox();
+		$message->dismiss( $this->inbox_key );
+	}
+
+	/**
+	 * @since 4.05.01
+	 */
+	private function set_inbox_read() {
+		$message = new FrmInbox();
+		$message->mark_read( $this->inbox_key );
 	}
 
 	/**
@@ -119,6 +162,7 @@ class FrmReviews {
 
 		if ( isset( $review['dismissed'] ) && $review['dismissed'] === 'done' ) {
 			// if feedback was submitted, don't update it again when the review is dismissed
+			$this->set_inbox_dismissed();
 			wp_die();
 		}
 
@@ -128,6 +172,7 @@ class FrmReviews {
 		$review['asked']     = isset( $review['asked'] ) ? $review['asked'] + 1 : 1;
 
 		update_user_meta( $user_id, $this->option_name, $review );
+		$this->set_inbox_read();
 		wp_die();
 	}
 }

@@ -1820,7 +1820,7 @@ function odb_confirm_delete() {
 			$sql = sprintf ("
 			SELECT '%s' AS site,
 				`post_id` AS ID, 
-				'meta' AS type,
+				'post meta' AS type,
 				'' AS post_title,
 				'' AS post_modified,
 				'' AS term_taxonomy_id,
@@ -1829,7 +1829,8 @@ function odb_confirm_delete() {
 			  FROM %spostmeta
 			 WHERE post_id NOT IN (SELECT ID FROM %sposts)
 			 ORDER BY `meta_key`
-			", $prefix, $prefix, $prefix);			
+			", $prefix, $prefix, $prefix);
+			//echo $sql . '<br>';		
 
 			$results = $wpdb->get_results($sql, ARRAY_A);
 			for ($j = 0; $j < count($results); $j++) {
@@ -1894,6 +1895,7 @@ function odb_confirm_delete() {
 			} // if (!$scheduler && ($action == 'analyze_detail' || $action == 'run_detail'))
 			
 			if ($scheduler || $action == 'run_summary' || $action == 'run_detail') {
+				$sql = "";
 				for($j = 0; $j < count($results); $j++) {
 					// DELETE METADATA FOR THIS COMMENT (IF ANY)
 					if ($results[$j]['type'] == 'post meta') {

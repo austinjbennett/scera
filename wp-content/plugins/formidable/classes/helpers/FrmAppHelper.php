@@ -11,7 +11,7 @@ class FrmAppHelper {
 	/**
 	 * @since 2.0
 	 */
-	public static $plug_version = '4.04.03';
+	public static $plug_version = '4.05.01';
 
 	/**
 	 * @since 1.07.02
@@ -205,13 +205,7 @@ class FrmAppHelper {
 		$page          = self::simple_get( 'page', 'sanitize_title' );
 		$is_formidable = strpos( $page, 'formidable' ) !== false;
 		if ( empty( $page ) ) {
-			global $pagenow;
-			$post_type     = self::simple_get( 'post_type', 'sanitize_title' );
-			$is_formidable = ( $post_type == 'frm_display' );
-			if ( empty( $post_type ) && $pagenow == 'post.php' ) {
-				global $post;
-				$is_formidable = ( $post && $post->post_type == 'frm_display' );
-			}
+			$is_formidable = self::is_view_builder_page();
 		}
 
 		return $is_formidable;
@@ -231,7 +225,10 @@ class FrmAppHelper {
 		$get_page = self::simple_get( 'page', 'sanitize_title' );
 		if ( $pagenow ) {
 			// allow this to be true during ajax load i.e. ajax form builder loading
-			return ( $pagenow == 'admin.php' || $pagenow == 'admin-ajax.php' ) && $get_page == $page;
+			$is_page = ( $pagenow == 'admin.php' || $pagenow == 'admin-ajax.php' ) && $get_page == $page;
+			if ( $is_page ) {
+				return true;
+			}
 		}
 
 		return is_admin() && $get_page == $page;
@@ -246,18 +243,19 @@ class FrmAppHelper {
 	public static function is_view_builder_page() {
 		global $pagenow;
 
-		if ( $pagenow !== 'post.php' && $pagenow !== 'post-new.php' ) {
+		if ( $pagenow !== 'post.php' && $pagenow !== 'post-new.php' && $pagenow !== 'edit.php' ) {
 			return false;
 		}
 
 		$post_type = self::simple_get( 'post_type', 'sanitize_title' );
 
 		if ( empty( $post_type ) ) {
-			$post_id = self::simple_get( 'post', 'absint' );
-			$post    = get_post( $post_id );
-			if ( ! empty( $post ) ) {
-				$post_type = $post->post_type;
+			global $post;
+			if ( empty( $post ) ) {
+				$post_id = self::simple_get( 'post', 'absint' );
+				$post    = get_post( $post_id );
 			}
+			$post_type = $post ? $post->post_type : '';
 		}
 
 		return $post_type === 'frm_display';
@@ -289,26 +287,11 @@ class FrmAppHelper {
 	 * @return boolean
 	 */
 	public static function doing_ajax() {
-		return self::wp_doing_ajax() && ! self::is_preview_page();
+		return wp_doing_ajax() && ! self::is_preview_page();
 	}
 
 	public static function js_suffix() {
 		return defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	}
-
-	/**
-	 * Use the WP 4.7 wp_doing_ajax function
-	 *
-	 * @since 2.05.07
-	 */
-	public static function wp_doing_ajax() {
-		if ( function_exists( 'wp_doing_ajax' ) ) {
-			$doing_ajax = wp_doing_ajax();
-		} else {
-			$doing_ajax = defined( 'DOING_AJAX' ) && DOING_AJAX;
-		}
-
-		return $doing_ajax;
 	}
 
 	/**
@@ -330,7 +313,7 @@ class FrmAppHelper {
 	 * @return boolean
 	 */
 	public static function is_admin() {
-		return is_admin() && ! self::wp_doing_ajax();
+		return is_admin() && ! wp_doing_ajax();
 	}
 
 	/**
@@ -1124,7 +1107,7 @@ class FrmAppHelper {
 	public static function is_full_screen() {
 		$action       = self::simple_get( 'frm_action', 'sanitize_title' );
 		$full_builder = self::is_admin_page( 'formidable' ) && ( $action === 'edit' || $action === 'settings' || $action === 'duplicate' );
-		$styler       = self::is_admin_page( 'formidable-styles' );
+		$styler       = self::is_admin_page( 'formidable-styles' ) || self::is_admin_page( 'formidable-styles2' );
 		$full_entries = self::simple_get( 'frm-full', 'absint' );
 
 		return $full_builder || $full_entries || $styler || self::is_view_builder_page();
@@ -1620,7 +1603,7 @@ class FrmAppHelper {
 			$field_array['unique_msg'] = '';
 		}
 
-		$field_array = array_merge( $field->field_options, $field_array );
+		$field_array = array_merge( (array) $field->field_options, $field_array );
 
 		$values['fields'][ $field->id ] = $field_array;
 	}
@@ -1849,36 +1832,143 @@ class FrmAppHelper {
 
 		$time_strings = self::get_time_strings();
 
+		if ( ! is_numeric( $levels ) ) {
+			// Show time in specified unit.
+			$levels = self::get_unit( $levels );
+			if ( isset( $time_strings[ $levels ] ) ) {
+				$diff = array(
+					$levels => self::time_format( $levels, $diff ),
+				);
+				$time_strings = array(
+					$levels => $time_strings[ $levels ],
+				);
+			}
+			$levels = 1;
+		}
+
 		foreach ( $time_strings as $k => $v ) {
-			if ( $diff[ $k ] ) {
+			if ( isset( $diff[ $k ] ) && $diff[ $k ] ) {
 				$time_strings[ $k ] = $diff[ $k ] . ' ' . ( $diff[ $k ] > 1 ? $v[1] : $v[0] );
+			} elseif ( isset( $diff[ $k ] ) && count( $time_strings ) === 1 ) {
+				// Account for 0.
+				$time_strings[ $k ] = $diff[ $k ] . ' ' . $v[1];
 			} else {
 				unset( $time_strings[ $k ] );
 			}
 		}
 
 		$levels_deep     = apply_filters( 'frm_time_ago_levels', $levels, compact( 'time_strings', 'from', 'to' ) );
-		$time_strings    = array_slice( $time_strings, 0, $levels_deep );
-		$time_ago_string = $time_strings ? implode( ' ', $time_strings ) : '0 ' . __( 'seconds', 'formidable' );
+		$time_strings    = array_slice( $time_strings, 0, absint( $levels_deep ) );
+		$time_ago_string = implode( ' ', $time_strings );
 
 		return $time_ago_string;
 	}
 
 	/**
-	 * Get the translatable time strings
+	 * @since 4.05.01
+	 */
+	private static function time_format( $unit, $diff ) {
+		$return = array(
+			'y' => 'y',
+			'd' => 'days',
+		);
+		if ( isset( $return[ $unit ] ) ) {
+			return $diff[ $return[ $unit ] ];
+		}
+
+		$total = $diff['days'] * self::convert_time( 'd', $unit );
+
+		$times = array( 'h', 'i', 's' );
+
+		foreach ( $times as $time ) {
+			if ( ! isset( $diff[ $time ] ) ) {
+				continue;
+			}
+
+			$total += $diff[ $time ] * self::convert_time( $time, $unit );
+		}
+
+		return floor( $total );
+	}
+
+	/**
+	 * @since 4.05.01
+	 */
+	private static function convert_time( $from, $to ) {
+		$convert = array(
+			's' => 1,
+			'i' => MINUTE_IN_SECONDS,
+			'h' => HOUR_IN_SECONDS,
+			'd' => DAY_IN_SECONDS,
+			'w' => WEEK_IN_SECONDS,
+			'm' => DAY_IN_SECONDS * 30.42,
+			'y' => DAY_IN_SECONDS * 365.25,
+		);
+
+		return $convert[ $from ] / $convert[ $to ];
+	}
+
+	/**
+	 * @since 4.05.01
+	 */
+	private static function get_unit( $unit ) {
+		$units = self::get_time_strings();
+		if ( isset( $units[ $unit ] ) || is_numeric( $unit ) ) {
+			return $unit;
+		}
+
+		foreach ( $units as $u => $strings ) {
+			if ( in_array( $unit, $strings ) ) {
+				return $u;
+			}
+		}
+		return 1;
+	}
+
+	/**
+	 * Get the translatable time strings. The untranslated version is a failsafe
+	 * in case langauges are changing for the unit set in the shortcode.
 	 *
 	 * @since 2.0.20
 	 * @return array
 	 */
 	private static function get_time_strings() {
 		return array(
-			'y' => array( __( 'year', 'formidable' ), __( 'years', 'formidable' ) ),
-			'm' => array( __( 'month', 'formidable' ), __( 'months', 'formidable' ) ),
-			'w' => array( __( 'week', 'formidable' ), __( 'weeks', 'formidable' ) ),
-			'd' => array( __( 'day', 'formidable' ), __( 'days', 'formidable' ) ),
-			'h' => array( __( 'hour', 'formidable' ), __( 'hours', 'formidable' ) ),
-			'i' => array( __( 'minute', 'formidable' ), __( 'minutes', 'formidable' ) ),
-			's' => array( __( 'second', 'formidable' ), __( 'seconds', 'formidable' ) ),
+			'y' => array(
+				__( 'year', 'formidable' ),
+				__( 'years', 'formidable' ),
+				'year',
+			),
+			'm' => array(
+				__( 'month', 'formidable' ),
+				__( 'months', 'formidable' ),
+				'month',
+			),
+			'w' => array(
+				__( 'week', 'formidable' ),
+				__( 'weeks', 'formidable' ),
+				'week',
+			),
+			'd' => array(
+				__( 'day', 'formidable' ),
+				__( 'days', 'formidable' ),
+				'day',
+			),
+			'h' => array(
+				__( 'hour', 'formidable' ),
+				__( 'hours', 'formidable' ),
+				'hour',
+			),
+			'i' => array(
+				__( 'minute', 'formidable' ),
+				__( 'minutes', 'formidable' ),
+				'minute',
+			),
+			's' => array(
+				__( 'second', 'formidable' ),
+				__( 'seconds', 'formidable' ),
+				'second',
+			),
 		);
 	}
 
@@ -2230,7 +2320,7 @@ class FrmAppHelper {
 				'saved'             => esc_attr( __( 'Saved', 'formidable' ) ),
 				'ok'                => __( 'OK', 'formidable' ),
 				'cancel'            => __( 'Cancel', 'formidable' ),
-				'default'           => __( 'Default', 'formidable' ),
+				'default_label'     => __( 'Default', 'formidable' ),
 				'clear_default'     => __( 'Clear default value when typing', 'formidable' ),
 				'no_clear_default'  => __( 'Do not clear default value when typing', 'formidable' ),
 				'valid_default'     => __( 'Default value will pass form validation', 'formidable' ),
@@ -2252,7 +2342,7 @@ class FrmAppHelper {
 				'import_complete'   => __( 'Import Complete', 'formidable' ),
 				'updating'          => __( 'Please wait while your site updates.', 'formidable' ),
 				'no_save_warning'   => __( 'Warning: There is no way to retrieve unsaved entries.', 'formidable' ),
-				'private'           => __( 'Private', 'formidable' ),
+				'private_label'     => __( 'Private', 'formidable' ),
 				'jquery_ui_url'     => self::jquery_ui_base_url(),
 				'pro_url'           => is_callable( 'FrmProAppHelper::plugin_url' ) ? FrmProAppHelper::plugin_url() : '',
 				'no_licenses'       => __( 'No new licenses were found', 'formidable' ),
@@ -2450,6 +2540,17 @@ class FrmAppHelper {
 		$locales = apply_filters( 'frm_locales', $locales );
 
 		return $locales;
+	}
+
+	/**
+	 * Use the WP 4.7 wp_doing_ajax function
+	 *
+	 * @since 2.05.07
+	 * @deprecated 4.04.04
+	 */
+	public static function wp_doing_ajax() {
+		_deprecated_function( __METHOD__, '4.04.04', 'wp_doing_ajax' );
+		return wp_doing_ajax();
 	}
 
 	/**

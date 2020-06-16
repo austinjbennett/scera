@@ -9,9 +9,9 @@ Author: CAGE Web Design | Rolf van Gelder, Eindhoven, The Netherlands
 Contributors: cageehv
 Requires at least: 2.8
 Requires PHP: 5.0
-Tested up to: 5.4
-Stable tag: 4.9
-Version: 4.9
+Tested up to: 5.4.1
+Stable tag: 4.9.1
+Version: 4.9.1
 License: GPLv2 or later
 
 == Description ==
@@ -111,6 +111,9 @@ http://cagewebdev.com/category/news-tech-art/wordpress/
 * If you run the plugin from any of the sites, it will cleanup ALL the sites in the network!
 
 == Changelog ==
+= 4.9.1 [05/17/2020] =
+* BUG FIX: Fixed a bug for deleting orphans
+
 = 4.9 [04/10/2020] =
 * NEW: Deletion of orphaned term relationships
 

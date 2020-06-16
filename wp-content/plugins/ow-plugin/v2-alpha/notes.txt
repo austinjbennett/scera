@@ -1,3 +1,0 @@
-If needed, an example of a plugin that bulk installs other plugins can be found at
-
-https://wordpress.org/plugins/bulk-plugin-installation/

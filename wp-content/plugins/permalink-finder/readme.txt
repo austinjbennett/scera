@@ -1,8 +1,8 @@
-=== Permalink Finder Plugin ===
+=== Link Fixer ===
 Tags: permalinks, move, migrate, 301, 404, redirect, PageRank, seo,sitemap, robots.txt, crossdomain.xml, apple-touch-icon.png, favicon.ico
 Requires at least: 3.0  
-Stable tag: 2.8  
-Tested up to: 5.1
+Stable tag: 2.9  
+Tested up to: 5.4.1
 Contributors: Keith Graham       
 Donate link: https://www.facebook.com/BlogsEye/
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Never get a 404 page not found again. If you have restructured or moved your blo
 
 == Description ==
 
-The Permalink Finder Plugin detects when Wordpress cannot find a permalink. Before it generates the 404 error the plugin tries to locate any posts with similar words. It does this by searching through the database trying to find any of the word values from the bad link. It takes the best match and then, rather than issuing a 404 error, it sends back a redirect to the correct page.
+The Link Fixer Plugin (note the name change from Permalink Finder) detects when WordPress cannot find a permalink. Before it generates the 404 error the plugin tries to locate any posts with similar words. It does this by searching through the database trying to find any of the word values from the bad link. It takes the best match and then, rather than issuing a 404 error, it sends back a redirect to the correct page.
 Users will see the page that they are looking for, and search engine spiders will see the 301 redirect and update their databases so that the page appears correctly in searches.
 
 This is especially useful where Wordpress removes words like "the" and "a" from the permalink during conversions from Blogger.com accounts. It is also useful for migrations that formerly used extensions such as html and shtml, when Wordpress does not.
@@ -31,11 +31,14 @@ The plugin will also optionally keep track of the last few 404's or redirects. T
 1. Download the plugin.
 2. Upload the plugin to your wp-content/plugins directory.
 3. Activate the plugin.
-4. Change any options in the Permalink Finder settings.
+4. Change any options in the Link Fixer settings.
 The plugin can be tested by adding or deleting words from a working permalink in your browser address area. Even if you mangle the permalink it should find a valid link and almost always it will find the correct link. 
 
 
 == Changelog ==
+
+= 2.9 =
+* Tested on WordPress version 5.3. Changed the name to Link Fixer in order to help users find the plugin
 
 = 2.8 =
 * Changed the name of a function that used the mysql_ string so that it would not trigger compatibility testers.
@@ -66,7 +69,7 @@ The plugin can be tested by adding or deleting words from a working permalink in
 * 10/2/2012 Fixed many small but annoying bugs.
 * search for exacts matches on categories
 * changed the way MU functions work so that MU options can only be set on the Network Admin Dashboard.
-* Under MU users cannot see the Permalink options unless the admin sets the MU switch in the permalink finder options.
+* Under MU users cannot see the Permalink options unless the admin sets the MU switch in the Link Fixer options.
 * Keeps a grand total of the permalinks fixed since the plugin was installed (or version 2.2).
 * converts underscores to hyphens.
 * added option to load the actual page and change the "404 not found" to a "200 found". This would be useful in SEO when a redirect would not help. It essentially keeps the old permalink structure intact and makes no effort to inform requestors of the change. Creates the ability to type any keyword as a permalink and get a related page without a redirect.
