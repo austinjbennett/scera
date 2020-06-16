@@ -91,7 +91,7 @@
             </div>
             <?php
             $menu_parameters = array(
-                'menu_id'        => '',
+                'menu_id'        => 'menu-main-header-navigation',
                 'menu_class'     => '',
                 'theme_location' => 'headerNav',
                 'items_wrap'     => '<nav id="%1$s" class="%2$s">%3$s</nav>',
