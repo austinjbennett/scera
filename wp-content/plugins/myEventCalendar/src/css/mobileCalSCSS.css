@@ -1,0 +1,98 @@
+/*******************************Calendar Top Navigation*********************************/
+@media only screen and (max-width: 600px) {
+  .calendar {
+    padding-bottom: 0;
+    padding-top: 12px; }
+
+  .calWrap {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative; }
+
+  div#calendar div.box {
+    display: none; }
+  div#calendar div.box-content {
+    border: none; }
+    div#calendar div.box-content .label {
+      display: none; }
+    div#calendar div.box-content .dates {
+      display: none; }
+    div#calendar div.box-content .datesMobile {
+      display: block;
+      float: none;
+      width: 270%;
+      margin-left: -83%; }
+      div#calendar div.box-content .datesMobile .dayDiv {
+        background-color: #BCE0FD;
+        float: none;
+        width: 150px;
+        height: 150px;
+        display: inline-block;
+        margin-right: 15px;
+        display: none;
+        color: white; }
+        div#calendar div.box-content .datesMobile .dayDiv .ymdDate {
+          display: none; }
+        div#calendar div.box-content .datesMobile .dayDiv .cellDow {
+          display: block;
+          font-size: 1.2em;
+          margin: 8px 0 28px 0; }
+        div#calendar div.box-content .datesMobile .dayDiv .cellDayNum {
+          font-size: 4em;
+          margin: 16px 0; }
+        div#calendar div.box-content .datesMobile .dayDiv .cellMonth {
+          display: block;
+          font-size: 1.2em;
+          margin-top: 28px; }
+        div#calendar div.box-content .datesMobile .dayDiv.show {
+          display: inline-block; }
+        div#calendar div.box-content .datesMobile .dayDiv.today {
+          background-color: #2699FB; }
+      div#calendar div.box-content .datesMobile .evTxt {
+        display: none; }
+      div#calendar div.box-content .datesMobile.slideL {
+        -webkit-animation: slideL 0.3s forwards;
+        animation: slideL 0.3s forwards; }
+  @-webkit-keyframes slideL {
+    100% {
+      margin-left: calc(-83% - 165px); } }
+  @keyframes slideL {
+    100% {
+      margin-left: calc(-83% - 165px); } }
+      div#calendar div.box-content .datesMobile.slideR {
+        -webkit-animation: slideR 0.3s forwards;
+        animation: slideR 0.3s forwards; }
+  @-webkit-keyframes slideR {
+    100% {
+      margin-left: calc(-83% + 165px); } }
+  @keyframes slideR {
+    100% {
+      margin-left: calc(-83% + 165px); } }
+  .mobileEvsDiv {
+    display: block;
+    text-align: left;
+    height: 200px;
+    overflow-y: scroll;
+    padding: 15px 0; }
+    .mobileEvsDiv .newEvDiv {
+      cursor: pointer;
+      margin-top: 15px; }
+      .mobileEvsDiv .newEvDiv .icoWrap {
+        width: 25px;
+        margin: 0 16px;
+        text-align: center;
+        display: inline-block; }
+        .mobileEvsDiv .newEvDiv .icoWrap i {
+          color: #2699FB;
+          font-size: 1.6em;
+          margin-top: 5px; }
+      .mobileEvsDiv .newEvDiv .eventTitle {
+        display: inline-block;
+        font-size: 1.4em;
+        vertical-align: top; }
+      .mobileEvsDiv .newEvDiv.newEvDiv:first-child {
+        margin-top: 0; } }
+/*  END MEDIA QUERY - DO NOT DELETE  */
+
+/*# sourceMappingURL=mobileCalSCSS.css.map */
