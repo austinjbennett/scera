@@ -51,7 +51,19 @@ img {
 
 }
 
-
+.title {
+	font-family: $font-carlos;
+	font-size: 6rem;
+	&.gold {
+		color: $gradient-gold;
+	}
+	&.blue {
+		color: $color-blue;
+	}
+	&.teal {
+		color: $color-blue-teal;
+	}
+}
 
 /**********************/
 /***** Old Styles *****/

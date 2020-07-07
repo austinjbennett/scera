@@ -49,16 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			el: '.swiper-pagination',
 			clickable: 'true',
 		},
-		// breakpoints: {
-		// 	// when window width is >= 320px
-		// 	600: {
-		// 		height: 500,
-		// 	},
-		// 	// when window width is >= 480px
-		// 	992: {
-		// 		height: 600,
-		// 	},
-		// },
+
 	});
 });
 
