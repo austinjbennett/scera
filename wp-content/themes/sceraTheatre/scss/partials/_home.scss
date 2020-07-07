@@ -65,10 +65,10 @@
 					width: 1.3rem;
 					height: 1.3rem;
 					border: .15rem solid;
-					border-image: $border-gold-darker;
+					border-image: $gradient-gold-darker;
 					position: absolute;
-					top: -22%;
-					left: -22%;
+					top: -19%;
+					left: -19%;
 				}
 				&-active {
 					@include gradient-gold;

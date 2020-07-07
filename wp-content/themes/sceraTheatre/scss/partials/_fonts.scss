@@ -1,5 +1,8 @@
 @font-face {
 	font-family: 'Carlos';
-	src: url(../../fonts/Carlos-Light-Condensed.TTF) format(TTF/OTF);
-	font-weight: 400;
+	src: url('../fonts/carlos-light-condensed-webfont.woff2') format('woff2'),
+		url('../fonts/carlos-light-condensed-webfont.woff') format('woff'),
+		url('../fonts/Carlos-Light-Condensed.TTF') format('truetype');
+	font-weight: 100;
+	font-style: normal;
 }
