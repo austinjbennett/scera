@@ -1,243 +1,78 @@
 @import 'variables';
 
+// Sponsors Section Style
+.sponsors {
+	margin-bottom: 4.8rem;
 
-// Small Screens Style
-@media only screen and (max-width: 767px) {
-	
-	// Sponsors Section Style
-	.sponsors {
-		position: absolute;
-		bottom: 7.2rem;
-		margin-bottom: 4.8rem;
-
-		h1 {
-			margin: 4.8rem 0 1.6rem;
-			color: $color-blue-accent;
-			text-align: center;
-			font-size: 3rem!important;
+	h2 {
+		margin: 0 0 1.6rem;
+		color: $color-blue;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 3rem;
+		@media (min-width: $md-min) {
+			font-size: 6rem;
 		}
-		.sponsorImages {
-			display: flex;
-			justify-content: center;
-
-			.imageWrapper {
-				margin-left: 1rem;
-				background-color: #BCE0FD;
-				height: 7.8rem;
-				width: 7.8rem;
-			}
+		@media (min-width: $lg-min) {
+			margin: 0 0 3.2rem;
+			font-size: 8rem;
 		}
 	}
-	// footerWrap Style
-	.footerWrap {
-		position: fixed;
-		height: 7.2rem;
-		bottom: 0;
-		width: 100%;
-		padding-top: 2rem;
-		background-color: $color-blue-accent;
-		color: $color-white;
-		// Hide the footerNav on small screens
-		.footerNav {
-			display: none;
-		}
-		// Social Icons Style
-		.socialIcons {
-			text-align: center;
-		}
-		.socialIcons i {
-			padding: 0 1.5rem;
-			cursor: pointer;
-		}
-		.fa-twitter:hover {
-			opacity: 1;
-			color: $color-blue;
-		}
-		.fa-facebook-f:hover {
-			opacity: 1;
-			color: $color-blue;
-		}
-		.fa-instagram:hover {
-			opacity: 1;
-			color: $color-blue;
-		}
-		.fa-youtube:hover {
-			opacity: 1;
-			color: $color-blue;
-		}
-		// Copyright Style
-		footer {
-			text-align: center;
-			padding-top: 1.6rem;
-			font-size: 1.2rem;
-		}
-		// Hide hr line on Small Screens
-		hr {
-			display: none;
-		}
-		// Hide footerSearchWrap on Small Screens
-		.footerSearchWrap {
-			display: none;
-		}
-	}
-	
-	/*------OTHER------*/
-	.keepOpen {
-		clear: both;
-		content: "";
-		display: table;
-	}
-}
+	.sponsorImages {
+		display: flex;
+		justify-content: center;
 
-// Medium Screens Style
-@media only screen and (min-width: 768px) {
-	// Sponsors Section Style
-	.sponsors {
-		position: absolute;
-		bottom: 16.5rem;
-		margin: auto;
-		width: 100%;
-		margin-bottom: 4.8rem;
 
-		h1 {
-			margin: 4.8rem 0 1.6rem;
-			color: $color-blue-accent;
-			text-align: center;
-			font-size: 6.4rem!important;
-			}
-		.sponsorImages {
-			display: flex;
-			justify-content: center;
-
-			.imageWrapper {
+		.imageWrapper {
+			margin-left: 1rem;
+			background-color: #BCE0FD;
+			height: 7.8rem;
+			width: 7.8rem;
+			@media (min-width: $md-min) {
 				margin-left: 3.8rem;
-				background-color: #BCE0FD;
 				height: 18.7rem;
 				width: 18.7rem;
 			}
 		}
 	}
-	// footerWrap Style
-	.footerWrap {
-		position: fixed;
-		height: 16.5rem;
-		bottom: 0;
-		width: 100%;
-		padding-top: 3.8rem;
-		background-color: $color-blue-accent;
-		color: $color-white;
-		// Hide the footerNav on Medium Screens
-		.footerNav {
-			display: none;
-		}
+}
+
+// footerWrap Style
+.footerWrap {
+	width: 100%;
+	padding: 2rem;
+	background-color: $color-blue;
+	color: $color-white;
+	@media (min-width: $md-min) {
+		padding: 3.8rem;
 		a {
 			@include textLink();
 		}
 	}
-	// Social Icons Style
-	.socialIcons {
-		text-align: center;
+	@media (min-width: $lg-min) {
+		padding: 2.9rem;
 	}
-	.socialIcons i {
-		padding: 0 1.8rem;
-		cursor: pointer;
-		font-size: 4rem;
-	}
-	.fa-twitter:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-facebook-f:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-instagram:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-youtube:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	// Copyright Style
-	footer {
-		text-align: center;
-		padding-top: 1.6rem;
-		font-size: 2.4rem;
-	}
-	// Hide the hr line on Medium Screens
-	hr {
+	// Hide the footerNav on small screens
+	.footerNav {
 		display: none;
-	}
-	// Hide the footerSearchWrap on Medium Screens
-	.footerSearchWrap {
-		display: none;
-	}
-	/*------OTHER------*/
-	.keepOpen {
-		clear: both;
-		content: "";
-		display: table;
-	}
-}
-
-// Large Screens Style
-@media only screen and (min-width: 1200px) {
-	// Sponsors Section Style
-	.sponsors {
-		position: absolute;
-		bottom: 27.1rem;
-		margin: auto;
-		width: 100%;
-		margin-bottom: 4.8rem;
-
-		h1 {
-			margin: 4.8rem 0 3.2rem;
-			color: $color-blue-accent;
-			text-align: center;
-			font-size: 8rem!important;
-			}
-		.sponsorImages {
-			display: flex;
-			justify-content: center;
-
-			.imageWrapper {
-				margin-left: 3.8rem;
-				background-color: #BCE0FD;
-				height: 18.7rem;
-				width: 18.7rem;
-			}
-		}
-	}
-	// footerWrap Style
-	.footerWrap {
-		position: fixed;
-		height: 27.1rem;
-		bottom: 0;
-		width: 100%;
-		padding-top: 2.9rem;
-		background-color: $color-blue-accent;
-		color: $color-white;
-		// Show footerNav on Large Screens
-		.footerNav {
+		@media (min-width: $md-min) {
 			overflow: hidden;
 			font-size: 2.4rem;
 			margin: auto;
 			width: 100%;
 			padding-bottom: 2.7rem;
 			display: inherit;
-			float: none;
 			text-align: center;
-		}
-		.footerNav a {
-			padding: 0 2.5rem;
-			border-right: 1px solid white;
-		}
-		.footerNav a:last-child {
-			border-right: none;
-		}
-		.footerNav a:hover {
-			color: $color-blue;
+			a {
+				padding: 0 2.5rem;
+				border-right: .1rem solid white;
+				&:last-child {
+					border-right: none;
+				}
+				&:hover {
+					color: $color-blue;
+				}
+			}
 		}
 	}
 	// Social Icons Style
@@ -245,79 +80,80 @@
 		text-align: center;
 	}
 	.socialIcons i {
-		padding: 0 3.6rem;
+		padding: 0 1.5rem;
 		cursor: pointer;
-		font-size: 5.5rem;
+		font-size: 3.2rem;
+
+		&:hover {
+			opacity: 1;
+			color: $color-blue;
+		}
+		@media (min-width: $md-min) {
+			padding: 0 1.8rem;
+			font-size: 4rem;
+		}
+		@media (min-width: $lg-min) {
+			padding: 0 3.6rem;
+			font-size: 5.5rem;
+		}
 	}
-	.fa-twitter:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-facebook-f:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-instagram:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
-	.fa-youtube:hover {
-		opacity: 1;
-		color: $color-blue;
-	}
+
 	// Copyright Style
 	footer {
 		text-align: center;
 		padding-top: 1.6rem;
-		font-size: 2.4rem;
-	}
-	// Show hr line on Large Screens
-	hr {
-		display: inherit;
-		width: 95%;
-		margin: 1.6rem auto;
-	}
-	// Show footerSearchWrap on Large Screens
-	.footerSearchWrap {
-		display: flex;
-		padding-bottom: 1.6rem;
-		justify-content: center;
-		.searchArea {
-			color: $color-blue-accent;
-			position: relative;
-			width: 113.6rem;
-		
-			input {
-				font-size: 3.2rem;
-				color: $color-blue-accent;
-				width: 100%;
-				height: 5.7rem;
-				padding: 1.7rem 6rem 1.5rem 1.6rem;
-				border: 1px solid $color-blue-accent;
-				border-radius: .5rem;
-
-				&::placeholder {
-					color: $color-blue-accent;
-					font-size: 3.2rem;
-				}
-			}
-			i {
-				position: absolute;
-				top: 50%;
-				right: 2rem;
-				transform: translateY(-50%);
-				font-size: 3.2rem;
-				
-			}
-			i:hover {
-				color: $color-blue;
-			}
+		font-size: 1.2rem;
+		@media (min-width: $md-min) {
+			font-size: 2.4rem;
 		}
 	}
-	/*------OTHER------*/
-	.keepOpen {
-		clear: both;
-		content: "";
-		display: table;
+	// Hide hr line on Small Screens
+	hr {
+		display: none;
+		@media (min-width: $md-min) {
+			display: inherit;
+			width: 95%;
+			margin: 1.6rem auto;
+		}
+	}
+	// Hide footerSearchWrap on Small Screens
+	.footerSearchWrap {
+		display: none;
+		@media (min-width: $md-min) {
+			display: flex;
+			padding-bottom: 1.6rem;
+			justify-content: center;
+			.searchArea {
+				color: $color-blue;
+				position: relative;
+				width: 113.6rem;
+
+				input {
+					font-size: 3.2rem;
+					color: $color-blue;
+					width: 100%;
+					height: 5.7rem;
+					padding: 1.7rem 6rem 1.5rem 1.6rem;
+					border: .1rem solid $color-blue;
+					border-radius: .5rem;
+
+					&::placeholder {
+						color: $color-blue;
+						font-size: 3.2rem;
+					}
+				}
+				i {
+					position: absolute;
+					top: 50%;
+					right: 2rem;
+					transform: translateY(-50%);
+					font-size: 3.2rem;
+
+				}
+				i:hover {
+					color: $color-blue;
+				}
+			}
+		}
 	}
 }

@@ -6,13 +6,16 @@
 
     <!-- LOAD GOOGLE FONT -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet">  -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald" rel="stylesheet">-->
 
     <!-- FONT AWESOME ICONS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
     <!-- LATEST VERSION OF JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
 
     <!-- META TAG FOR DO NOT LIE -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--', maximum-scale=1' prevents users zooming on mobile-->

@@ -1,0 +1,87 @@
+@import 'variables';
+
+.home-container {
+	.swiper-container {
+		width: 100%;
+		height: 25.5rem;
+		padding-bottom: 5.5rem;
+		@media (min-width: $md-min) {
+			height: 43rem;
+		}
+		@media (min-width: $lg-min) {
+			height: 77rem;
+		}
+		.swiper-slide {
+			background-position: center;
+			background-size: cover;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			padding: 1.3rem 1.6rem;
+			.slide-title {
+				color: $color-white;
+				margin: 0;
+				font-size: 1.6rem;
+				font-weight: 600;
+				z-index: 5;
+			}
+			.slide-subtext {
+				color: $color-white;
+				margin-top: .6rem;
+				margin-bottom: 0;
+				z-index: 5;
+			}
+		}
+		.bottom-gradient {
+			width: 100%;
+			height: 50%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			@include gradient-black-transparent;
+			z-index: 2;
+		}
+		.swiper-pagination {
+			max-width: 70%;
+			bottom: 2.3rem;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			justify-content: space-evenly;
+			.swiper-pagination-bullet {
+				background: transparent;
+				width: 1.1rem;
+				height: 1.1rem;
+				padding: .2rem;
+				border-radius: 0;
+				margin: 0;
+				transform: rotate(45deg);
+				transform-origin: center;
+				opacity: 1;
+				&:after {
+					content: "";
+					display: inline-block;
+					width: 1.3rem;
+					height: 1.3rem;
+					border: .15rem solid;
+					border-image: $border-gold-darker;
+					position: absolute;
+					top: -22%;
+					left: -22%;
+				}
+				&-active {
+					@include gradient-gold;
+				}
+			}
+		}
+	}
+
+	// Hero Slider
+	.slider-button {
+		position: absolute;
+		right: 2rem;
+		bottom: 2rem;
+		z-index: 5;
+	}
+}
