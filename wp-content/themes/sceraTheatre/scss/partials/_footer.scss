@@ -25,7 +25,7 @@
 
 		.imageWrapper {
 			margin-left: 1rem;
-			background-color: #BCE0FD;
+			background-color: #BCE0FD; // Temporary for development. Remove once images are added
 			height: 7.8rem;
 			width: 7.8rem;
 			@media (min-width: $md-min) {
@@ -41,13 +41,10 @@
 .footerWrap {
 	width: 100%;
 	padding: 2rem;
-	background-color: $color-blue;
+	background-color: $color-blue-teal;
 	color: $color-white;
 	@media (min-width: $md-min) {
 		padding: 3.8rem;
-		a {
-			@include textLink();
-		}
 	}
 	@media (min-width: $lg-min) {
 		padding: 2.9rem;
