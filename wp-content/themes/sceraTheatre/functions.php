@@ -114,6 +114,7 @@ function create_post_type()
             ),
             'public' => true,
             'has_archive' => true,
+            'exclude_from_search' => true,
         )
     );
 
@@ -195,6 +196,7 @@ function load_swiper_files() {
 	if( is_front_page() ) {
         wp_enqueue_style( 'swiperCSS', get_template_directory_uri() . '/vendor/swiperjs/swiper.min.css');
         wp_enqueue_script( 'swiperJS', get_template_directory_uri() . '/vendor/swiperjs/swiper.min.js');
+        wp_enqueue_script( 'frontJS', get_template_directory_uri() . '/js/front-page.js');
     }
 }
 function load_main_script() {

@@ -83,6 +83,7 @@
         </div>
         <div class="shortstack" id="nav-toggle">
             <span></span>
+	        <span></span>
             <span></span>
         </div>
         <div id="nav-wrapper">

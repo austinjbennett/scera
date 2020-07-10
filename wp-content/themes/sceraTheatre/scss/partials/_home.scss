@@ -9,7 +9,7 @@
 			height: 43rem;
 		}
 		@media (min-width: $lg-min) {
-			height: 77rem;
+			height: 60rem;
 		}
 		.swiper-slide {
 			background-position: center;
@@ -65,7 +65,7 @@
 					width: 1.3rem;
 					height: 1.3rem;
 					border: .15rem solid;
-					border-image: $gradient-gold-darker;
+					border-image: $gradient-gold-darker-border;
 					position: absolute;
 					top: -19%;
 					left: -19%;
