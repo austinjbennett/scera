@@ -17,7 +17,7 @@ $color-white: #ffffff;
 $color-almost-white: #F1F9FF;
 $color-black: #000000;
 $color-red: #801217;
-$color-dark-red: #4D0B0E;
+$color-red-dark: #4D0B0E;
 $color-gray: #A8B0BF;
 $color-gray-dark: #5F6273;
 $color-gray-light: #00000029;
@@ -25,7 +25,7 @@ $color-blue: #01133A;
 $color-blue-teal: #03324D;
 $color-brown: #785126;
 $color-tan: #C7AA77;
-$color-light-tan: #F2DCA6;
+$color-tan-light: #F2DCA6;
 
 $color-gold1: #9F7533;
 $color-gold2: #C2AA6C;
@@ -35,29 +35,42 @@ $color-gold5: #E3C274;
 
 $color-white-border: rgba(255, 255, 255, 0.5);
 
-@mixin gradient-gold() { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e3c274+0,ead996+25,edeab0+50,c2aa6c+75,9f7533+100 */
+@mixin gradient-gold { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e3c274+0,ead996+25,edeab0+50,c2aa6c+75,9f7533+100 */
 	background: #e3c274; /* Old browsers */
 	background: -moz-linear-gradient(45deg,  #e3c274 0%, #ead996 25%, #edeab0 50%, #c2aa6c 75%, #9f7533 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(45deg,  #e3c274 0%,#ead996 25%,#edeab0 50%,#c2aa6c 75%,#9f7533 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(45deg,  #e3c274 0%,#ead996 25%,#edeab0 50%,#c2aa6c 75%,#9f7533 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3c274', endColorstr='#9f7533',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-$gradient-gold: linear-gradient(45deg,  #e3c274 0%,#ead996 25%,#edeab0 50%,#c2aa6c 75%,#9f7533 100%) 1;
+$gradient-gold: linear-gradient(45deg,  #e3c274 0%,#ead996 25%,#edeab0 50%,#c2aa6c 75%,#9f7533 100%);
+$gradient-gold-border: linear-gradient(45deg,  #e3c274 0%,#ead996 25%,#edeab0 50%,#c2aa6c 75%,#9f7533 100%) 1;
 
-@mixin gradient-gold-darker() { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#785126+0,c7aa77+25,f2dca6+50,c7aa77+75,9f7533+100 */
+@mixin gradient-gold-darker { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#785126+0,c7aa77+25,f2dca6+50,c7aa77+75,9f7533+100 */
 	background: #785126; /* Old browsers */
 	background: -moz-linear-gradient(45deg, #785126 0%, #c7aa77 25%, #f2dca6 50%, #c7aa77 75%, #9f7533 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(45deg, #785126 0%,#c7aa77 25%,#f2dca6 50%,#c7aa77 75%,#9f7533 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(45deg, #785126 0%,#c7aa77 25%,#f2dca6 50%,#c7aa77 75%,#9f7533 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#785126', endColorstr='#9f7533',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-$gradient-gold-darker: linear-gradient(45deg, #785126 0%,#c7aa77 25%,#f2dca6 50%,#c7aa77 75%,#9f7533 100%) 1;
+$gradient-gold-darker: linear-gradient(45deg, #785126 0%,#c7aa77 25%,#f2dca6 50%,#c7aa77 75%,#9f7533 100%);
+$gradient-gold-darker-border: linear-gradient(45deg, #785126 0%,#c7aa77 25%,#f2dca6 50%,#c7aa77 75%,#9f7533 100%) 1;
 
 @mixin gradient-black-transparent { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.8+100 */
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin bg-blue {
+	background-color: $color-blue;
+	background-image: url('../img/textures/bg-texture-blue.png');
+	background-size: 12rem;
+}
+@mixin bg-texture($bg-color) {
+	background-color: "$color-#{$bg-color}";
+	background-image: url('../img/textures/bg-texture-#{$color}.png');
+	background-size: 12rem;
 }
 
 $font-carlos: 'Carlos', 'Cinzel Decorative', cursive, serif;

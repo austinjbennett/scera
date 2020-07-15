@@ -39,18 +39,6 @@ function toggleNav() {
 }
 document.addEventListener('DOMContentLoaded', () => {
 	document.getElementById('nav-toggle').addEventListener('click', toggleNav);
-	const mySwiper = new Swiper('.swiper-container', {
-		// Optional parameters
-		// direction: 'vertical',
-		loop: true,
-		height: 300,
-		// If we need pagination
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: 'true',
-		},
-
-	});
 });
 
 // // ASSIGN CLASSES TO PARENT AND SUB NAV

@@ -9,7 +9,7 @@ get_header();
     <?php
         // WP_Query arguments
         $args = array (
-            'post_type'              => array( 'hero-slide' ),
+            'post_type' => array( 'hero-slide' ),
         );
 
         // The Query
@@ -35,7 +35,11 @@ get_header();
 	                </div>
 	            <?php
 	            }
-            echo '</div><div class="swiper-pagination"></div>';
+	            ?>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        <?php
         } else {
             // no posts found
         }
@@ -43,6 +47,103 @@ get_header();
         // Restore original Post Data
         wp_reset_postdata();
 		?>
+
+	<?php
+    $currentDate = date('Y/m/d');
+    $lastWeek = date('Y/m/d', strtotime("-7 days"))
+
+    // WP_Query arguments
+	$args = array (
+		'post_type' => 'any',
+		'start_date' => '',
+	);
+
+	// The Query
+	$query_slider = new WP_Query( $args );
+
+	// The Loop
+	if ( $query_slider->have_posts() ) {
+	?>
+	<section class="event-carousel-container">
+		<div class="event-carousel-dates">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<p class="weekday">Monday</p>
+					<p class="date">27</p>
+					<p class="month">April</p>
+				</div>
+				<div class="swiper-slide">
+					<p class="weekday">Tuesday</p>
+					<p class="date">28</p>
+					<p class="month">April</p>
+				</div>
+				<div class="swiper-slide">
+					<p class="weekday">Wednesday</p>
+					<p class="date">29</p>
+					<p class="month">April</p>
+				</div>
+				<div class="swiper-slide">
+					<p class="weekday">Thursday</p>
+					<p class="date">30</p>
+					<p class="month">April</p>
+				</div>
+				<div class="swiper-slide">
+					<p class="weekday">Friday</p>
+					<p class="date">1</p>
+					<p class="month">May</p>
+				</div>
+			</div>
+		</div>
+		<div class="event-carousel">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<p><i class="fas fa-film"></i>Frozen 2</p>
+					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+					<p><i class="fas fa-star"></i>A Night of Broadway</p>
+					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+				</div>
+				<div class="swiper-slide">
+					<p><i class="fas fa-film"></i>Frozen 2</p>
+					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+					<p><i class="fas fa-star"></i>A Night of Broadway</p>
+					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+				</div>
+				<div class="swiper-slide">
+					<p><i class="fas fa-film"></i>Frozen 2</p>
+					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+					<p><i class="fas fa-star"></i>A Night of Broadway</p>
+					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+				</div>
+				<div class="swiper-slide">
+					<p><i class="fas fa-film"></i>Frozen 2</p>
+					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+					<p><i class="fas fa-star"></i>A Night of Broadway</p>
+					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+				</div>
+				<div class="swiper-slide">
+					<p><i class="fas fa-film"></i>Frozen 2</p>
+					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+					<p><i class="fas fa-star"></i>A Night of Broadway</p>
+					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+        <?php
+    } else {
+        // no posts found
+    }
+
+    // Restore original Post Data
+    wp_reset_postdata();
+    ?>
+
 
 </div>
 

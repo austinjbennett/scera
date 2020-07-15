@@ -1,0 +1,59 @@
+.event-carousel-container {
+	overflow: hidden;
+	margin-bottom: 2rem;
+	.event-carousel-dates {
+		.swiper-slide {
+			width: 15.6rem;
+			height: 15.6rem;
+			background-color: $color-gray;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+			cursor: pointer;
+		}
+
+		.swiper-slide-active {
+			background-color: $color-red;
+		}
+
+		.weekday,
+		.date,
+		.month {
+			//color: $color-gold2;
+			@include gradient-gold;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			margin: 0;
+		}
+
+		.weekday,
+		.month {
+			font-size: 2rem;
+		}
+
+		.date {
+			font-size: 6rem;
+			line-height: 1;
+		}
+	}
+	.event-carousel {
+		.swiper-slide {
+			padding: 1.5rem;
+			p {
+				font-size: 2rem;
+				font-weight: 300;
+				color: $color-gray-dark;
+			}
+			i {
+				@include gradient-gold;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-size: 2.4rem;
+				margin-right: 1.5rem;
+				vertical-align: middle;
+			}
+		}
+	}
+}
