@@ -50,7 +50,7 @@ get_header();
 
 	<?php
     $currentDate = date('Y/m/d');
-    $lastWeek = date('Y/m/d', strtotime("-7 days"))
+    $lastWeek = date('Y/m/d', strtotime("-7 days"));
 
     // WP_Query arguments
 	$args = array (
@@ -133,6 +133,13 @@ get_header();
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<section class="venues-container">
+		<div>Experience Our Venues</div>
+	</section>
+
+	<section class="rentals-container">
 	</section>
 
         <?php
