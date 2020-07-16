@@ -50,7 +50,7 @@ get_header();
 
 	<?php
     $currentDate = date('Y/m/d');
-    $lastWeek = date('Y/m/d', strtotime("-7 days"))
+    $lastWeek = date('Y/m/d', strtotime("-7 days"));
 
     // WP_Query arguments
 	$args = array (
