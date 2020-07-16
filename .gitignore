@@ -3,7 +3,7 @@ wp-config.php
 wp-content/uploads
 
 # ignore css files (only tracking scss)
-wp-content/themes/sceraTheatre/**/*.css
+wp-content/themes/sceraTheatre/css/*.css
 *.css.map
 !style.css
 # ignore node dependency directories
