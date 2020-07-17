@@ -49,8 +49,6 @@ get_header();
     $currentDate = date('Y/m/d');
     $lastWeek = date('Y/m/d', strtotime("-7 days"));
     $twoWeeks = date('Y/m/d', strtotime('+2 weeks'));
-    echo 'lastWeek: ' . $lastWeek;
-    echo 'twoWeeks: ' . $twoWeeks;
 
     // WP_Query arguments
 	$args = array (
@@ -89,7 +87,7 @@ get_header();
                 $day = $lastWeek;
                 while ($day != $twoWeeks) {?>
 	                <div class="swiper-slide">
-		                <?php echo '$day: ' . $day; ?>
+		                <?php echo $day; ?>
 						<p><i class="fas fa-film"></i>Frozen 2</p>
 						<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
 						<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
