@@ -88,12 +88,12 @@ get_header();
                 while ($day != $twoWeeks) {?>
 	                <div class="swiper-slide">
 		                <?php echo $day; ?>
-						<p><i class="fas fa-film"></i>Frozen 2</p>
-						<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-						<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-						<p><i class="fas fa-star"></i>A Night of Broadway</p>
-						<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-					</div>
+		                <p><i class="fas fa-film"></i>Frozen 2</p>
+		                <p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+		                <p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+		                <p><i class="fas fa-star"></i>A Night of Broadway</p>
+		                <p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+	                </div>
                 <?php
                     $day = date("Y/m/d", strtotime("+1 day", strtotime($day)));
                 } // End While ?>
