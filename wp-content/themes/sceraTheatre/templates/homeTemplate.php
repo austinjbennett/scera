@@ -136,10 +136,11 @@ get_header();
 	</section>
 
 	<section class="venues-container">
-		<div>Experience Our Venues</div>
+		<div class="title-gold">Experience Our Venues</div>
 	</section>
 
 	<section class="rentals-container">
+		<div class="title-blue">Rentals</div>
 	</section>
 
         <?php

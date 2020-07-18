@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 // Sponsors Section Style
 .sponsors {
@@ -39,10 +39,9 @@
 
 // footerWrap Style
 .footerWrap {
+	@include bg-blue-teal;
 	width: 100%;
 	padding: 2rem;
-	background-color: $color-blue-teal;
-	color: $color-white;
 	@media (min-width: $md-min) {
 		padding: 3.8rem;
 	}
@@ -60,6 +59,9 @@
 			padding-bottom: 2.7rem;
 			display: inherit;
 			text-align: center;
+			@include gradient-gold;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
 			a {
 				padding: 0 2.5rem;
 				border-right: .1rem solid white;
@@ -77,9 +79,12 @@
 		text-align: center;
 	}
 	.socialIcons i {
-		padding: 0 1.5rem;
+		@include gradient-gold;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		padding: .25rem 1.5rem;
 		cursor: pointer;
-		font-size: 3.2rem;
+		font-size: 3rem;
 
 		&:hover {
 			opacity: 1;
@@ -97,9 +102,12 @@
 
 	// Copyright Style
 	footer {
+		@include gradient-gold;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 		text-align: center;
 		padding-top: 1.6rem;
-		font-size: 1.2rem;
+		font-size: 1.38rem;
 		@media (min-width: $md-min) {
 			font-size: 2.4rem;
 		}
