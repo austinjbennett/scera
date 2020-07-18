@@ -16,12 +16,11 @@ get_header();
         $query_slider = new WP_Query( $args );
 
         // The Loop
-        if ( $query_slider->have_posts() ) {
-        	?>
+        if ( $query_slider->have_posts() ) { ?>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
 	            <?php while ( $query_slider->have_posts() ) {
-	                $query_slider->the_post();?>
+	                $query_slider->the_post(); ?>
 	                <div class="swiper-slide" style="background-image: url('<?php the_field( 'slide_image' );?>')">
 		                <p class="slide-title"><?php the_title(); ?></p>
 						<p class="slide-subtext"><?php the_field( 'slide_subtext' ); ?></p>
@@ -34,8 +33,7 @@ get_header();
 		                <div class="bottom-gradient"></div>
 	                </div>
 	            <?php
-	            }
-	            ?>
+	            } ?>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -45,92 +43,60 @@ get_header();
         }
 
         // Restore original Post Data
-        wp_reset_postdata();
-		?>
+        wp_reset_postdata(); ?>
 
 	<?php
     $currentDate = date('Y/m/d');
     $lastWeek = date('Y/m/d', strtotime("-7 days"));
+    $twoWeeks = date('Y/m/d', strtotime('+2 weeks'));
 
     // WP_Query arguments
 	$args = array (
 		'post_type' => 'any',
-		'start_date' => '',
+		'start_date' => $lastWeek,
+		'end_date' => $twoWeeks,
 	);
 
 	// The Query
-	$query_slider = new WP_Query( $args );
+	$query_eventsCalendar = new WP_Query( $args );
 
 	// The Loop
-	if ( $query_slider->have_posts() ) {
+	if ( $query_eventsCalendar->have_posts() ) {
 	?>
 	<section class="event-carousel-container">
 		<div class="event-carousel-dates">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<p class="weekday">Monday</p>
-					<p class="date">27</p>
-					<p class="month">April</p>
-				</div>
-				<div class="swiper-slide">
-					<p class="weekday">Tuesday</p>
-					<p class="date">28</p>
-					<p class="month">April</p>
-				</div>
-				<div class="swiper-slide">
-					<p class="weekday">Wednesday</p>
-					<p class="date">29</p>
-					<p class="month">April</p>
-				</div>
-				<div class="swiper-slide">
-					<p class="weekday">Thursday</p>
-					<p class="date">30</p>
-					<p class="month">April</p>
-				</div>
-				<div class="swiper-slide">
-					<p class="weekday">Friday</p>
-					<p class="date">1</p>
-					<p class="month">May</p>
-				</div>
+		        <?php
+		        $day = $lastWeek;
+		        while ($day != $twoWeeks) {
+		            $formattedDay = date( "Y/F/d/D", strtotime($day));
+		            $dateArray = explode('/', $formattedDay)?>
+					<div class="swiper-slide">
+						<p class="weekday"><?php echo $dateArray[3]; ?></p>
+						<p class="date"><?php echo $dateArray[2]; ?></p>
+						<p class="month"><?php echo $dateArray[1]; ?></p>
+					</div>
+                <?php
+                    $day = date("Y/m/d", strtotime("+1 day", strtotime($day)));
+                } // End While ?>
 			</div>
 		</div>
 		<div class="event-carousel">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<p><i class="fas fa-film"></i>Frozen 2</p>
-					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-					<p><i class="fas fa-star"></i>A Night of Broadway</p>
-					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-				</div>
-				<div class="swiper-slide">
-					<p><i class="fas fa-film"></i>Frozen 2</p>
-					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-					<p><i class="fas fa-star"></i>A Night of Broadway</p>
-					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-				</div>
-				<div class="swiper-slide">
-					<p><i class="fas fa-film"></i>Frozen 2</p>
-					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-					<p><i class="fas fa-star"></i>A Night of Broadway</p>
-					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-				</div>
-				<div class="swiper-slide">
-					<p><i class="fas fa-film"></i>Frozen 2</p>
-					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-					<p><i class="fas fa-star"></i>A Night of Broadway</p>
-					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-				</div>
-				<div class="swiper-slide">
-					<p><i class="fas fa-film"></i>Frozen 2</p>
-					<p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-					<p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-					<p><i class="fas fa-star"></i>A Night of Broadway</p>
-					<p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-				</div>
+                <?php
+                $day = $lastWeek;
+                while ($day != $twoWeeks) {?>
+	                <div class="swiper-slide">
+		                <?php echo $day; ?>
+		                <p><i class="fas fa-film"></i>Frozen 2</p>
+		                <p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
+		                <p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
+		                <p><i class="fas fa-star"></i>A Night of Broadway</p>
+		                <p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
+	                </div>
+                <?php
+                    $day = date("Y/m/d", strtotime("+1 day", strtotime($day)));
+                } // End While ?>
 			</div>
 		</div>
 	</section>

@@ -2,11 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	const mySwiper = new Swiper('.swiper-container', {
-		// Optional parameters
-		// direction: 'vertical',
 		loop: true,
 		height: 300,
-		// If we need pagination
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: 'true',
@@ -18,18 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
 		centeredSlides: true,
-		initialSlide: 1,
+		initialSlide: 6, // Slider starts 7 days in the past. So start on index 6 = today
 		centeredSlidesBounds: false,
-		// watchSlidesVisibility: true,
-		watchSlidesProgress: true,
 	});
 	const eventCarousel = new Swiper('.event-carousel', {
 		loop: false,
-		height: 156,
 		slidesPerView: 1,
 		spaceBetween: 20,
 		centeredSlides: true,
-		initialSlide: 1,
+		initialSlide: 6, // Slider starts 7 days in the past. So start on index 6 = today
 		centeredSlidesBounds: true,
 		thumbs: {
 			swiper: eventCarouselDates,
@@ -39,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		eventCarousel.slideTo(event.activeIndex);
 	});
 	eventCarouselDates.on('click', (event) => {
-		console.log('clickedIndex:', event.clickedIndex);
 		eventCarouselDates.slideTo(event.clickedIndex);
 	});
 	eventCarousel.on('slideChange', (event) => {
