@@ -101,14 +101,6 @@ get_header();
 		</div>
 	</section>
 
-	<section class="venues-container">
-		<div class="title-gold">Experience Our Venues</div>
-	</section>
-
-	<section class="rentals-container">
-		<div class="title-blue">Rentals</div>
-	</section>
-
         <?php
     } else {
         // no posts found
@@ -116,7 +108,29 @@ get_header();
 
     // Restore original Post Data
     wp_reset_postdata();
-    ?>
+	?>
+	
+	<section class="venues-container">
+		<img class="top-left-border" src="../img/decoratives/venue-top-corner.png" alt="">
+		<img class="top-right-border" src="../img/decoratives/venue-top-corner.png" alt="">
+		<img class="side-left-border" src="../img/decoratives/venue-side.png" alt="">
+		<img class="side-right-border" src="../img/decoratives/venue-side.png" alt="">
+		<img class="bottom-left-corner" src="../img/decoratives/venue-bottom-corner.png" alt="">
+		<img class="bottom-right-corner" src="../img/decoratives/venue-bottom-corner.png" alt="">
+
+		<div class="title-gold">Experience </br> Our Venues</div>
+
+		<img src="../img/scera-center-for-the-arts.png" alt="">
+		<img src="../img/scera-heritage-museum.png" alt="">
+		<img src="../img/scera-shell-gold.png" alt="">
+	</section>
+
+	<section class="rentals-container">
+		<div class="title-blue">Rentals</div>
+
+		<img src="../img/costumes.png" alt="">
+		<img src="../img/facilities.png" alt="">
+	</section>
 
 
 </div>

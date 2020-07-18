@@ -1,0 +1,11 @@
+.rentals-container {
+    @include bg-grey;
+    padding: 6rem 1.6rem;
+
+    .title-blue { 
+        font-family: $font-carlos;
+        font-size: 4.3rem;
+        text-align: center;
+        color: $color-blue;
+    }
+}

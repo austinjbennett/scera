@@ -1,16 +1,16 @@
 <div class="sponsors">
-	<h2>Thanks to our Sponsors</h2>
+	<div class="sponsorTitle">Thanks to our </br> Sponsors</h2>
 	<div class="sponsorImages">
 		<div class="imageWrapper">
-		
+			<img src="../img/orem-care.png" alt="">
 		</div>
 
 		<div class="imageWrapper">
-		
+			<img src="../img/seal-of-transparency.png" alt="">
 		</div>
 
 		<div class="imageWrapper">
-		
+			<img src="../img/utah-arts-council.png" alt="">
 		</div>
 	</div>
 </div>
