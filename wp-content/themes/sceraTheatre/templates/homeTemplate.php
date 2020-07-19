@@ -87,7 +87,6 @@ get_header();
                 $day = $lastWeek;
                 while ($day != $twoWeeks) {?>
 	                <div class="swiper-slide">
-		                <?php echo $day; ?>
 		                <p><i class="fas fa-film"></i>Frozen 2</p>
 		                <p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
 		                <p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
