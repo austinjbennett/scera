@@ -79,7 +79,7 @@
     </header> -->
     <header class="main-header">
         <div class="header-logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/scera_logo.png" alt="Scera"/>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/scera-logo-gold.png" alt="Scera"/>
         </div>
         <div class="shortstack" id="nav-toggle">
             <span></span>
