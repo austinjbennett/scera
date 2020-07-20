@@ -23,13 +23,11 @@
 		display: flex;
 		justify-content: center;
 
-
-		.imageWrapper {
-			@media (min-width: $md-min) {
-				margin-left: 3.8rem;
-				height: 18.7rem;
-				width: 18.7rem;
-			}
+		img { 
+			height: 6.4rem;
+		}
+		img:not(:first-child) {
+			margin-left: 3.2rem;
 		}
 	}
 }

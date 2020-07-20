@@ -101,6 +101,40 @@ get_header();
 		</div>
 	</section>
 
+	<section class="venues-container">
+		<img class="top-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt="">
+		<img class="top-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt="">
+		
+		<div class="title gold">Experience </br> Our Venues</div>
+
+		<img class="side-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt="">
+		<img class="side-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt="">
+
+		<img src="<?php echo get_template_directory_uri(); ?>/img/scera-center-for-the-arts-gold.png" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/orem-heritage-museum-gold.png" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/scera-shell-gold.png" alt="">
+
+		<img class="bottom-left-corner" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-bottom-corner.png" alt="">
+		<img class="bottom-right-corner" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-bottom-corner.png" alt="">
+	</section>
+
+	<section class="rentals-container">
+		<div class="title blue">Rentals</div>
+			<div class="rentals-section-container">
+				<div class="rentals-props">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/costumes.png" alt="">
+					<p>Props/Costumes</p>
+					<button class="scera-btn">Rent</button>
+				</div>
+				<div class="rentals-facilities">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/facilities.png" alt="">
+					<p>Facilities</p>
+					<button class="scera-btn">Rent</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
         <?php
     } else {
         // no posts found
@@ -109,28 +143,6 @@ get_header();
     // Restore original Post Data
     wp_reset_postdata();
 	?>
-	
-	<section class="venues-container">
-		<img class="top-left-border" src="../img/decoratives/venue-top-corner.png" alt="">
-		<img class="top-right-border" src="../img/decoratives/venue-top-corner.png" alt="">
-		<img class="side-left-border" src="../img/decoratives/venue-side.png" alt="">
-		<img class="side-right-border" src="../img/decoratives/venue-side.png" alt="">
-		<img class="bottom-left-corner" src="../img/decoratives/venue-bottom-corner.png" alt="">
-		<img class="bottom-right-corner" src="../img/decoratives/venue-bottom-corner.png" alt="">
-
-		<div class="title-gold">Experience </br> Our Venues</div>
-
-		<img src="../img/scera-center-for-the-arts.png" alt="">
-		<img src="../img/scera-heritage-museum.png" alt="">
-		<img src="../img/scera-shell-gold.png" alt="">
-	</section>
-
-	<section class="rentals-container">
-		<div class="title-blue">Rentals</div>
-
-		<img src="../img/costumes.png" alt="">
-		<img src="../img/facilities.png" alt="">
-	</section>
 
 
 </div>

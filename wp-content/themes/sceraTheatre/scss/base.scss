@@ -51,6 +51,7 @@ img {
 .title {
 	font-family: $font-carlos;
 	font-size: 6rem;
+	text-transform: uppercase;
 	&.gold {
 		color: $gradient-gold;
 	}

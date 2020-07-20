@@ -1,17 +1,10 @@
 <div class="sponsors">
-	<div class="sponsorTitle">Thanks to our </br> Sponsors</h2>
+	<div class="sponsorTitle">Thanks to our </br> Sponsors</h2> </div>
+
 	<div class="sponsorImages">
-		<div class="imageWrapper">
-			<img src="../img/orem-care.png" alt="">
-		</div>
-
-		<div class="imageWrapper">
-			<img src="../img/seal-of-transparency.png" alt="">
-		</div>
-
-		<div class="imageWrapper">
-			<img src="../img/utah-arts-council.png" alt="">
-		</div>
+		<img src="<?php echo get_template_directory_uri(); ?>/img/orem-care.png" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/seal-of-transparency.png" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/utah-arts-council.png" alt="">
 	</div>
 </div>
 

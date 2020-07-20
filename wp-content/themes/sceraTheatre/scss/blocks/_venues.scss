@@ -3,49 +3,44 @@
     padding: 8rem .8rem;
 
     .top-left-border {
-        width: 100%;
-        top: 2rem;
+        width: 10rem;
+        top: 10rem;
         left: .7rem;
     }
 
     .top-right-border {
-        width: 100%;
-        top: 2rem;
+        width: 10rem;
+        top: 10rem;
         right: .7rem;
     }
 
     .side-left-border {
-        width: 100%;
+        width: 1.5rem;
         top: 50%;
         bottom: 50%;
         left: .7rem;
     }
 
     .side-right-border {
-        width: 100%;
+        width: 1.5rem;
         top: 50%;
         bottom: 50%;
         right: .7rem;
     }
 
     .bottom-left-border {
-        width: 100%;
-        bottom: 2rem;
+        width: 10rem;
+        bottom: 10rem;
         left: .7rem;
     }
 
     .bottom-right-border {
-        width: 100%;
-        bottom: 2rem;
+        width: 10rem;
+        bottom: 10rem;
         right: .7rem;
     }
 
-    .title-gold { 
-        font-family: $font-carlos;
-        font-size: 4.3rem;
-        text-align: center;
-        @include gradient-gold;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+    .title { 
+        
     }
 }
