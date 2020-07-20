@@ -154,7 +154,7 @@ $nav-height: 5.6rem;
 			border: .1rem solid $color-gold4;
 			border-radius: .5rem;
 			&::placeholder {
-				color: $color-gray-dark;
+				color: $color-grey-dark;
 				font-size: 1.4rem;
 			}
 		}
@@ -163,7 +163,7 @@ $nav-height: 5.6rem;
 			top: 50%;
 			right: 2rem;
 			transform: translateY(-50%);
-			color: $color-gray-dark;
+			color: $color-grey-dark;
 		}
 	}
 }
