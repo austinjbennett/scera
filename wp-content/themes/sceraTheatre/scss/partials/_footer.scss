@@ -1,48 +1,31 @@
-@import 'variables';
+@import "variables";
 
 // Sponsors Section Style
 .sponsors {
 	margin-bottom: 4.8rem;
 
-	h2 {
+	.title {
 		margin: 0 0 1.6rem;
-		color: $color-blue;
 		text-align: center;
-		text-transform: uppercase;
-		font-size: 3rem;
-		@media (min-width: $md-min) {
-			font-size: 6rem;
-		}
-		@media (min-width: $lg-min) {
-			margin: 0 0 3.2rem;
-			font-size: 8rem;
-		}
 	}
 	.sponsorImages {
 		display: flex;
 		justify-content: center;
 
-
-		.imageWrapper {
-			margin-left: 1rem;
-			background-color: #BCE0FD; // Temporary for development. Remove once images are added
-			height: 7.8rem;
-			width: 7.8rem;
-			@media (min-width: $md-min) {
-				margin-left: 3.8rem;
-				height: 18.7rem;
-				width: 18.7rem;
-			}
+		img { 
+			height: 6.4rem;
+		}
+		img:not(:first-child) {
+			margin-left: 3.2rem;
 		}
 	}
 }
 
 // footerWrap Style
 .footerWrap {
+	@include bg-blue-teal;
 	width: 100%;
 	padding: 2rem;
-	background-color: $color-blue-teal;
-	color: $color-white;
 	@media (min-width: $md-min) {
 		padding: 3.8rem;
 	}
@@ -60,6 +43,9 @@
 			padding-bottom: 2.7rem;
 			display: inherit;
 			text-align: center;
+			@include gradient-gold;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
 			a {
 				padding: 0 2.5rem;
 				border-right: .1rem solid white;
@@ -77,9 +63,12 @@
 		text-align: center;
 	}
 	.socialIcons i {
-		padding: 0 1.5rem;
+		@include gradient-gold;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		padding: .25rem 1.5rem;
 		cursor: pointer;
-		font-size: 3.2rem;
+		font-size: 3rem;
 
 		&:hover {
 			opacity: 1;
@@ -97,9 +86,12 @@
 
 	// Copyright Style
 	footer {
+		@include gradient-gold;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 		text-align: center;
 		padding-top: 1.6rem;
-		font-size: 1.2rem;
+		font-size: 1.38rem;
 		@media (min-width: $md-min) {
 			font-size: 2.4rem;
 		}

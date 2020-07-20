@@ -100,6 +100,44 @@ get_header();
 		</div>
 	</section>
 
+	<section class="venues-container">
+		<!-- <img class="top-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt="">
+		<img class="top-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt=""> -->
+		
+		<div class="title gold">Experience Our Venues</div>
+
+		<!-- <img class="side-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt="">
+		<img class="side-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt=""> -->
+		
+		<div class="venues-images">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/scera-center-for-the-arts-gold.png" alt="">
+			<img class="image-transition" src="<?php echo get_template_directory_uri(); ?>/img/gold-hr.png" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/scera-shell-gold.png" alt="">
+			<img class="image-transition" src="<?php echo get_template_directory_uri(); ?>/img/gold-hr.png" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/orem-heritage-museum-gold.png" alt="">
+		</div>
+
+		<!-- <img class="bottom-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-bottom-corner.png" alt="">
+		<img class="bottom-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-bottom-corner.png" alt=""> -->
+	</section>
+
+	<section class="rentals-container">
+		<div class="title blue">Rentals</div>
+			<div class="rentals-section-container">
+				<div class="rentals-props">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/costumes.png" alt="">
+					<p>Props/Costumes</p>
+					<button class="scera-btn">Rent</button>
+				</div>
+				<div class="rentals-facilities">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/facilities.png" alt="">
+					<p>Facilities</p>
+					<button class="scera-btn">Rent</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
         <?php
     } else {
         // no posts found
@@ -107,7 +145,7 @@ get_header();
 
     // Restore original Post Data
     wp_reset_postdata();
-    ?>
+	?>
 
 
 </div>
