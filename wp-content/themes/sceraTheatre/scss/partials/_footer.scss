@@ -4,20 +4,9 @@
 .sponsors {
 	margin-bottom: 4.8rem;
 
-	.sponsorTitle {
+	.title {
 		margin: 0 0 1.6rem;
-		color: $color-blue;
 		text-align: center;
-		text-transform: uppercase;
-		font-family: $font-carlos;
-		font-size: 6rem;
-		@media (min-width: $md-min) {
-			font-size: 6rem;
-		}
-		@media (min-width: $lg-min) {
-			margin: 0 0 3.2rem;
-			font-size: 8rem;
-		}
 	}
 	.sponsorImages {
 		display: flex;

@@ -1,5 +1,5 @@
 <div class="sponsors">
-	<div class="sponsorTitle">Thanks to our </br> Sponsors</h2> </div>
+	<div class="title blue">Thanks to our Sponsors</div>
 
 	<div class="sponsorImages">
 		<img src="<?php echo get_template_directory_uri(); ?>/img/orem-care.png" alt="">

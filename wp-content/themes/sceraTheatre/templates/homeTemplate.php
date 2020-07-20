@@ -105,7 +105,7 @@ get_header();
 		<!-- <img class="top-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt="">
 		<img class="top-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt=""> -->
 		
-		<div class="title gold">Experience </br> Our Venues</div>
+		<div class="title gold">Experience Our Venues</div>
 
 		<!-- <img class="side-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt="">
 		<img class="side-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt=""> -->
