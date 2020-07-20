@@ -5,7 +5,7 @@
 		.swiper-slide {
 			width: 15.6rem;
 			height: 15.6rem;
-			background-color: $color-gray;
+			background-color: $color-grey;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -44,7 +44,7 @@
 			p {
 				font-size: 2rem;
 				font-weight: 300;
-				color: $color-gray-dark;
+				color: $color-grey-dark;
 			}
 			i {
 				@include gradient-gold;

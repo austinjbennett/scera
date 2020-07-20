@@ -18,9 +18,9 @@ $color-almost-white: #F1F9FF;
 $color-black: #000000;
 $color-red: #801217;
 $color-red-dark: #4D0B0E;
-$color-gray: #A8B0BF;
-$color-gray-dark: #5F6273;
-$color-gray-light: #00000029;
+$color-grey: #A8B0BF;
+$color-grey-dark: #5F6273;
+$color-grey-light: #00000029;
 $color-blue: #01133A;
 $color-blue-teal: #03324D;
 $color-brown: #785126;
@@ -65,12 +65,25 @@ $gradient-gold-darker-border: linear-gradient(45deg, #785126 0%,#c7aa77 25%,#f2d
 @mixin bg-blue {
 	background-color: $color-blue;
 	background-image: url('../img/textures/bg-texture-blue.png');
-	background-size: 12rem;
+	background-size: 12.5rem;
 }
+
+@mixin bg-grey {
+	background-color: $color-grey;
+	background-image: url('../img/textures/bg-texture-grey.png');
+	background-size: 12.5rem;
+}
+
+@mixin bg-blue-teal {
+	background-color: $color-blue-teal;
+	background-image: url('../img/textures/bg-texture-black.png');
+	background-size: 12.5rem;
+}
+
 @mixin bg-texture($bg-color) {
 	background-color: "$color-#{$bg-color}";
 	background-image: url('../img/textures/bg-texture-#{$color}.png');
-	background-size: 12rem;
+	background-size: 12.5rem;
 }
 
 $font-carlos: 'Carlos', 'Cinzel Decorative', cursive, serif;

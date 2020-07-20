@@ -1,0 +1,40 @@
+.rentals-container {
+    @include bg-grey;
+    padding: 6rem 1.6rem;
+    text-align: center;
+
+    .title{ 
+        margin-bottom: 3.2rem;
+    }
+
+    .rentals-section-container {
+        display: inline-flex;
+    
+        .rentals-props img {
+            width: 15.6rem;
+        }
+
+        .rentals-props p {
+            font-family: $font-oxygen;
+            font-size: 1.6rem;
+        }
+
+        .rentals-facilities img {
+            width: 15.6rem;
+        }
+
+        .rentals-facilities p {
+            font-family: $font-oxygen;
+            font-size: 1.6rem;
+        }
+
+        button {
+            height: 4.4rem;
+            width: 12.7rem;
+        }
+    }
+
+    .rentals-section-container div:not(:first-child) {
+        margin-left: 1.6rem;
+    }
+}
