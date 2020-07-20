@@ -1,21 +1,25 @@
 .venues-container {
     background-color: $color-blue-teal;
     padding: 8rem .8rem;
+    text-align: center;
 
     .top-left-border {
         width: 10rem;
+        height: 10rem;
         top: 10rem;
         left: .7rem;
     }
 
     .top-right-border {
         width: 10rem;
+        height: 10rem;
         top: 10rem;
         right: .7rem;
     }
 
     .side-left-border {
         width: 1.5rem;
+        height: 22.1rem;
         top: 50%;
         bottom: 50%;
         left: .7rem;
@@ -23,6 +27,7 @@
 
     .side-right-border {
         width: 1.5rem;
+        height: 22.1rem;
         top: 50%;
         bottom: 50%;
         right: .7rem;
@@ -30,17 +35,32 @@
 
     .bottom-left-border {
         width: 10rem;
+        height: 10rem;
         bottom: 10rem;
         left: .7rem;
     }
 
     .bottom-right-border {
         width: 10rem;
+        height: 10rem;
         bottom: 10rem;
         right: .7rem;
     }
 
     .title { 
-        
+        padding-bottom: 4.7rem;
+    }
+
+    .venues-images {
+        display: grid;
+        justify-items: center;
+
+        img {
+            padding-bottom: 3.3rem;
+        }
+
+        .image-transition {
+            text-align: center;
+        }
     }
 }

@@ -53,7 +53,9 @@ img {
 	font-size: 6rem;
 	text-transform: uppercase;
 	&.gold {
-		color: $gradient-gold;
+		@include gradient-gold;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 	&.blue {
 		color: $color-blue;
