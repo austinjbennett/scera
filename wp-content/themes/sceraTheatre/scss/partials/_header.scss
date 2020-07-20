@@ -7,13 +7,13 @@ $nav-height: 5.6rem;
 	height: $nav-height;
 	display: flex;
 	align-items: center;
-	padding: 0 2.4rem;
+	padding: 0 1.6rem;
 	.shortstack {
 		width: 2.6rem;
 		height: 3rem;
 		cursor: pointer;
 		position: absolute;
-		right: 1.2rem;
+		right: 1.6rem;
 		z-index: 10;
 		overflow: hidden;
 
@@ -79,7 +79,8 @@ $nav-height: 5.6rem;
 		}
 	}
 	.header-logo {
-		width: 10rem;
+		width: 11rem;
+		margin-top: .3rem;
 	}
 	//.right-nav {
 	//	position: absolute;
@@ -118,6 +119,7 @@ $nav-height: 5.6rem;
 		height: auto;
 		opacity: 1;
 		transition: opacity .2s;
+		padding-top: 1rem;
 		padding-bottom: 4.3rem;
 	}
 	.admin-bar & {
@@ -132,25 +134,27 @@ $nav-height: 5.6rem;
 	a {
 		color: $color-white;
 		padding: 1.5rem 0;
-		border-bottom: .1rem solid $color-white-border;
+		border-bottom: .1rem solid $color-gold4;
 		text-decoration: none;
+		font-size: 2rem;
+		font-weight: 300;
 	}
 }
 
 .searchWrap {
 	padding: 0 1rem 2rem;
-	border-bottom: .1rem solid $color-white-border;
+	border-bottom: .1rem solid $color-gold4;
 	.searchArea {
 		color: $color-blue;
 		position: relative;
 		input {
 			font-size: 1.4rem;
 			width: 100%;
-			padding: 1.7rem 5rem 1.5rem 1.6rem;
-			border: .1rem solid $color-blue;
+			padding: 1rem 5rem 1rem 2rem;
+			border: .1rem solid $color-gold4;
 			border-radius: .5rem;
 			&::placeholder {
-				color: $color-blue;
+				color: $color-gray-dark;
 				font-size: 1.4rem;
 			}
 		}
@@ -159,6 +163,7 @@ $nav-height: 5.6rem;
 			top: 50%;
 			right: 2rem;
 			transform: translateY(-50%);
+			color: $color-gray-dark;
 		}
 	}
 }

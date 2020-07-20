@@ -65,16 +65,16 @@
 				&:after {
 					content: "";
 					display: inline-block;
-					width: 1.3rem;
-					height: 1.3rem;
+					width: 1.5rem;
+					height: 1.5rem;
 					border: .15rem solid;
 					border-image: $gradient-gold-darker-border;
 					position: absolute;
-					top: -19%;
-					left: -19%;
+					top: -.3rem;
+					left: -.3rem;
 				}
 				&-active {
-					@include gradient-gold;
+					@include gradient-gold-bullet;
 				}
 			}
 		}
