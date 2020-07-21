@@ -1,53 +1,66 @@
 .venues-container {
     background-color: $color-blue-teal;
-    padding: 8rem .8rem;
+    padding: 6rem 2.5rem;
     text-align: center;
+    position: relative;
 
     .top-left-border {
+        position: absolute;
         width: 10rem;
         height: 10rem;
-        top: 10rem;
+        top: 2rem;
         left: .7rem;
     }
 
     .top-right-border {
+        position: absolute;
         width: 10rem;
         height: 10rem;
-        top: 10rem;
+        top: 2rem;
         right: .7rem;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
     }
 
     .side-left-border {
+        position: absolute;
         width: 1.5rem;
         height: 22.1rem;
-        top: 50%;
-        bottom: 50%;
+        top: 29.5rem;
         left: .7rem;
     }
 
     .side-right-border {
+        position: absolute;
         width: 1.5rem;
         height: 22.1rem;
-        top: 50%;
-        bottom: 50%;
+        top: 29.5rem;
         right: .7rem;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
     }
 
     .bottom-left-border {
+        position: absolute;
         width: 10rem;
         height: 10rem;
-        bottom: 10rem;
+        bottom: 2rem;
         left: .7rem;
     }
 
     .bottom-right-border {
+        position: absolute;
         width: 10rem;
         height: 10rem;
-        bottom: 10rem;
+        bottom: 2rem;
         right: .7rem;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
     }
 
-    .title { 
+    h2 { 
+        margin-block-start: 0;
+        margin-block-end: 0;
         padding-bottom: 4.7rem;
     }
 

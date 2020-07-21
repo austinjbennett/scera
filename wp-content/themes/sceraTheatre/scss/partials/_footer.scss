@@ -2,10 +2,12 @@
 
 // Sponsors Section Style
 .sponsors {
-	margin-bottom: 4.8rem;
+	padding: 6rem 2rem 4.8rem 2rem;
 
-	.title {
-		margin: 0 0 1.6rem;
+	h2 {
+		padding-bottom: 3.4rem;
+		margin-block-start: 0;
+        margin-block-end: 0;
 		text-align: center;
 	}
 	.sponsorImages {
@@ -23,7 +25,7 @@
 
 // footerWrap Style
 .footerWrap {
-	@include bg-blue-teal;
+	@include bg-blue;
 	width: 100%;
 	padding: 2rem;
 	@media (min-width: $md-min) {
