@@ -5,6 +5,9 @@
     position: relative;
 
     .top-left-border {
+        background-image: url('../img/decoratives/venue-top-corner.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
         position: absolute;
         width: 10rem;
         height: 10rem;
@@ -13,6 +16,9 @@
     }
 
     .top-right-border {
+        background-image: url('../img/decoratives/venue-top-corner.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
         position: absolute;
         width: 10rem;
         height: 10rem;
@@ -23,6 +29,9 @@
     }
 
     .side-left-border {
+        background-image: url('../img/decoratives/venue-side.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
         position: absolute;
         width: 1.5rem;
         height: 22.1rem;
@@ -31,6 +40,9 @@
     }
 
     .side-right-border {
+        background-image: url('../img/decoratives/venue-side.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
         position: absolute;
         width: 1.5rem;
         height: 22.1rem;
@@ -41,6 +53,9 @@
     }
 
     .bottom-left-border {
+        background-image: url('../img/decoratives/venue-bottom-corner.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
         position: absolute;
         width: 10rem;
         height: 10rem;
@@ -49,6 +64,9 @@
     }
 
     .bottom-right-border {
+        background-image: url('../img/decoratives/venue-bottom-corner.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
         position: absolute;
         width: 10rem;
         height: 10rem;
