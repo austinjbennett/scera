@@ -101,13 +101,14 @@ get_header();
 	</section>
 
 	<section class="venues-container">
-		<img class="top-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt="">
-		<img class="top-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-top-corner.png" alt="">
+		
+		<div class="top-left-border"></div>
+		<div class="top-right-border"></div>
 		
 		<h2 class="title gold">Experience Our Venues</h2>
 
-		<img class="side-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt="">
-		<img class="side-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-side.png" alt="">
+		<div class="side-left-border"></div>
+		<div class="side-right-border"></div>
 		
 		<div class="venues-images">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/scera-center-for-the-arts-gold.png" alt="">
@@ -117,8 +118,8 @@ get_header();
 			<img src="<?php echo get_template_directory_uri(); ?>/img/orem-heritage-museum-gold.png" alt="">
 		</div>
 
-		<img class="bottom-left-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-bottom-corner.png" alt="">
-		<img class="bottom-right-border" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/venue-bottom-corner.png" alt="">
+		<div class="bottom-left-border"></div>
+		<div class="bottom-right-border"></div>
 	</section>
 
 	<section class="rentals-container">
