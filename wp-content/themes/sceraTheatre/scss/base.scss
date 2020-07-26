@@ -24,12 +24,30 @@ body {
 	}
 }
 
+h3 {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+h2 {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
 p {
+	margin-block-start: 0;
+	margin-block-end: 0;
 	line-height: 1.4;
 }
 
 img {
 	max-width: 100%;
+}
+
+button {
+	width: 14.9rem;
+	height: 4.4rem;
+	margin-top: 4.8rem;
 }
 
 .scera-btn {
@@ -45,7 +63,6 @@ img {
 	text-decoration: none;
 	color: $color-white;
 	text-transform: uppercase;
-
 }
 
 .title {
@@ -63,4 +80,77 @@ img {
 	&.teal {
 		color: $color-blue-teal;
 	}
+}
+
+.text-section {
+	font-size: 2rem;
+	color: $color-grey-dark;
+}
+
+.title-section {
+	padding: 3.8rem 2rem 4.8rem;
+	text-align: center;
+
+	h2 {
+		text-align: center;
+		padding-bottom: 2.8rem;
+	}
+
+	h3 {
+		text-align: left;
+		font-size: 2rem;
+		color: $color-grey-dark;
+	}
+
+	span {
+		text-align: left;
+		font-size: 2rem;
+		color: $color-grey-dark;
+		font-weight: bold;
+	}
+
+	p {
+		text-align: left;
+	}
+
+	p:not(:last-child) {
+        padding-bottom: 2.7rem;
+	}
+	
+	button {
+		justify-content: center;
+	}
+}
+
+.title-section-center {
+	padding: 3.8rem 2rem 4.8rem;
+	text-align: center;
+
+	h2 {
+		padding-bottom: 2.8rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+		color: $color-grey-dark;
+	}
+
+	span {
+		font-size: 2rem;
+		color: $color-grey-dark;
+		font-weight: bold;
+	}
+
+	p:not(:last-child) {
+        padding-bottom: 2.7rem;
+	}
+	
+}
+
+.none {
+	padding-bottom: 0 !important;
+}
+
+.uppercase {
+	text-transform: uppercase;
 }

@@ -9,6 +9,10 @@
         padding-bottom: 4.7rem;
     }
 
+    p {
+        color: $color-blue;
+    }
+
     .rentals-section-container {
         display: inline-flex;
     
@@ -33,6 +37,7 @@
         button {
             height: 4.4rem;
             width: 12.7rem;
+            margin-top: 2rem !important;
         }
     }
 

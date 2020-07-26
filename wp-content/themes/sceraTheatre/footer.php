@@ -1,13 +1,3 @@
-<div class="sponsors">
-	<h2 class="title blue">Thanks to our Sponsors</h2>
-
-	<div class="sponsorImages">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/orem-care.png" alt="">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/seal-of-transparency.png" alt="">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/utah-arts-council.png" alt="">
-	</div>
-</div>
-
 <div class="footerWrap">
 
 	<div class="footerNav">
