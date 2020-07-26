@@ -17,19 +17,19 @@ get_header();
 
         <p class="text-section">A sample of the many sponsors we’ve had over the course of the last several years are:</p>
 
-        <p class="text-section none">Clark Capital Partners</p>
-        <p class="text-section none">McNeil Printing</p>
-        <p class="text-section none">Wingers</p>
-        <p class="text-section none">Doterra</p>
-        <p class="text-section none">Printcon</p>
-        <p class="text-section none">Zions Bank</p>
-        <p class="text-section none">Hall of Fame</p>
-        <p class="text-section none">Dominion Energy</p>
-        <p class="text-section none">Z104</p>
-        <p class="text-section none">Clarke Grand Theater</p>
-        <p class="text-section none">National Endowment for the Arts</p>
-        <p class="text-section none">CARE Homepage</p>
-        <p class="text-section none">Utah Valley Chamber</p>
+        <p class="text-section padding-none">Clark Capital Partners</p>
+        <p class="text-section padding-none">McNeil Printing</p>
+        <p class="text-section padding-none">Wingers</p>
+        <p class="text-section padding-none">Doterra</p>
+        <p class="text-section padding-none">Printcon</p>
+        <p class="text-section padding-none">Zions Bank</p>
+        <p class="text-section padding-none">Hall of Fame</p>
+        <p class="text-section padding-none">Dominion Energy</p>
+        <p class="text-section padding-none">Z104</p>
+        <p class="text-section padding-none">Clarke Grand Theater</p>
+        <p class="text-section padding-none">National Endowment for the Arts</p>
+        <p class="text-section padding-none">CARE Homepage</p>
+        <p class="text-section padding-none">Utah Valley Chamber</p>
         <p class="text-section">And Many More...</p>
 
         <p class="text-section">For more information, contact SCERA President & CEO Adam J. Robertson at (801) 310-4000 (call/text) or send an email to adam@scera.org.</p>

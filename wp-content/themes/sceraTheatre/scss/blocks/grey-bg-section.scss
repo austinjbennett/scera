@@ -1,0 +1,44 @@
+.donate-section {
+    @include bg-grey;
+    padding: 6rem 1.6rem;
+    text-align: center;
+
+    p {
+        color: $color-blue;
+    }
+}
+
+.join-section {
+    @include bg-grey;
+    padding: 6rem 1.6rem;
+    text-align: center;
+
+    h2 {
+        padding-bottom: 3.1rem;
+    }
+
+    button {
+        height: 4.4rem;
+        width: 14.9rem;
+    }
+}
+
+.volunteer-section {
+    @include bg-grey;
+    padding: 6rem 1.6rem;
+    text-align: center;
+
+    h2 {
+        padding-bottom: 3.1rem;
+    }
+
+    p {
+        color: $color-blue;
+    }
+
+    button {
+        height: 4.4rem;
+        width: 14.9rem;
+    }
+}
+
