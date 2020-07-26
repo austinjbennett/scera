@@ -83,13 +83,12 @@ button {
 }
 
 .text-section {
-	font-size: 20px;
+	font-size: 2rem;
 	color: $color-grey-dark;
-	font-family: $font-oxygen;
 }
 
 .title-section {
-	padding: 3.8rem 2rem 4.8rem 2rem;
+	padding: 3.8rem 2rem 4.8rem;
 	text-align: center;
 
 	h2 {
@@ -99,15 +98,13 @@ button {
 
 	h3 {
 		text-align: left;
-		font-size: 20px;
-		font-family: $font-oxygen;
+		font-size: 2rem;
 		color: $color-grey-dark;
 	}
 
 	span {
 		text-align: left;
-		font-size: 20px;
-		font-family: $font-oxygen;
+		font-size: 2rem;
 		color: $color-grey-dark;
 		font-weight: bold;
 	}
@@ -126,7 +123,7 @@ button {
 }
 
 .title-section-center {
-	padding: 3.8rem 2rem 4.8rem 2rem;
+	padding: 3.8rem 2rem 4.8rem;
 	text-align: center;
 
 	h2 {
@@ -134,14 +131,12 @@ button {
 	}
 
 	h3 {
-		font-size: 20px;
-		font-family: $font-oxygen;
+		font-size: 2rem;
 		color: $color-grey-dark;
 	}
 
 	span {
-		font-size: 20px;
-		font-family: $font-oxygen;
+		font-size: 2rem;
 		color: $color-grey-dark;
 		font-weight: bold;
 	}
