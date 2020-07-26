@@ -139,6 +139,16 @@ get_header();
 		</div>
 	</section>
 
+	<section class="sponsors-section">
+		<h2 class="title blue">Thanks to our Sponsors</h2>
+
+		<div class="sponsor-images">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/orem-care.png" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/seal-of-transparency.png" alt="">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/utah-arts-council.png" alt="">
+		</div>
+	</section>
+
         <?php
     } else {
         // no posts found

@@ -7,8 +7,9 @@ get_header();
 
 <div class="scera-outdoor-theater-container">
 
-    <section class="title-section">
+    <section class="title-section-center">
         <h2 class="title blue">Scera Shell Outdoor Theater</h2>
+
         <p class="text-section">600 South 400 East, Orem, UT, 84058</p>
         <p class="text-section">Middle of Scera Park</p>
         <p class="text-section">Admissions Vary on Event</p>
@@ -16,6 +17,7 @@ get_header();
 
     <section class="details-section">
         <h2 class="title gold">Details</h2>
+        
         <p class="text-section">With the beautiful backdrop of the Wasatch Mountains, enjoy a summer season under the stars filled with grand-scale live theatre, nationally touring concerts, and big screen outdoor movies! The SCERA Shell Outdoor Theatre features festival seating on a grassy slope, with a designated general admission section for chairs and another just for blankets. There are also prime reserved areas in the center of the hill that come with a free lawn chair.</p>
 
         <p class="text-section">Thanks to the City of Orem, we have handrails to help you get up and down the hill. And a special thanks to you for voting SCERA as Best Live Music Venue, Best Live Theatre, Best Date Place and Best Family Entertainment Venue!</p>

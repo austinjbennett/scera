@@ -7,8 +7,9 @@ get_header();
 
 <div class="orem-heritage-container">
 
-    <section class="title-section">
+    <section class="title-section-center">
         <h2 class="title blue">Orem Heritage Museum</h2>
+
         <p class="text-section">3PM-7PM</p>
         <p class="text-section">777 South State Street, Orem, UT, 84058</p>
         <p class="text-section">Free Admissions</p>
@@ -16,6 +17,7 @@ get_header();
 
     <section class="details-section">
         <h2 class="title gold">Details</h2>
+
         <p class="text-section">Visit the Orem Heritage Museum for school and church groups, scout troops, senior center and assisted living facilities, clubs and organizations, and families and individuals. The museum is a 2,000-piece collection that tells the history of Orem through artifacts including:</p>
 
         <p class="text-section">Coal stove, butter churn, old-fashioned washing machine, popcorn poppers, victrola, pioneer clothing and more. World War I to Korean War displays featuring uniforms, equipment and weapons. Indian petroglyphs and arrowheads. Toy display. A blacksmith shop and agricultural displays. Early Orem schools, churches and railroad exhibits. Evolution of Orem from agriculture, industry and education. World War II Orem prisoner of war camp display. Historic memorabilia from Geneva Steel and SCERA. Diorama of 1940’s Orem with a working model railroad. Historical videos of early Orem settlers.</p>

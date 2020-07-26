@@ -9,6 +9,9 @@
 
     p {
         color: $color-white;
+    }
+
+    p:not(:last-child) {
         padding-bottom: 2.7rem;
     }
 }

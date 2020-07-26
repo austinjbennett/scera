@@ -1,28 +1,5 @@
 @import "variables";
 
-// Sponsors Section Style
-.sponsors {
-	padding: 6rem 2rem 4.8rem 2rem;
-
-	h2 {
-		padding-bottom: 3.4rem;
-		margin-block-start: 0;
-        margin-block-end: 0;
-		text-align: center;
-	}
-	.sponsorImages {
-		display: flex;
-		justify-content: center;
-
-		img { 
-			height: 6.4rem;
-		}
-		img:not(:first-child) {
-			margin-left: 3.2rem;
-		}
-	}
-}
-
 // footerWrap Style
 .footerWrap {
 	@include bg-blue;

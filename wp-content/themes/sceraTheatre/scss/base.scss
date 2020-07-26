@@ -44,6 +44,12 @@ img {
 	max-width: 100%;
 }
 
+button {
+	width: 14.9rem;
+	height: 4.4rem;
+	margin-top: 4.8rem;
+}
+
 .scera-btn {
 	display: inline-block;
 	font-family: $font-carlos;
@@ -57,7 +63,6 @@ img {
 	text-decoration: none;
 	color: $color-white;
 	text-transform: uppercase;
-
 }
 
 .title {
@@ -85,12 +90,72 @@ img {
 
 .title-section {
 	padding: 3.8rem 2rem 4.8rem 2rem;
+	text-align: center;
 
 	h2 {
 		text-align: center;
+		padding-bottom: 2.8rem;
+	}
+
+	h3 {
+		text-align: left;
+		font-size: 20px;
+		font-family: $font-oxygen;
+		color: $color-grey-dark;
+	}
+
+	span {
+		text-align: left;
+		font-size: 20px;
+		font-family: $font-oxygen;
+		color: $color-grey-dark;
+		font-weight: bold;
 	}
 
 	p {
-		text-align: center;
+		text-align: left;
 	}
+
+	p:not(:last-child) {
+        padding-bottom: 2.7rem;
+	}
+	
+	button {
+		justify-content: center;
+	}
+}
+
+.title-section-center {
+	padding: 3.8rem 2rem 4.8rem 2rem;
+	text-align: center;
+
+	h2 {
+		padding-bottom: 2.8rem;
+	}
+
+	h3 {
+		font-size: 20px;
+		font-family: $font-oxygen;
+		color: $color-grey-dark;
+	}
+
+	span {
+		font-size: 20px;
+		font-family: $font-oxygen;
+		color: $color-grey-dark;
+		font-weight: bold;
+	}
+
+	p:not(:last-child) {
+        padding-bottom: 2.7rem;
+	}
+	
+}
+
+.none {
+	padding-bottom: 0 !important;
+}
+
+.uppercase {
+	text-transform: uppercase;
 }
