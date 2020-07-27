@@ -7,7 +7,7 @@ get_header();
 
 <div class="venue-page-container">
 
-<section class="venues-container">
+<section class="venues-section">
 		
 		<div class="top-left-border"></div>
 		<div class="top-right-border"></div>
