@@ -41,13 +41,14 @@
 	.event-carousel {
 		.swiper-slide {
 			padding: 1.5rem;
+			background-color: $color-white;
 			p {
 				font-size: 2rem;
 				font-weight: 300;
 				color: $color-grey-dark;
 			}
 			i {
-				@include gradient-gold;
+				@include gradient-gold-bullet;
 				background-clip: text;
 				-webkit-text-fill-color: transparent;
 				font-size: 2.4rem;

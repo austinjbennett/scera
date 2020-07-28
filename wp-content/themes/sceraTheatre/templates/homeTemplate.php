@@ -50,18 +50,6 @@ get_header();
     $lastWeek = date('Y/m/d', strtotime("-7 days"));
     $twoWeeks = date('Y/m/d', strtotime('+2 weeks'));
 
-    // WP_Query arguments
-	$args = array (
-		'post_type' => 'any',
-		'start_date' => $lastWeek,
-		'end_date' => $twoWeeks,
-	);
-
-	// The Query
-	$query_eventsCalendar = new WP_Query( $args );
-
-	// The Loop
-	if ( $query_eventsCalendar->have_posts() ) {
 	?>
 	<section class="event-carousel-container">
 		<div class="event-carousel-dates">
@@ -85,17 +73,76 @@ get_header();
 			<div class="swiper-wrapper">
                 <?php
                 $day = $lastWeek;
-                while ($day != $twoWeeks) {?>
-	                <div class="swiper-slide">
-		                <p><i class="fas fa-film"></i>Frozen 2</p>
-		                <p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>
-		                <p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>
-		                <p><i class="fas fa-star"></i>A Night of Broadway</p>
-		                <p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>
-	                </div>
+                while ($day != $twoWeeks) {
+	                // WP_Query arguments
+	                $args = array (
+		                'post_type' => array(
+	                        'movies',
+			                'stage',
+			                'concerts',
+			                'education',
+			                'events',
+		                ),
+                        'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'start_date',
+                                'value' => $day,
+                                'compare' => '<=',
+                                'type' => 'DATE'
+                            ),
+                            array(
+                                'relation' => 'OR',
+								array(
+                                    'key' => 'end_date',
+                                    'value' => $day,
+                                    'compare' => '>=',
+                                    'type' => 'DATE'
+                                ),
+		                        array(
+	                                'key' => 'end_date',
+	                                'value' => '',
+	                                'compare' => '='
+	                            ),
+                            ),
+                        ),
+	                );
+
+	                // The Query
+	                $query_eventsCalendar = new WP_Query( $args );
+
+	                // The Loop
+	                if ( $query_eventsCalendar->have_posts() ) {?>
+						<div class="swiper-slide">
+
+						<?php while ($query_eventsCalendar->have_posts()) {
+                            $query_eventsCalendar->the_post();
+                                $post_type = get_post_type( $post->ID )?>
+		                        <p><i class="fas fa-<?php
+			                        if($post_type == 'movies') {echo 'film';}
+			                        elseif($post_type == 'events') {echo 'music';}
+			                        ?>"></i><?php the_title(); ?></p>
+<!--		                        <p><i class="fas fa-theater-masks"></i>The Scarlet Pimpernel</p>-->
+<!--		                        <p><i class="fas fa-music"></i>Saltaire's Barbershop Chorus</p>-->
+<!--		                        <p><i class="fas fa-star"></i>A Night of Broadway</p>-->
+<!--		                        <p><i class="fas fa-graduation-cap"></i>Adult Ballet</p>-->
+                        <?php
+                        } ?>
+
+						</div>
+
+	                <?php
+	                } else {
+	                // no posts found
+	                }?>
+
                 <?php
                     $day = date("Y/m/d", strtotime("+1 day", strtotime($day)));
-                } // End While ?>
+                } // End While between last week and 2 weeks from now
+
+                // Restore original Post Data
+                wp_reset_postdata();
+                ?>
 			</div>
 		</div>
 	</section>
@@ -152,17 +199,6 @@ get_header();
 			<img src="<?php echo get_template_directory_uri(); ?>/img/utah-arts-council.png" alt="">
 		</div>
 	</section>
-
-        <?php
-    } else {
-        // no posts found
-    }
-
-    // Restore original Post Data
-    wp_reset_postdata();
-	?>
-
-
 </div>
 
 <?php get_footer(); ?>

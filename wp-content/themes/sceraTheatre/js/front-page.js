@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		centeredSlidesBounds: false,
 	});
 	const eventCarousel = new Swiper('.event-carousel', {
+		effect: 'slide',
+		allowTouchMove: false,
 		loop: false,
 		slidesPerView: 1,
 		spaceBetween: 20,
@@ -33,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		eventCarousel.slideTo(event.activeIndex);
 	});
 	eventCarouselDates.on('click', (event) => {
-		eventCarouselDates.slideTo(event.clickedIndex);
-	});
-	eventCarousel.on('slideChange', (event) => {
-		eventCarouselDates.slideTo(event.activeIndex);
+		if (event.clickedIndex > -1) {
+			eventCarouselDates.slideTo(event.clickedIndex);
+		}
 	});
 });
