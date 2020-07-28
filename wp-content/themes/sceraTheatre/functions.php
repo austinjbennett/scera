@@ -26,28 +26,83 @@ add_action('init', 'create_post_type');
 
 function create_post_type()
 {
-    // EVENTS
+    // Events
     register_post_type(
         'events',
         array(
             'labels' => array(
-                'name' => __('Events'),
+                'name' => __('Misc. Events'),
                 'singular_name' => __('Event'),
-                'menu_name' => __('Events & Education')
+                'menu_name' => __('Misc. Events')
             ),
             'public' => true,
             'has_archive' => true,
         )
     );
-    register_taxonomy(
-        'event-category',
-        'events',
+//    register_taxonomy(
+//        'event-category',
+//        'events',
+//        array(
+//            'hierarchical' => true,
+//            'label' => __('Category'),
+//            'show_admin_column' => true,
+//            'query_var' => true,
+//            'rewrite' => array( 'slug' => 'event-category' )
+//        )
+//    );
+
+    // Stage
+    register_post_type(
+        'stage',
         array(
-            'hierarchical' => true,
-            'label' => __('Category'),
-            'show_admin_column' => true,
-            'query_var' => true,
-            'rewrite' => array( 'slug' => 'event-category' )
+            'labels' => array(
+                'name' => __('Stage Event'),
+                'singular_name' => __('Stage Event'),
+                'menu_name' => __('Stage')
+            ),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
+
+    // Concerts
+    register_post_type(
+        'concerts',
+        array(
+            'labels' => array(
+                'name' => __('Concerts'),
+                'singular_name' => __('Concert'),
+                'menu_name' => __('Concerts')
+            ),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
+
+    // Education
+    register_post_type(
+        'education',
+        array(
+            'labels' => array(
+                'name' => __('Education'),
+                'singular_name' => __('Education'),
+                'menu_name' => __('Education')
+            ),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
+
+    // Movies
+    register_post_type(
+        'movies',
+        array(
+            'labels' => array(
+                'name' => __('Movies'),
+                'singular_name' => __('Movie')
+            ),
+            'public' => true,
+            'has_archive' => true,
         )
     );
 
@@ -62,19 +117,6 @@ function create_post_type()
             'public' => true,
             'has_archive' => true,
             'supports' => array( 'title', 'editor', 'thumbnail' )
-        )
-    );
-
-    // Movies
-    register_post_type(
-        'movies',
-        array(
-            'labels' => array(
-                'name' => __('Movies'),
-                'singular_name' => __('Movie')
-            ),
-            'public' => true,
-            'has_archive' => true,
         )
     );
 
