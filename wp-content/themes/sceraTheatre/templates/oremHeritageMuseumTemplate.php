@@ -15,7 +15,7 @@ get_header();
         <p class="text-section">Free Admissions</p>
     </section>
 
-    <section class="details-section">
+    <section class="details-section bg-blue">
         <h2 class="title gold">Details</h2>
 
         <p class="text-section">Visit the Orem Heritage Museum for school and church groups, scout troops, senior center and assisted living facilities, clubs and organizations, and families and individuals. The museum is a 2,000-piece collection that tells the history of Orem through artifacts including:</p>

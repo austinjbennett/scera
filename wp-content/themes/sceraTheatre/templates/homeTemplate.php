@@ -126,7 +126,7 @@ get_header();
 		<div class="bottom-right-border"></div>
 	</section>
 
-	<section class="rentals-section">
+	<section class="rentals-section bg-grey">
 		<h2 class="title blue">Rentals</h2>
 			<div class="rentals-container">
 				<div class="rentals-props">

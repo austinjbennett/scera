@@ -147,10 +147,38 @@ button {
 	
 }
 
+.center {
+	text-align: center;
+}
+
 .padding-none {
 	padding-bottom: 0 !important;
 }
 
 .uppercase {
 	text-transform: uppercase;
+}
+
+.bg-blue {
+	background-color: $color-blue;
+	background-image: url('../img/textures/bg-texture-blue.png');
+	background-size: 12.5rem;
+}
+
+.bg-grey {
+	background-color: $color-grey;
+	background-image: url('../img/textures/bg-texture-grey-opacity40.png');
+	background-size: 12.5rem;
+}
+
+.bg-red {
+	background-color: $color-red-dark;
+	background-image: url('../img/textures/bg-texture-red.png');
+	background-size: 12.5rem;
+}
+
+.bg-blue-teal {
+	background-color: $color-blue-teal;
+	background-image: url('../img/textures/bg-texture-black.png');
+	background-size: 12.5rem;
 }
