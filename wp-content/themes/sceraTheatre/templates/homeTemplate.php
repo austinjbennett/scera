@@ -199,17 +199,6 @@ get_header();
 			<img src="<?php echo get_template_directory_uri(); ?>/img/utah-arts-council.png" alt="">
 		</div>
 	</section>
-
-        <?php
-    } else {
-        // no posts found
-    }
-
-    // Restore original Post Data
-    wp_reset_postdata();
-	?>
-
-
 </div>
 
 <?php get_footer(); ?>
