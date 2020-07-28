@@ -100,6 +100,10 @@ get_header();
 		</div>
 	</section>
 
+	<section class="bg-red">
+		<h2 class="title gold">Upcoming Events</h2>
+	</section>
+
 	<section class="venues-container">
 		
 		<div class="top-left-border"></div>
