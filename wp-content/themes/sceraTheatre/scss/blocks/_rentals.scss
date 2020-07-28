@@ -1,6 +1,6 @@
-.rentals-container {
+.rentals-section {
     @include bg-grey;
-    padding: 6rem 2rem;
+    padding: 6rem 1.6rem;
     text-align: center;
 
     h2 { 
@@ -13,7 +13,7 @@
         color: $color-blue;
     }
 
-    .rentals-section-container {
+    .rentals-container {
         display: inline-flex;
     
         .rentals-props img {
@@ -41,7 +41,7 @@
         }
     }
 
-    .rentals-section-container div:not(:first-child) {
+    .rentals-container div:not(:first-child) {
         margin-left: 1.6rem;
     }
 }

@@ -35,7 +35,7 @@ get_header();
         <button class="scera-btn">Submit Request</button>
     </section>
 
-    <section class="visit-container">
+    <section class="visit-section">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3043.6645813401965!2d-111.69053648496939!3d40.28320057167424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874d9a9366e1b871%3A0xfd565d60fd5352b4!2sOrem%20Heritage%20Museum!5e0!3m2!1sen!2sus!4v1595554211426!5m2!1sen!2sus" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
         <h2 class="title blue">Visit the Venue</h2>

@@ -104,7 +104,7 @@ get_header();
 		<h2 class="title gold">Upcoming Events</h2>
 	</section>
 
-	<section class="venues-container">
+	<section class="venues-section">
 		
 		<div class="top-left-border"></div>
 		<div class="top-right-border"></div>
@@ -126,9 +126,9 @@ get_header();
 		<div class="bottom-right-border"></div>
 	</section>
 
-	<section class="rentals-container">
+	<section class="rentals-section">
 		<h2 class="title blue">Rentals</h2>
-			<div class="rentals-section-container">
+			<div class="rentals-container">
 				<div class="rentals-props">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/costumes.png" alt="">
 					<p>Props/Costumes</p>
