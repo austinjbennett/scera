@@ -15,7 +15,7 @@ get_header();
         <p class="text-section">Admissions Vary on Event</p>
     </section>
 
-    <section class="details-section">
+    <section class="details-section bg-blue">
         <h2 class="title gold">Details</h2>
         
         <p class="text-section">With the beautiful backdrop of the Wasatch Mountains, enjoy a summer season under the stars filled with grand-scale live theatre, nationally touring concerts, and big screen outdoor movies! The SCERA Shell Outdoor Theatre features festival seating on a grassy slope, with a designated general admission section for chairs and another just for blankets. There are also prime reserved areas in the center of the hill that come with a free lawn chair.</p>

@@ -30,7 +30,7 @@ get_header();
         <button class="scera-btn">Apply</button>
     </section>
 
-    <section class="donate-section">
+    <section class="donate-section bg-grey">
         <h2 class="title blue">Donate</h2>
 
         <p class="text-section">Your change can change lives! Please consider making a donation to SCERA, a non-profit charitable 501(c)(3) arts organization.</p>

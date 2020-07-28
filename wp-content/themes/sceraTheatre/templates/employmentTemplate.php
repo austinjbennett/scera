@@ -68,7 +68,7 @@ get_header();
 
     </section>
 
-    <section class="volunteer-section">
+    <section class="volunteer-section bg-grey">
         <h2 class="title blue">Volunteer & Internship</h2>
 
         <p class="text-section">Click here to Apply to be an Intern or Volunteer at the SCERA Theater in Orem Utah. Get experience in the arts. High school and college students welcome to apply!</p>
