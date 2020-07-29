@@ -92,7 +92,6 @@ button {
 	text-align: center;
 
 	h2 {
-		text-align: center;
 		padding-bottom: 2.8rem;
 	}
 
@@ -115,10 +114,6 @@ button {
 
 	p:not(:last-child) {
         padding-bottom: 2.7rem;
-	}
-	
-	button {
-		justify-content: center;
 	}
 }
 
@@ -153,6 +148,7 @@ button {
 
 .padding-none {
 	padding-bottom: 0 !important;
+	padding-top: 0 !important;
 }
 
 .uppercase {
