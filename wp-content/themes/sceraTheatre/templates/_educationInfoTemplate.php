@@ -7,18 +7,18 @@ get_header();
 
 <div class="education-info-container">
 
-    <section class="title-section-center">
+    <section class="title-section-center borderless-section">
         <h2 class="title blue">Quarentine Art Club</h2>
 
         <p class="text-section padding-none">April 16-May 29</p>
         <p class="text-section padding-none">Streaming Link</p>
         <p class="text-section padding-none">$5-$7 Per Class</p>
-        <i></i><p class="text-section padding-none">Art</p>
+        <p class="text-section padding-none"><i class="fas fa-graduation-cap"></i>Art</p>
 
         <button class="scera-btn">Share Class</button>
     </section>
 
-    <section class="details-section bg-blue">
+    <section class="details-section bg-blue border-section">
         <h2 class="title gold">overview</h2>
 
         <p class="text-section">There’s never been a better time to join our Quarantine Art Club and create art in solidarity with each other! Each 1-hour session will walk you through a specific art prompt using household materials. These casual and fun art activities are recommended for ages 15+, but if kids under 15 want to join with a parent or guardian, that is also fine. A secure link to our Zoom livestream will be sent to your provided email to join us on the day of the event.</p>
@@ -60,7 +60,7 @@ get_header();
         </section>
     </section>
 
-    <section class="teacher-section">
+    <section class="teacher-section borderless-section">
         <h2 class="title blue center">Teacher</h2>
 
         <img src="<?php echo get_template_directory_uri(); ?>/img/jane-christensen.png" alt="">
