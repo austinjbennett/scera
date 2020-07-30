@@ -174,18 +174,30 @@ button {
 	background-color: $color-blue;
 	background-image: url('../img/textures/bg-texture-blue.png');
 	background-size: 12.5rem;
+
+	p {
+        color: $color-white;
+    }
 }
 
 .bg-grey {
 	background-color: $color-grey;
 	background-image: url('../img/textures/bg-texture-grey-opacity40.png');
 	background-size: 12.5rem;
+
+	p {
+        color: $color-blue;
+    }
 }
 
 .bg-red {
 	background-color: $color-red-dark;
 	background-image: url('../img/textures/bg-texture-red.png');
 	background-size: 12.5rem;
+
+	p {
+        color: $color-white;
+    }
 }
 
 .bg-blue-teal {

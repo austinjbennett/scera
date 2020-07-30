@@ -21,12 +21,14 @@ get_header();
     </section>
 
     <section class="join-section bg-grey borderless-section">
-        <h2 class="title blue">Join Mailing List</h2>
+        <h2 class="title blue center">Join Mailing List</h2>
 
-        <button class="scera-btn">Subscribe</button>
+        <section class="center">
+            <button class="scera-btn">Subscribe</button>
+        </section>
     </section>
 
-    <section class="parking-section borderless-section">
+    <section class="parking-section borderless-section center">
         <h2 class="title blue">Parking</h2>
 
         <p class="text-section">Free parking is available in several lots near the Shell Theater SCERA Park Pool (699 S. State St.) Orem High School (175 S. 400 E.) LDS Church (631 S. 400 E.) SCERA Park Elementary (450 S. 400 E.) SCERA Center (745 S. State) and along 400 East.</p>
