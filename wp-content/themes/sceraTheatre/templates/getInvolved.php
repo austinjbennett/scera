@@ -7,7 +7,7 @@ get_header();
 
 <div class="get-involved-container">
 
-    <section class="title-section">
+    <section class="title-section borderless-section">
         <h2 class="title blue">Get Involved</h2>
 
         <p class="text-section">There are many ways to get involved at the SCERA. You can become a volunteer, apply to intern, donate, and maybe even become a sponsor.</p>
@@ -30,15 +30,17 @@ get_header();
         <button class="scera-btn">Apply</button>
     </section>
 
-    <section class="donate-section bg-grey">
+    <section class="donate-section bg-grey borderless-section center">
         <h2 class="title blue">Donate</h2>
 
         <p class="text-section">Your change can change lives! Please consider making a donation to SCERA, a non-profit charitable 501(c)(3) arts organization.</p>
 
-        <button class="scera-btn">Donate</button>
+        <section class="center">
+            <button class="scera-btn">Donate</button>
+        </section>
     </section>
 
-    <section class="title-section-center">
+    <section class="title-section-center borderless-section">
         <h2 class="title blue">Become A Sponsor</h2>
 
         <p class="text-section padding-none">Click here to see the different sponsorship levels and find how your business can be involved.</p>

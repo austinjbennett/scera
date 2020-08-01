@@ -1,0 +1,71 @@
+.education-page-container {
+    padding: 0 1.6rem 0;
+
+    .education-section {
+        padding: 0 0 6rem;
+        position: relative;
+        margin-bottom: 6.4rem;
+
+        p {
+            color: $color-blue;
+        }
+
+        .image-section {
+            position: relative;
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 2.8rem;
+            }
+
+            .age-limit {
+                border: .1rem ridge $color-gold4;
+                border-image: $gradient-gold-border;
+                position: absolute;
+                background-color: $color-blue;
+                width: 3.4rem;
+                height: 3.4rem;
+                padding: .4rem;
+                right: 1.6rem;
+                bottom: 1rem;
+
+                h3 {
+                    text-align: center;
+                    @include gradient-gold;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 1rem;
+                }
+
+                p {
+                    text-align: center;
+                    @include gradient-gold;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .class-outlook {
+            padding-left: 3rem;
+            padding-bottom: 1.2rem;
+
+            .outlook-text-section {
+                h3 {
+                    color: $color-blue;
+                    font-size: 2.8rem;
+                    padding-bottom: .5rem;
+                }
+
+                .outlook-text {
+                    color: $color-blue;
+                    font-size: 1.6rem;
+                    padding-bottom: .3rem;
+                }
+            }
+        }
+    }
+}
