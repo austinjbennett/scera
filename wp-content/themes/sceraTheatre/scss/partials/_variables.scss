@@ -51,6 +51,12 @@ $gradient-gold-border: linear-gradient(45deg,  #e3c274 0%,#ead996 25%,#edeab0 50
 $gradient-gold-darker: linear-gradient(to bottom,  rgba(120,81,38,1) 0%,rgba(199,170,119,1) 35%,rgba(242,220,166,1) 50%,rgba(199,170,119,1) 65%,rgba(159,117,51,1) 100%);
 $gradient-gold-darker-border: linear-gradient(to bottom,  rgba(120,81,38,1) 0%,rgba(199,170,119,1) 35%,rgba(242,220,166,1) 50%,rgba(199,170,119,1) 65%,rgba(159,117,51,1) 100%) 1;
 
+@mixin gradient-gold-text { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9f7533+0,c2aa6c+25,edeab0+50,ead996+75,e3c274+100 */
+	background: rgb(159,117,51); /* Old browsers */
+	background: linear-gradient(to bottom,  rgba(159,117,51,1) 0%,rgba(194,170,108,1) 25%,rgba(237,234,176,1) 50%,rgba(234,217,150,1) 75%,rgba(227,194,116,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9f7533', endColorstr='#e3c274',GradientType=0 ); /* IE6-9 */
+}
+
 @mixin gradient-gold-bullet { /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#9f7533+0,c2aa6c+25,edeab0+50,ead996+75,e3c274+100 */
 	background: rgb(159,117,51); /* Old browsers */
 	background: linear-gradient(75deg,  rgba(159,117,51,1) 0%,rgba(194,170,108,1) 50%,rgba(237,234,176,1) 70%,rgba(234,217,150,1) 85%,rgba(227,194,116,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */

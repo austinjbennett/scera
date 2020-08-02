@@ -14,17 +14,10 @@
 			cursor: pointer;
 		}
 
-		.swiper-slide-active {
-			background-color: $color-red;
-		}
-
 		.weekday,
 		.date,
 		.month {
-			//color: $color-gold2;
-			@include gradient-gold;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
+			color: $color-almost-white;
 			margin: 0;
 		}
 
@@ -36,6 +29,18 @@
 		.date {
 			font-size: 6rem;
 			line-height: 1;
+		}
+
+		.swiper-slide-active {
+			background-color: $color-red;
+			.weekday,
+			.date,
+			.month {
+				//color: $color-gold2;
+				@include gradient-gold-text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
 		}
 	}
 	.event-carousel {
