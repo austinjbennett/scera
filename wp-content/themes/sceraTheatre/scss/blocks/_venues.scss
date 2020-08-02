@@ -1,6 +1,6 @@
 .venues-section {
 	background-color: $color-blue-teal;
-	padding: 6rem;
+	padding: 8rem 4rem;
 	text-align: center;
 	position: relative;
 
@@ -12,10 +12,10 @@
 		width: 10rem;
 		height: 10rem;
 		top: 2rem;
-		left: .7rem;
+		left: .8rem;
 		&.section-corner-right {
 			left: auto;
-			right: .7rem;
+			right: .8rem;
 			transform: scaleX(-1);
 		}
 		&.section-corner-bottom {
@@ -32,11 +32,11 @@
 		width: 1.8rem;
 		height: 22.1rem;
 		top: 50%;
-		left: .7rem;
+		left: .8rem;
 		transform: translateY(-50%);
 		&.section-side-right {
 			left: auto;
-			right: .7rem;
+			right: .8rem;
 			transform: scaleX(-1) translateY(-50%);
 		}
 		@media (min-width: $md-min) {

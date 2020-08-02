@@ -7,7 +7,7 @@ get_header();
 
 <div class="sponsors-page-container">
     
-    <section class="title-section">
+    <section class="title-section borderless-section">
 
         <h2 class="title blue">Sponsors</h2>
         

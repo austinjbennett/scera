@@ -173,7 +173,7 @@ get_header();
 		<div class="section-corner-decoration section-corner-bottom section-corner-right"></div>
 	</section>
 
-	<section class="rentals-section bg-grey">
+	<section class="rentals-section bg-grey borderless-section">
 		<h2 class="title blue">Rentals</h2>
 			<div class="rentals-container">
 				<div class="rentals-props">
