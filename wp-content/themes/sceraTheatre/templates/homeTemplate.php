@@ -153,13 +153,13 @@ get_header();
 
 	<section class="venues-section">
 		
-		<div class="top-left-border"></div>
-		<div class="top-right-border"></div>
+		<div class="section-corner-decoration"></div>
+		<div class="section-corner-decoration section-corner-right"></div>
 		
 		<h2 class="title gold">Experience Our Venues</h2>
 
-		<div class="side-left-border"></div>
-		<div class="side-right-border"></div>
+		<div class="section-side-decoration"></div>
+		<div class="section-side-decoration section-side-right"></div>
 		
 		<div class="venues-images">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/scera-center-for-the-arts-gold.png" alt="">
@@ -169,8 +169,8 @@ get_header();
 			<img src="<?php echo get_template_directory_uri(); ?>/img/orem-heritage-museum-gold.png" alt="">
 		</div>
 
-		<div class="bottom-left-border"></div>
-		<div class="bottom-right-border"></div>
+		<div class="section-corner-decoration section-corner-bottom"></div>
+		<div class="section-corner-decoration section-corner-bottom section-corner-right"></div>
 	</section>
 
 	<section class="rentals-section bg-grey">
@@ -179,12 +179,12 @@ get_header();
 				<div class="rentals-props">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/costumes.png" alt="">
 					<p>Props/Costumes</p>
-					<button class="scera-btn">Rent</button>
+					<a href="#" class="scera-btn">Rent</a>
 				</div>
 				<div class="rentals-facilities">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/facilities.png" alt="">
 					<p>Facilities</p>
-					<button class="scera-btn">Rent</button>
+					<a href="#" class="scera-btn">Rent</a>
 				</div>
 			</div>
 		</div>

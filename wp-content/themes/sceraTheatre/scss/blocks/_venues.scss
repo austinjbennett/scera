@@ -1,97 +1,67 @@
 .venues-section {
-    background-color: $color-blue-teal;
-    padding: 6rem;
-    text-align: center;
-    position: relative;
+	background-color: $color-blue-teal;
+	padding: 6rem;
+	text-align: center;
+	position: relative;
 
-    .top-left-border {
-        background-image: url('../img/decoratives/venue-top-corner.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        width: 10rem;
-        height: 10rem;
-        top: 2rem;
-        left: .7rem;
-    }
+	.section-corner-decoration {
+		background-image: url('../img/decoratives/venue-top-corner.png');
+		background-repeat: no-repeat;
+		background-size: 100%;
+		position: absolute;
+		width: 10rem;
+		height: 10rem;
+		top: 2rem;
+		left: .7rem;
+		&.section-corner-right {
+			left: auto;
+			right: .7rem;
+			transform: scaleX(-1);
+		}
+		&.section-corner-bottom {
+			top: auto;
+			bottom: 2rem;
+			background-image: url('../img/decoratives/venue-bottom-corner.png');
+		}
+	}
+	.section-side-decoration {
+		background-image: url('../img/decoratives/venue-side.png');
+		background-repeat: no-repeat;
+		background-size: 100%;
+		position: absolute;
+		width: 1.8rem;
+		height: 22.1rem;
+		top: 50%;
+		left: .7rem;
+		transform: translateY(-50%);
+		&.section-side-right {
+			left: auto;
+			right: .7rem;
+			transform: scaleX(-1) translateY(-50%);
+		}
+		@media (min-width: $md-min) {
+			display: none;
+		}
+	}
 
-    .top-right-border {
-        background-image: url('../img/decoratives/venue-top-corner.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        width: 10rem;
-        height: 10rem;
-        top: 2rem;
-        right: .7rem;
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-    }
+	.venues-images {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
 
-    .side-left-border {
-        background-image: url('../img/decoratives/venue-side.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        width: 1.5rem;
-        height: 22.1rem;
-        top: 29.5rem;
-        left: .7rem;
-    }
+		@media (min-width: $md-min) {
+			flex-direction: row;
+		}
+		img {
+			padding-bottom: 3.3rem;
+		}
 
-    .side-right-border {
-        background-image: url('../img/decoratives/venue-side.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        width: 1.5rem;
-        height: 22.1rem;
-        top: 29.5rem;
-        right: .7rem;
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-    }
-
-    .bottom-left-border {
-        background-image: url('../img/decoratives/venue-bottom-corner.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        width: 10rem;
-        height: 10rem;
-        bottom: 2rem;
-        left: .7rem;
-    }
-
-    .bottom-right-border {
-        background-image: url('../img/decoratives/venue-bottom-corner.png');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        position: absolute;
-        width: 10rem;
-        height: 10rem;
-        bottom: 2rem;
-        right: .7rem;
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-    }
-
-    h2 { 
-        margin-block-start: 0;
-        margin-block-end: 0;
-        padding-bottom: 4.7rem;
-    }
-
-    .venues-images {
-        display: grid;
-        justify-items: center;
-
-        img {
-            padding-bottom: 3.3rem;
-        }
-
-        .image-transition {
-            text-align: center;
-        }
-    }
+		.image-transition {
+			text-align: center;
+			@media (min-width: $md-min) {
+				display: none;
+			}
+		}
+	}
 }
