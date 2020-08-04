@@ -23,10 +23,10 @@ get_header();
         <p class="text-section">Thanks to the City of Orem, we have handrails to help you get up and down the hill. And a special thanks to you for voting SCERA as Best Live Music Venue, Best Live Theatre, Best Date Place and Best Family Entertainment Venue!</p>
     </section>
 
-    <section class="policies-section borderless-section">
+    <section class="title-section-center borderless-section">
         <h2 class="title blue">Policies & Faqs</h2>
 
-        <p class="text-section padding-none">To see the policies and frequently asked questions about SCERA Shell Outdoor Theater, Click the link below.</p>
+        <p class="text-section">To see the policies and frequently asked questions about SCERA Shell Outdoor Theater, Click the link below.</p>
 
         <button class="scera-btn">More Info</button>
     </section>
