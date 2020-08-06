@@ -51,7 +51,7 @@ get_header();
             <div class="outlook-text-section">
                 <p class="outlook-text">April 16-May 29</p>
                 <h3>Adult Ballet</h3>
-                <p class="text-section">ALearn Beginning Ballet</p>
+                <p class="text-section">Learn Beginning Ballet</p>
 
                 <button class="scera-btn">Details</button>
             </div>

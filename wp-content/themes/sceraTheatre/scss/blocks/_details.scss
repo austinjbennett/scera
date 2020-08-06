@@ -1,5 +1,4 @@
 .details-section {
-
     h2 {
         text-align: center;
     }
@@ -7,5 +6,14 @@
     h3 {
         color: $color-white;
         font-weight: bold;
+    }
+
+    .trailer-section {
+        padding: 1.2rem 0 0;
+        h3 {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: inherit;
+        }
     }
 }
