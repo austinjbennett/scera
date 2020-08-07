@@ -13,7 +13,7 @@ get_header();
         <p class="text-section">$3-$4 General Admissions</p>
         <p class="text-section"><i class=""></i>103 Minutes</p>
 
-        <button class="scera-btn">Buy Tickets</button>
+        <a href="#" class="scera-btn">Buy Tickets</a>
     </section>
 
     <section class="details-section bg-blue border-section">
@@ -25,16 +25,16 @@ get_header();
         </section>
     </section>
 
-    <section class="movie-times-section borderless-section">
+    <section class="time-selection-section borderless-section">
         <h2 class="title blue">Movie Times</h2>
         <div class="time-box">
             <p class="text-section">June 10, @ Dusk</p>
-            <button class="scera-btn">Buy</button>
+            <a href="#" class="scera-btn">Buy</a>
         </div>
 
         <div class="time-box">
             <p class="text-section">June 10, @ Dusk</p>
-            <button class="scera-btn">Buy</button>
+            <a href="#" class="scera-btn">Buy</a>
         </div>
     </section>
 
