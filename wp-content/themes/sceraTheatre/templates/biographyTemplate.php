@@ -7,6 +7,8 @@ get_header();
 
 <div class="biography-container">
 
+<img src="<?php echo get_template_directory_uri(); ?>/img/jane-christensen.png" alt="">
+
     <section class="title-section borderless-section">
         <h2 class="title blue">Jane Christensen</h2>
 

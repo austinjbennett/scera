@@ -15,7 +15,7 @@ get_header();
         <p class="text-section">$10-$15</p>
         <p class="text-section"><i class="fas fa-theater-masks"></i>Play/Musical</p>
 
-        <button class="scera-btn">Share Event</button>
+        <a href="#" class="scera-btn">Share Event</a>
     </section>
 
     <section class="details-section bg-blue border-section">

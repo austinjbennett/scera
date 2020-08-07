@@ -28,7 +28,7 @@ get_header();
 
         <p class="text-section">To see the policies and frequently asked questions about SCERA Shell Outdoor Theater, Click the link below.</p>
 
-        <button class="scera-btn">More Info</button>
+        <a href="#" class="scera-btn">More Info</a>
     </section>
 
     <section class="visit-section borderless-section">

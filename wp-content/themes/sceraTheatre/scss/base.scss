@@ -104,6 +104,11 @@ img {
 		color: $color-grey-dark;
 	}
 
+	p {
+		margin-block-start: .5rem;
+		margin-block-end: .5rem;
+	}
+
 	span {
 		text-align: left;
 		font-size: 2rem;
@@ -126,6 +131,12 @@ img {
 	a {
 		margin-top: 2rem;
 	}
+
+	.show-map {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: $color-grey;
+	}
 }
 
 .title-section-center {
@@ -134,6 +145,11 @@ img {
 	h3 {
 		font-size: 2rem;
 		color: $color-grey-dark;
+	}
+
+	p {
+		margin-block-start: .5rem;
+		margin-block-end: .5rem;
 	}
 
 	span {
@@ -152,6 +168,12 @@ img {
 
 	a {
 		margin-top: 2rem;
+	}
+
+	.show-map {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: $color-grey;
 	}
 }
 

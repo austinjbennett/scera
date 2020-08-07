@@ -55,9 +55,9 @@ get_header();
         <h3>Materials: </h3> 
         <P class="text-section">Paper, Pencil, Masking Tape, Basic Watercolors, Brush, Water</P>
 
-        <section class="center">
-        <a href="#" class="scera-btn">Register</a>
-        </section>
+        <div class="center">
+            <a href="#" class="scera-btn">Register</a>
+</div>
     </section>
 
     <section class="teacher-section borderless-section">
