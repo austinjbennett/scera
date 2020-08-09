@@ -1,9 +1,8 @@
 .upcoming-events {
-    // @include bg-red;
     text-align: center;
     position: relative;
-    border-top: 4px solid #edeab0;
-    border-bottom: 4px solid #edeab0;
+    border-top: .4rem solid $color-gold3;
+    border-bottom: .4rem solid $color-gold3;
 
     .top-transition, .bottom-transition {
         width: 20rem;
@@ -39,12 +38,11 @@
 
     .events-container {
         display: inline-flex;
-        margin-left: 13px;
-        margin-right: 13px;
+        margin-left: 1.3rem;
+        margin-right: 1.3rem;
     
         .events-link {
             padding: 1rem;
-            // padding-right: 4px;
             font-family: $font-oxygen;
             font-size: 1.6rem;
             text-align: left;
@@ -54,8 +52,7 @@
             
         }
         .golden-ticket{
-            max-width: 29px;
-            // margin-left: 5px;
+            max-width: 2.9rem;
         }
         .test{
         display: flex;
@@ -68,6 +65,6 @@
         font-size: 3.5rem;
     }
     a{
-        margin: 30px 0px 30px 0px;
+        margin: 3rem 0rem;
     }
 }

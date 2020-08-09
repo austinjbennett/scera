@@ -101,9 +101,7 @@ get_header();
 	</section>
 
 	<section class="upcoming-events bg-red">
-		<!-- <div class="bg-red"> -->
 		<div class="top-transition">
-		
 		</div>
 		<h2 class="title gold">Upcoming Events</h2>
 			<div class="events-container">
