@@ -82,7 +82,7 @@ get_header();
         <p class="text-section">Click here to Apply to be an Intern or Volunteer at the SCERA Theater in Orem Utah. Get experience in the arts. High school and college students welcome to apply!</p>
 
         <section class="center">
-            <button class="scera-btn">Get Involved</button>
+        <a href="#" class="scera-btn">Get Involved</a>
         </section>
     </section>
 </div>

@@ -25,9 +25,9 @@ get_header();
         <p class="text-section">High school and college students can apply for internships. We can give you hands-on experience in the areas of your choice and will be customized to fit your experience, interests and school requirements.</p>
 
         <h3 class="uppercase">HOW TO APPLY?</h3>
-        <p class="text-section padding-none">Click the button down below to become a volunteer or start an internship.</p>
+        <p class="text-section">Click the button down below to become a volunteer or start an internship.</p>
 
-        <button class="scera-btn">Apply</button>
+        <a href="#" class="scera-btn">Apply</a>
     </section>
 
     <section class="donate-section bg-grey borderless-section center">
@@ -43,9 +43,9 @@ get_header();
     <section class="title-section-center borderless-section">
         <h2 class="title blue">Become A Sponsor</h2>
 
-        <p class="text-section padding-none">Click here to see the different sponsorship levels and find how your business can be involved.</p>
+        <p class="text-section">Click here to see the different sponsorship levels and find how your business can be involved.</p>
 
-        <button class="scera-btn">Become A Sponsor</button>
+        <a href="#" class="scera-btn">Become A Sponsor</a>
     </section>
 </div>
 

@@ -15,7 +15,7 @@ get_header();
         <p class="text-section padding-none">$5-$7 Per Class</p>
         <p class="text-section padding-none"><i class="fas fa-graduation-cap"></i>Art</p>
 
-        <button class="scera-btn">Share Class</button>
+        <a href="#" class="scera-btn">Share Class</a>
     </section>
 
     <section class="details-section bg-blue border-section">
@@ -55,9 +55,9 @@ get_header();
         <h3>Materials: </h3> 
         <P class="text-section">Paper, Pencil, Masking Tape, Basic Watercolors, Brush, Water</P>
 
-        <section class="center">
-            <button class="scera-btn">Register</button>
-        </section>
+        <div class="center">
+            <a href="#" class="scera-btn">Register</a>
+</div>
     </section>
 
     <section class="teacher-section borderless-section">
@@ -72,7 +72,7 @@ get_header();
         <p class="text-section">Jane Christensen was born in New York City and received her BFA from Brigham Young University in 2017. Jane works across media including painting and photography.</p>
 
         <section class="center">
-            <button class="scera-btn">Read Bio</button>
+        <a href="#" class="scera-btn">Read Bio</a>
         </section>
     </section>
 

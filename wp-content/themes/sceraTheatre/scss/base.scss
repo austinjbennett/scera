@@ -36,12 +36,6 @@ img {
 	max-width: 100%;
 }
 
-button {
-	width: 14.9rem;
-	height: 4.4rem;
-	margin-top: 4.8rem;
-}
-
 .scera-btn {
 	display: inline-block;
 	position: relative;
@@ -49,7 +43,7 @@ button {
 	max-width: 20rem;
 	font-family: $font-carlos;
 	font-size: 1.8rem;
-	padding: 1.5rem 2rem 1.3rem;
+	padding: 1.3rem 3rem 1.1rem;
 	letter-spacing: .14rem;
 	text-align: center;
 	line-height: 1;
@@ -104,14 +98,15 @@ button {
 .title-section {
 	text-align: center;
 
-	h2 {
-		padding-bottom: 2.8rem;
-	}
-
 	h3 {
 		text-align: left;
 		font-size: 2rem;
 		color: $color-grey-dark;
+	}
+
+	p {
+		margin-block-start: .5rem;
+		margin-block-end: .5rem;
 	}
 
 	span {
@@ -125,28 +120,36 @@ button {
 		text-align: left;
 	}
 
-	p:not(:last-child) {
-        padding-bottom: 2.7rem;
-	}
-
 	i {
 		font-size: 2.4rem;
 		@include gradient-gold;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
+		margin-right: 1rem;
+	}
+
+	a {
+		margin-top: 2rem;
+	}
+
+	.show-map {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: $color-grey;
 	}
 }
 
 .title-section-center {
 	text-align: center;
 
-	h2 {
-		padding-bottom: 2.8rem;
-	}
-
 	h3 {
 		font-size: 2rem;
 		color: $color-grey-dark;
+	}
+
+	p {
+		margin-block-start: .5rem;
+		margin-block-end: .5rem;
 	}
 
 	span {
@@ -155,17 +158,23 @@ button {
 		font-weight: bold;
 	}
 
-	p:not(:last-child) {
-        padding-bottom: 2.7rem;
-	}
-
 	i {
 		font-size: 2.4rem;
 		@include gradient-gold;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
+		margin-right: 1rem;
 	}
 
+	a {
+		margin-top: 2rem;
+	}
+
+	.show-map {
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: $color-grey;
+	}
 }
 
 .center {
@@ -221,16 +230,8 @@ button {
 
 .border-section {
     padding: 8rem 1.6rem 6.4rem;
-
-    h2 {
-        padding-bottom: 3.2rem;
-    }
 }
 
 .borderless-section {
     padding: 6.4rem 1.6rem 6.4rem;
-
-    h2 {
-        padding-bottom: 3.2rem;
-    }
 }

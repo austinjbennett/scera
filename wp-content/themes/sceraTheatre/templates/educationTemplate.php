@@ -10,9 +10,9 @@ get_header();
     <section class="title-section borderless-section">
         <h2 class="title blue">Education</h2>
     
-        <p class="text-section padding-none">SCERA has fun ways that kids, teens, adults, senior citizens and homeschoolers can get creative, develop a new talent and get excited about art! SCERA offers affordable tuition, wonderful instructors and a quality arts education in drama, dance, art, music and more. Programs offered year-round, from week long summer camps to fall and winter semester classes during the school year.</p>
+        <p class="text-section">SCERA has fun ways that kids, teens, adults, senior citizens and homeschoolers can get creative, develop a new talent and get excited about art! SCERA offers affordable tuition, wonderful instructors and a quality arts education in drama, dance, art, music and more. Programs offered year-round, from week long summer camps to fall and winter semester classes during the school year.</p>
 
-        <button class="scera-btn">Filter & Sort</button>
+        <a href="#" class="scera-btn">Filter & Sort</a>
     </section>
 
     <section class="education-section bg-grey">
@@ -31,7 +31,7 @@ get_header();
                 <h3>Quarentine Art Club</h3>
                 <p class="text-section">Art Using Household Materials</p>
 
-                <button class="scera-btn">Details</button>
+                <a href="#" class="scera-btn">Details</a>
             </div>
 
         </section>
@@ -51,9 +51,9 @@ get_header();
             <div class="outlook-text-section">
                 <p class="outlook-text">April 16-May 29</p>
                 <h3>Adult Ballet</h3>
-                <p class="text-section">ALearn Beginning Ballet</p>
+                <p class="text-section">Learn Beginning Ballet</p>
 
-                <button class="scera-btn">Details</button>
+                <a href="#" class="scera-btn">Details</a>
             </div>
 
         </section>
@@ -75,14 +75,14 @@ get_header();
                 <h3>Adult Hip Hop</h3>
                 <p class="text-section">Learn Beginning Hip Hop</p>
 
-                <button class="scera-btn">Details</button>
+                <a href="#" class="scera-btn">Details</a>
             </div>
 
         </section>
     </section>
 
     <section class ="center">
-        <button class="scera-btn padding-none">More Classes</button>
+        <a href="#" class="scera-btn">More Classes</a>
     </section>
 
     <section class="sponsors-section">
