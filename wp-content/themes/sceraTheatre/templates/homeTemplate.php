@@ -147,8 +147,75 @@ get_header();
 		</div>
 	</section>
 
-	<section class="bg-red">
+	<section class="upcoming-events bg-red">
+		<div class="top-transition">
+		</div>
 		<h2 class="title gold">Upcoming Events</h2>
+			<div class="events-container">
+				<div class="events-link">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-quarantine-art.png" alt="">
+					<div class="test">
+						<div>
+						<p class="bold">Quarantine Art</p>
+						<p>April 16 - May 9</p>
+						</div>
+						<div>
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="events-link">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-adult-ballet.png" alt="">
+					<div class="test">
+					<div>
+						<p class="bold">Adult Ballet</p>
+						<p>May 5 - May 23</p>
+					</div>
+					<div>
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="events-container">
+				<div class="events-link">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-night-of-broadway.png" alt="">
+					<div class="test">
+					<div>
+						<p class="bold">Night of Broaday</p>
+						<p>May 1 - May 7</p>
+					</div>
+					<div>
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
+					</div>
+				</div>
+				<div class="events-link">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-the-untold-story.png" alt="">
+					<div class="test">
+					<div>
+					<p class="bold">Adult Ballet</p>
+					<p>April 25 - April 30</p>
+				</div>
+				<div>
+					<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+				</div>
+				</div>
+				</div>
+			</div>
+			<div class="event-comment">
+				<p>See 2020 Summer Season</p>
+				<a class="scera-btn">SEE SUMMER SEASON</a>
+			</div>
+		<div class="bottom-transition">
+		
+		</div>
+	</section>
+
+	<section class="gift-cards">
+		<h2 class="title blue">Gift Cards</h2>
+		<p>SCERA gift cards can be used for movie, play and concert tickets, season tickets, concessions, tuition,</p>
+		<a class="scera-btn">BUY NOW</a>
 	</section>
 
 	<section class="venues-section">
