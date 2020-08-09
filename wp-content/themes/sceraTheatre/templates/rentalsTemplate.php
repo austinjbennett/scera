@@ -6,7 +6,7 @@ get_header();
 ?>
 
 <div class="rentals-page-container">
-    <section class="title-section-center borderless-section">
+    <section class="title-section borderless-section">
         <h2 class="title blue">Scera Rentals</h2>
         <h3>Facilities Rentals</h3>
 
