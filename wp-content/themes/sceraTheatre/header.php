@@ -77,7 +77,7 @@
                 </div>
             </div>
     </header> -->
-    <header class="main-header">
+    <header class="main-header bg-blue">
         <div class="header-logo">
             <img src="<?php echo get_template_directory_uri(); ?>/img/scera-logo-gold.png" alt="Scera"/>
         </div>
@@ -86,7 +86,7 @@
 	        <span></span>
             <span></span>
         </div>
-        <div id="nav-wrapper">
+        <div id="nav-wrapper" class="bg-blue">
             <div class='searchWrap'>
                 <form id="searchForm" class="form-inline searchArea" method="get" action="/">
                     <input class="sfield" type="search" name="s" placeholder="Search SCERA.org">

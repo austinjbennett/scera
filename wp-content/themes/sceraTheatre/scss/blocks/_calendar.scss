@@ -14,17 +14,10 @@
 			cursor: pointer;
 		}
 
-		.swiper-slide-active {
-			background-color: $color-red;
-		}
-
 		.weekday,
 		.date,
 		.month {
-			//color: $color-gold2;
-			@include gradient-gold;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
+			color: $color-almost-white;
 			margin: 0;
 		}
 
@@ -37,17 +30,30 @@
 			font-size: 6rem;
 			line-height: 1;
 		}
+
+		.swiper-slide-active {
+			background-color: $color-red;
+			.weekday,
+			.date,
+			.month {
+				//color: $color-gold2;
+				@include gradient-gold-text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		}
 	}
 	.event-carousel {
 		.swiper-slide {
 			padding: 1.5rem;
+			background-color: $color-white;
 			p {
 				font-size: 2rem;
 				font-weight: 300;
 				color: $color-grey-dark;
 			}
 			i {
-				@include gradient-gold;
+				@include gradient-gold-bullet;
 				background-clip: text;
 				-webkit-text-fill-color: transparent;
 				font-size: 2.4rem;

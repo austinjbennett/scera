@@ -1,4 +1,4 @@
-<div class="footerWrap">
+<div class="footerWrap bg-blue">
 
 	<div class="footerNav">
 		<a>Movies</a>

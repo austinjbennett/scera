@@ -1,14 +1,12 @@
 .details-section {
-    @include bg-blue;
-    padding: 6rem 1.6rem;
 
     h2 {
         text-align: center;
-        padding-bottom: 2.7rem;
     }
 
-    p {
+    h3 {
         color: $color-white;
+        font-weight: bold;
     }
 
     p:not(:last-child) {
