@@ -40,6 +40,8 @@ get_header();
     </section>
 
     <section class="bg-red border-section">
+        <div class="top-transition"></div>
+
         <h2 class="title gold">Presidents Advisory Council</h2>
 
         <section class="council-section">
@@ -63,6 +65,8 @@ get_header();
             <p class="text-section">Terri Lindorf</p>
             <p class="text-section">Yevon Romney</p>
         </section>
+
+        <div class="bottom-transition"></div>
     </section>
 
     <section class="directors-section borderless-section">

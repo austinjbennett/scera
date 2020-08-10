@@ -19,6 +19,8 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
+        <div class="top-transition"></div>
+
         <h2 class="title gold">overview</h2>
 
         <p class="text-section">There’s never been a better time to join our Quarantine Art Club and create art in solidarity with each other! Each 1-hour session will walk you through a specific art prompt using household materials. These casual and fun art activities are recommended for ages 15+, but if kids under 15 want to join with a parent or guardian, that is also fine. A secure link to our Zoom livestream will be sent to your provided email to join us on the day of the event.</p>
@@ -57,7 +59,9 @@ get_header();
 
         <div class="center">
             <a href="#" class="scera-btn">Register</a>
-</div>
+        </div>
+
+        <div class="bottom-transition"></div>
     </section>
 
     <section class="teacher-section borderless-section">

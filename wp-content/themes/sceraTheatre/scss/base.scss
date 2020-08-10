@@ -237,7 +237,27 @@ img {
 }
 
 .border-section {
-    padding: 8rem 1.6rem 6.4rem;
+	padding: 8rem 1.6rem 6.4rem;
+	border-top: .4rem solid $color-gold3;
+    border-bottom: .4rem solid $color-gold3;
+	position: relative;
+	
+	.top-transition, .bottom-transition {
+		width: 20rem;
+		height:4.5rem;
+		position:absolute;
+		background-size: 100%;
+		background-image: url('../img/decoratives/section-transition-top.png');
+		left:50%;
+		transform:translateX(-50%);
+	}
+	.top-transition {
+		top:-1.7rem;
+	}
+	.bottom-transition {
+		bottom:-1.7rem;
+		transform: scaleY(-1) translateX(-50%);
+	}
 }
 
 .borderless-section {

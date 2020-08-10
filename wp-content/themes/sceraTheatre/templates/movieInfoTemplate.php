@@ -17,12 +17,16 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
+        <div class="top-transition"></div>
+
         <h2 class="title gold">Overview</h2>
         <p class="text-section">Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa’s powers in order to save their kingdom.</p>
 
         <section class="trailer-section">
             <h3>Watch Trailer</h3>
         </section>
+        
+        <div class="bottom-transition"></div>
     </section>
 
     <section class="time-selection-section borderless-section">

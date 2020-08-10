@@ -6,7 +6,6 @@ get_header();
 ?>
 
 <div class="employment-container">
-
     <section class="hiring-section borderless-section">
         <h2 class="title blue">Now Hiring</h2>
 
