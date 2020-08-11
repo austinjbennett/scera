@@ -16,11 +16,15 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
+        <div class="top-transition-blue"></div>
+
         <h2 class="title gold">Details</h2>
         
         <p class="text-section">The historic SCERA Center for the Arts, opened in 1941, is our longest-standing facility and has two theatres: the remodeled Clarke Grand Theatre and Showhouse II. The entire lobby and concessions area was renovated in 2006. In the lobby are series of stained glass windows depicting 8 areas of the arts: as well as two floor-to-ceiling custom stained glass pieces by artist Tom Holdman. The Center offer something for everyone: our indoor performing arts series; art exhibits in Gallery 101; an outdoor courtyard; feature films, classic cinema series and children’s summer matinee program; arts education programs for youth including drama, music, dance, art and more (with financial need scholarships awarded to deserving students); special events including Sunday firesides, Theatre for Young Audiences, Celebration of Veterans, The Star Awards and the LDS Film Festival; and rental availability of our theaters and multi-purpose rooms for fairs, festivals, meetings, reunions, conferences, classes, performances, recitals, rehearsals and more.</p>
 
         <img src="<?php echo get_template_directory_uri(); ?>/img/stage-map.png" alt="">
+
+        <div class="bottom-transition-blue"></div>
     </section>
 
     <section class="gallery-section borderless-section">

@@ -137,6 +137,10 @@ img {
 		font-weight: bold;
 		color: $color-grey;
 	}
+
+	img {
+		padding: 3rem 0;
+	}
 }
 
 .title-section-center {
@@ -174,6 +178,10 @@ img {
 		font-size: 1.6rem;
 		font-weight: bold;
 		color: $color-grey;
+	}
+
+	img {
+		padding: 3rem 0;
 	}
 }
 
@@ -229,7 +237,37 @@ img {
 }
 
 .border-section {
-    padding: 8rem 1.6rem 6.4rem;
+	padding: 8rem 1.6rem 6.4rem;
+	border-top: .4rem solid $color-gold3;
+    border-bottom: .4rem solid $color-gold3;
+	position: relative;
+	
+	.top-transition-red, .bottom-transition-red {
+		width: 20rem;
+		height:4.5rem;
+		position:absolute;
+		background-size: 100%;
+		background-image: url('../img/decoratives/red-border.png');
+		left:50%;
+		transform:translateX(-50%);
+	}
+
+	.top-transition-blue, .bottom-transition-blue {
+		width: 20rem;
+		height:4.5rem;
+		position:absolute;
+		background-size: 100%;
+		background-image: url('../img/decoratives/blue-border.png');
+		left:50%;
+		transform:translateX(-50%);
+	}
+	.top-transition-red, .top-transition-blue{
+		top:-1.7rem;
+	}
+	.bottom-transition-red, .bottom-transition-blue{
+		bottom:-1.7rem;
+		transform: scaleY(-1) translateX(-50%);
+	}
 }
 
 .borderless-section {

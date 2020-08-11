@@ -1,0 +1,23 @@
+.directors-section {
+    text-align: center;
+    h3 {
+        color: $color-grey-dark;
+        font-weight: bold;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    p {
+        margin-block-start: 0;
+        margin-block-end: 2rem;
+    }
+}
+
+.council-section {
+    column-count: 2;
+
+    p {
+        margin-block-start: 0;
+        margin-block-end: 1.6rem;
+    }
+}

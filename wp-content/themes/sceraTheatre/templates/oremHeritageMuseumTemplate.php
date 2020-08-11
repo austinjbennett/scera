@@ -16,11 +16,15 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
+        <div class="top-transition-blue"></div>
+
         <h2 class="title gold">Details</h2>
 
         <p class="text-section">Visit the Orem Heritage Museum for school and church groups, scout troops, senior center and assisted living facilities, clubs and organizations, and families and individuals. The museum is a 2,000-piece collection that tells the history of Orem through artifacts including:</p>
 
         <p class="text-section">Coal stove, butter churn, old-fashioned washing machine, popcorn poppers, victrola, pioneer clothing and more. World War I to Korean War displays featuring uniforms, equipment and weapons. Indian petroglyphs and arrowheads. Toy display. A blacksmith shop and agricultural displays. Early Orem schools, churches and railroad exhibits. Evolution of Orem from agriculture, industry and education. World War II Orem prisoner of war camp display. Historic memorabilia from Geneva Steel and SCERA. Diorama of 1940’s Orem with a working model railroad. Historical videos of early Orem settlers.</p>
+
+        <div class="bottom-transition-blue"></div>
     </section>
 
     <section class="gallery-section borderless-section">

@@ -7,4 +7,11 @@
         border: solid .1rem #707070;
         margin-bottom: 2.1rem;
     }
+
+    .info {
+        p {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+    }
 }
