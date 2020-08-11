@@ -11,31 +11,43 @@ get_header();
         <div class="top-transition-red"></div>
         <h2 class="title gold">Scera Spotlight Podcast</h2>
 
-        <section class="spotlight-info">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/best-christmas.png"" alt="">
-            <h3>Best Christmas Pageant Ever</h3>
-            <p class="text-section">Dec 31, 2020</p>
+        <section class="spotlight-container">
+            <div class="spotlight-info">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/best-christmas.png"" alt="">
+                <div class="spotlight-text">
+                    <h3>Best Christmas Pageant Ever</h3>
+                    <p class="text-section">Dec, 31 2020</p>
+                </div>
+            </div>
+
+            <div class="spotlight-info">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/costume-shop.png"" alt="">
+                <div class="spotlight-text">
+                    <h3>SCERA Costume Shop</h3>
+                    <p class="text-section">Dec, 7 2018</p>
+                </div>
+            </div>
+
+            <div class="spotlight-info">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/shes-a-wiz.png"" alt="">
+                <div class="spotlight-text">
+                    <h3>She's A Wiz!</h3>
+                    <p class="text-section">Oct 5, 2018</p>
+                </div>
+            </div>
+
+            <div class="spotlight-info">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/bye-birdie.png"" alt="">
+                <div class="spotlight-text">
+                    <h3>Bye Bye, Bye Bye Birdie!</h3>
+                    <p class="text-section">Aug 16, 2018</p>
+                </div>
+            </div>
         </section>
 
-        <section class="spotlight-info">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/costume-shop.png"" alt="">
-            <h3>SCERA Costume Shop</h3>
-            <p class="text-section">Dec 7, 2018</p>
-        </section>
-
-        <section class="spotlight-info">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/shes-a-wiz.png"" alt="">
-            <h3>She's A Wiz</h3>
-            <p class="text-section">Oct 5, 2018</p>
-        </section>
-
-        <section class="spotlight-info">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/bye-birdie.png"" alt="">
-            <h3>Bye, Bye, Bye, Bye, Birdie</h3>
-            <p class="text-section">August 16, 2018</p>
-        </section>
-
-        <a href="#" class="scera-btn">More</a>
+        <div class="center">
+            <a href="#" class="scera-btn">More</a>
+        </div>
 
         <div class="bottom-transition-red"></div>
     </section>
