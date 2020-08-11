@@ -192,6 +192,38 @@ class FrmAddonsController {
 	}
 
 	/**
+	 * @since 4.06
+	 */
+	public static function license_type() {
+		$api     = new FrmFormApi();
+		$addons  = $api->get_api_info();
+		$type    = 'free';
+
+		if ( isset( $addons['error'] ) ) {
+			if ( isset( $addons['error']['code'] ) && $addons['error']['code'] === 'expired' ) {
+				return $addons['error']['code'];
+			}
+			$type = isset( $addons['error']['type'] ) ? $addons['error']['type'] : $type;
+		}
+
+		$pro = isset( $addons['93790'] ) ? $addons['93790'] : array();
+		if ( $type === 'free' ) {
+			$type = isset( $pro['type'] ) ? $pro['type'] : $type;
+			if ( $type === 'free' ) {
+				return $type;
+			}
+		}
+
+		if ( isset( $pro['code'] ) && $pro['code'] === 'grandfathered' ) {
+			return $pro['code'];
+		}
+
+		$expires = isset( $pro['expires'] ) ? $pro['expires'] : '';
+		$expired = $expires ? $expires < time() : false;
+		return $expired ? 'expired' : strtolower( $type );
+	}
+
+	/**
 	 * @since 4.0.01
 	 */
 	public static function is_license_expired() {
@@ -370,6 +402,10 @@ class FrmAddonsController {
 				$link = array(
 					'categories' => $addon['categories'],
 				);
+			}
+
+			if ( ! empty( $link ) ) {
+				$link['status'] = $addon['status']['type'];
 			}
 
 			return $link;
@@ -815,6 +851,39 @@ class FrmAddonsController {
 
 		// Send back a response.
 		echo json_encode( __( 'Your plugin has been activated. Please reload the page to see more options.', 'formidable' ) );
+		wp_die();
+	}
+
+	/**
+	 * @since 4.06.02
+	 */
+	public static function ajax_multiple_addons() {
+		self::install_addon_permissions();
+
+		// Set the current screen to avoid undefined notices.
+		global $hook_suffix;
+		set_current_screen();
+
+		$download_urls = FrmAppHelper::get_param( 'plugin', '', 'post' );
+		$download_urls = explode( ',', $download_urls );
+		FrmAppHelper::sanitize_value( 'esc_url_raw', $download_urls );
+
+		foreach ( $download_urls as $download_url ) {
+			$_POST['plugin'] = $download_url;
+			if ( strpos( $download_url, 'http' ) !== false ) {
+				// Installing.
+				self::maybe_show_cred_form();
+
+				$installed = self::install_addon();
+				self::maybe_activate_addon( $installed );
+			} else {
+				// Activating.
+				self::maybe_activate_addon( $download_url );
+			}
+		}
+
+		echo json_encode( __( 'Your plugins have been installed and activated.', 'formidable' ) );
+
 		wp_die();
 	}
 

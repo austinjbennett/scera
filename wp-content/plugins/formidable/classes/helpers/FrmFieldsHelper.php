@@ -905,7 +905,9 @@ class FrmFieldsHelper {
 		$value = apply_filters( 'frm_get_' . $field->type . '_display_value', $value, $field, $atts );
 		$value = apply_filters( 'frm_get_display_value', $value, $field, $atts );
 
-		return self::get_unfiltered_display_value( compact( 'value', 'field', 'atts' ) );
+		$value = self::get_unfiltered_display_value( compact( 'value', 'field', 'atts' ) );
+
+		return apply_filters( 'frm_display_value', $value, $field, $atts );
 	}
 
 	/**
@@ -1055,7 +1057,6 @@ class FrmFieldsHelper {
 		}
 
 		// Check posted vals before checking saved values
-
 		// For fields inside repeating sections - note, don't check if $pointer is true because it will often be zero
 		if ( $parent && isset( $_POST['item_meta'][ $parent ][ $pointer ]['other'][ $field['id'] ] ) ) {
 			if ( FrmField::is_field_with_multiple_values( $field ) ) {

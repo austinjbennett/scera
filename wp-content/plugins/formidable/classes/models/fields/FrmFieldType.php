@@ -112,7 +112,7 @@ abstract class FrmFieldType {
 		}
 
 		if ( is_array( $this->field ) ) {
-			$this->field_id = $this->field['id'];
+			$this->field_id = isset( $this->field['id'] ) ? $this->field['id'] : 0;
 		} else if ( is_object( $this->field ) && property_exists( $this->field, 'id' ) ) {
 			$this->field_id = $this->field->id;
 		} elseif ( is_numeric( $this->field ) ) {
@@ -371,6 +371,7 @@ DEFAULT_HTML;
 		$this->field_choices_heading( $args );
 
 		echo '<div class="frm_grid_container frm-collapse-me' . esc_attr( $this->extra_field_choices_class() ) . '">';
+		$this->show_priority_field_choices( $args );
 		include( FrmAppHelper::plugin_path() . '/classes/views/frm-fields/back-end/field-choices.php' );
 		$this->show_extra_field_choices( $args );
 		echo '</div>';
@@ -477,6 +478,15 @@ DEFAULT_HTML;
 	 * @since 4.04
 	 */
 	protected function field_choices_heading_attrs( $args ) {
+		return;
+	}
+
+	/**
+	 * Show settings above the multiple options settings.
+	 *
+	 * @since 4.06
+	 */
+	protected function show_priority_field_choices( $args = array() ) {
 		return;
 	}
 

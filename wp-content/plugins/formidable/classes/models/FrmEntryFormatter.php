@@ -123,14 +123,14 @@ class FrmEntryFormatter {
 	 * @param array $atts
 	 */
 	protected function init_entry( $atts ) {
-		if ( is_object( $atts['entry'] ) ) {
+		if ( isset( $atts['entry'] ) && is_object( $atts['entry'] ) ) {
 
 			if ( isset( $atts['entry']->metas ) ) {
 				$this->entry = $atts['entry'];
 			} else {
 				$this->entry = FrmEntry::getOne( $atts['entry']->id, true );
 			}
-		} elseif ( $atts['id'] ) {
+		} elseif ( ! empty( $atts['id'] ) ) {
 			$this->entry = FrmEntry::getOne( $atts['id'], true );
 		}
 	}
@@ -329,7 +329,7 @@ class FrmEntryFormatter {
 		$atts['wpautop']      = false;
 		$atts['return_array'] = true;
 
-		$unset = array( 'id', 'entry', 'form_id', 'format', 'plain_text' );
+		$unset = array( 'id', 'entry', 'form_id', 'format' );
 		foreach ( $unset as $param ) {
 			if ( isset( $atts[ $param ] ) ) {
 				unset( $atts[ $param ] );
@@ -823,7 +823,9 @@ class FrmEntryFormatter {
 	 */
 	protected function prepare_display_value_for_html_table( $display_value, $field_type = '' ) {
 		$display_value = $this->flatten_array( $display_value );
-		$display_value = str_replace( array( "\r\n", "\n" ), '<br/>', $display_value );
+		if ( ! isset( $this->atts['line_breaks'] ) || ! empty( $this->atts['line_breaks'] ) ) {
+			$display_value = str_replace( array( "\r\n", "\n" ), '<br/>', $display_value );
+		}
 
 		return $display_value;
 	}

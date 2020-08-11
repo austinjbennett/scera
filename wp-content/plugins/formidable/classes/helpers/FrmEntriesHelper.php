@@ -170,7 +170,12 @@ class FrmEntriesHelper {
 		$field_value = isset( $entry->metas[ $field->id ] ) ? $entry->metas[ $field->id ] : false;
 
 		if ( FrmAppHelper::pro_is_installed() ) {
+			$empty = empty( $field_value );
 			FrmProEntriesHelper::get_dynamic_list_values( $field, $entry, $field_value );
+			if ( $empty && ! empty( $field_value ) ) {
+				// We've got an entry id, so switch it to a value.
+				$atts['force_id'] = true;
+			}
 		}
 
 		if ( $field->form_id == $entry->form_id || empty( $atts['embedded_field_id'] ) ) {
@@ -213,7 +218,11 @@ class FrmEntriesHelper {
 			unset( $child_entry );
 		}
 
-		$val = implode( ', ', (array) $field_value );
+		$sep = ', ';
+		if ( strpos( implode( ' ', (array) $field_value ), '<img' ) !== false ) {
+			$sep = '<br/>';
+		}
+		$val = implode( $sep, (array) $field_value );
 
 		return FrmAppHelper::kses( $val, 'all' );
 	}

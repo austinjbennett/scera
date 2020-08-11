@@ -59,6 +59,10 @@ class FrmXMLHelper {
 	 * @return array The number of items imported
 	 */
 	public static function import_xml_now( $xml ) {
+		if ( ! defined( 'WP_IMPORTING' ) ) {
+			define( 'WP_IMPORTING', true );
+		}
+
 		$imported = self::pre_import_data();
 
 		foreach ( array( 'term', 'form', 'view' ) as $item_type ) {
@@ -70,7 +74,16 @@ class FrmXMLHelper {
 			}
 		}
 
-		return apply_filters( 'frm_importing_xml', $imported, $xml );
+		$imported = apply_filters( 'frm_importing_xml', $imported, $xml );
+
+		if ( ! isset( $imported['form_status'] ) || empty( $imported['form_status'] ) ) {
+			// Check for an error message in the XML.
+			if ( isset( $xml->Code ) && isset( $xml->Message ) ) { // phpcs:ignore WordPress.NamingConventions
+				$imported['error'] = reset( $xml->Message ); // phpcs:ignore WordPress.NamingConventions
+			}
+		}
+
+		return $imported;
 	}
 
 	/**
@@ -350,26 +363,7 @@ class FrmXMLHelper {
 		foreach ( $xml_fields as $field ) {
 			$f = self::fill_field( $field, $form_id );
 
-			$has_default = array(
-				'text',
-				'email',
-				'url',
-				'textarea',
-				'number',
-				'phone',
-				'date',
-				'hidden',
-				'password',
-				'tag',
-			);
-			if ( is_array( $f['default_value'] ) && in_array( $f['type'], $has_default, true ) ) {
-				if ( count( $f['default_value'] ) === 1 ) {
-					$f['default_value'] = '[' . reset( $f['default_value'] ) . ']';
-				} else {
-					$f['default_value'] = reset( $f['default_value'] );
-				}
-			}
-
+			self::set_default_value( $f );
 			self::maybe_add_required( $f );
 			self::maybe_update_in_section_variable( $in_section, $f );
 			self::maybe_update_form_select( $f, $imported );
@@ -422,6 +416,32 @@ class FrmXMLHelper {
 			'options'       => FrmAppHelper::maybe_json_decode( (string) $field->options ),
 			'field_options' => FrmAppHelper::maybe_json_decode( (string) $field->field_options ),
 		);
+	}
+
+	/**
+	 * @since 4.06
+	 */
+	private static function set_default_value( &$f ) {
+		$has_default = array(
+			'text',
+			'email',
+			'url',
+			'textarea',
+			'number',
+			'phone',
+			'date',
+			'hidden',
+			'password',
+			'tag',
+		);
+
+		if ( is_array( $f['default_value'] ) && in_array( $f['type'], $has_default, true ) ) {
+			if ( count( $f['default_value'] ) === 1 ) {
+				$f['default_value'] = '[' . reset( $f['default_value'] ) . ']';
+			} else {
+				$f['default_value'] = reset( $f['default_value'] );
+			}
+		}
 	}
 
 	/**

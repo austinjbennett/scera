@@ -2,8 +2,8 @@
 Contributors: supsystic.com
 Donate link: https://supsystic.com/plugins/popup-plugin
 Tags: popup, popup WordPress plugin, marketing, popover, pop-up, popup builder, social popup, facebook popup, popup builder, popup maker
-Tested up to: 5.3
-Stable tag: 1.10.0
+Tested up to: 5.4
+Stable tag: 1.10.1
 
 Create elegant popup easily with Popup Builder by Supsystic. Popup with Subscription Forms, Facebook popup, Optin and Social locks, Contact Forms etc.
 
@@ -116,6 +116,10 @@ Enable “Redirect after close” option in Appearance setting on the Design tab
 Leave us a nice review 🙂
 
 == Changelog ==
+= 1.10.0 / 23.06.2020 =
+ * Add fix for mailPoetV3
+ * Add fix for mobile
+
 = 1.10.0 / 14.01.2020 =
  * Fix for GetResponse
  * Remove PHPMailer
