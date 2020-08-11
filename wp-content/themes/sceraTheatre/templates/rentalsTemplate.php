@@ -16,7 +16,7 @@ get_header();
     </section>
 
     <section class="rentals-details-section bg-red border-section">
-        <div class="top-transition"></div>
+        <div class="top-transition-red"></div>
         
         <img src="<?php echo get_template_directory_uri(); ?>/img/rentals-building.png" alt="">
         <h3>Costumes, Props, Scenery Rentals</h3>
@@ -27,7 +27,7 @@ get_header();
             <a href="#" class="scera-btn">Set Appointment</a>
         </div>
 
-        <div class="bottom-transition"></div>
+        <div class="bottom-transition-red"></div>
     </section>
 
     <section class="visit-section borderless-section">

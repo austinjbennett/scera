@@ -19,7 +19,7 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
-        <div class="top-transition"></div>
+        <div class="top-transition-blue"></div>
 
         <h2 class="title gold">Details</h2>
         <p class="text-section">The opening show of Summer 2020 at SCERA Shell Outdoor Theatre will be “Mamma Mia!,” directed and choreographed by Shawn M. errera, with music direction by Brandalee Bluth Streeter. It plays on stage June 5-20, 2020 @ 8:00pm on Mondays, Tuesdays, Thursdays, Fridays and Saturdays.</p>
@@ -31,7 +31,7 @@ get_header();
             <a href="#" class="scera-btn">Casting Manager</a>
         </div>
 
-        <div class="bottom-transition"></div>
+        <div class="bottom-transition-blue"></div>
     </section>
 
     <section class="sponsors-section">

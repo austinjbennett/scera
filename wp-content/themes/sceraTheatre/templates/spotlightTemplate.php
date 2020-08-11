@@ -8,7 +8,7 @@ get_header();
 <div class="spotlight-page-container">
     <img src="<?php echo get_template_directory_uri(); ?>/img/spotlight-banner.png" alt="">
     <section class="spotlight-section bg-red border-section">
-        <div class="top-transition"></div>
+        <div class="top-transition-red"></div>
         <h2 class="title gold">Scera Spotlight Podcast</h2>
 
         <section class="spotlight-info">
@@ -37,7 +37,7 @@ get_header();
 
         <a href="#" class="scera-btn">More</a>
 
-        <div class="bottom-transition"></div>
+        <div class="bottom-transition-red"></div>
     </section>
 
     <section class="podcast-section borderless-section">

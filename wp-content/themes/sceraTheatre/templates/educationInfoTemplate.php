@@ -19,7 +19,7 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
-        <div class="top-transition"></div>
+        <div class="top-transition-blue"></div>
 
         <h2 class="title gold">overview</h2>
 
@@ -61,7 +61,7 @@ get_header();
             <a href="#" class="scera-btn">Register</a>
         </div>
 
-        <div class="bottom-transition"></div>
+        <div class="bottom-transition-blue"></div>
     </section>
 
     <section class="teacher-section borderless-section">

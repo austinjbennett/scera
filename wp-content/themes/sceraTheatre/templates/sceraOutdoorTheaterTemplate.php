@@ -16,7 +16,7 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
-        <div class="top-transition"></div>
+        <div class="top-transition-blue"></div>
 
         <h2 class="title gold">Details</h2>
         
@@ -24,7 +24,7 @@ get_header();
 
         <p class="text-section">Thanks to the City of Orem, we have handrails to help you get up and down the hill. And a special thanks to you for voting SCERA as Best Live Music Venue, Best Live Theatre, Best Date Place and Best Family Entertainment Venue!</p>
 
-        <div class="bottom-transition"></div>
+        <div class="bottom-transition-blue"></div>
     </section>
 
     <section class="title-section-center borderless-section">

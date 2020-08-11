@@ -19,7 +19,7 @@ get_header();
     </section>
 
     <section class="details-section bg-blue border-section">
-        <div class="top-transition"></div>
+        <div class="top-transition-blue"></div>
 
         <h2 class="title gold">Overview</h2>
 
@@ -45,7 +45,7 @@ get_header();
             <p class="text-section">Events will not be a “rainout” before showtime. Shows continue regardless of any type of weather, cold, rain or snow. Come prepared, or plan to attend on another evening! If the show is declared a rainout by SCERA management prior to intermission, rainchecks will be given for one of the remaining nights.</p>
         </section>
 
-        <div class="bottom-transition"></div>
+        <div class="bottom-transition-blue"></div>
     </section>
 
     <section class="time-selection-section borderless-section">
