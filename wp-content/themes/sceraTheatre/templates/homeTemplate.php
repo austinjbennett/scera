@@ -148,10 +148,10 @@ get_header();
 	</section>
 
 	<section class="upcoming-events bg-red">
-		<div class="top-transition">
+		<div class="top-transition-red">
 		</div>
 		<h2 class="title gold">Upcoming Events</h2>
-			<div class="events-container">
+			<div class="upcoming-events-container">
 				<div class="events-link">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-quarantine-art.png" alt="">
 					<div class="test">
@@ -177,7 +177,7 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<div class="events-container">
+			<div class="upcoming-events-container">
 				<div class="events-link">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-night-of-broadway.png" alt="">
 					<div class="test">
@@ -207,7 +207,7 @@ get_header();
 				<p>See 2020 Summer Season</p>
 				<a class="scera-btn">SEE SUMMER SEASON</a>
 			</div>
-		<div class="bottom-transition">
+		<div class="bottom-transition-red">
 		
 		</div>
 	</section>

@@ -1,20 +1,20 @@
 <?php
 /**
  * @package loginizer
- * @version 1.4.4
+ * @version 1.5.3
  */
 /*
 Plugin Name: Loginizer
-Plugin URI: http://wordpress.org/extend/plugins/loginizer/
+Plugin URI: https://wordpress.org/extend/plugins/loginizer/
 Description: Loginizer is a WordPress plugin which helps you fight against bruteforce attack by blocking login for the IP after it reaches maximum retries allowed. You can blacklist or whitelist IPs for login using Loginizer.
-Version: 1.4.4
-Author: Raj Kothari
-Author URI: http://www.loginizer.com
-License: GPLv3 or later
+Version: 1.5.3
+Author: Softaculous
+Author URI: https://www.loginizer.com
+License: LGPLv2.1
 */
 
 /*
-Copyright (C) 2013  Raj Kothari (email : support@loginizer.com)
+Copyright (C) 2013 Loginizer (email : support@loginizer.com)
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -48,7 +48,7 @@ if(defined('LOGINIZER_VERSION')){
 
 $plugin_loginizer = plugin_basename(__FILE__);
 define('LOGINIZER_FILE', __FILE__);
-define('LOGINIZER_API', 'http://api.loginizer.com/');
+define('LOGINIZER_API', 'https://api.loginizer.com/');
 
 include_once(dirname(__FILE__).'/init.php');
 

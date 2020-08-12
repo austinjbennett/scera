@@ -3,8 +3,8 @@ Contributors: sudar
 Tags: email, log, log email, resend email, multisite  
 Requires PHP: 5.6  
 Requires at least: 4.0  
-Tested up to: 5.3  
-Stable tag: 2.3.2  
+Tested up to: 5.4  
+Stable tag: 2.4.2  
 
 Log and view all outgoing emails from WordPress. Works with WordPress Multisite as well.
 
@@ -132,6 +132,20 @@ Meanwhile, I have added a hack to handle this condition in v1.7.3 of my plugin. 
 This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/wp-readme'>wp-readme</a>, which generates readme files for WordPress Plugins.
 == Changelog ==
 
+= v2.4.2 – (2020-07-07) =
+- Fix: Fixed issues with email preview tab switcher that occurred in some installations.
+- Tweak: Enhanced the UI for lifetime license activation.
+
+= v2.4.1 – (2020-07-06) =
+- Fix: Added a missing file that broke v2.4.0 release for some installations.
+
+= v2.4.0 – (2020-07-05) =
+- New: Capture the error message when an email fails to be delivered.
+- New: Show seconds in send time.
+- Tweak: Enhance the email preview screen.
+- Tweak: Code enhancements for better maintenance.
+- Fix: Minor CSS alignment issues in addon list page.
+
 = v2.3.2 – (2020-03-03) =
 - New: Added the ability to log BuddyPress emails which don't use wp_mail function.
 - New: Supports PHP 5.6 to PHP 7.4
@@ -149,8 +163,8 @@ This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/
 - New: Store ip address of the request that triggered the email.
 - New: Setting to enable notification when the number of email logs reach a threshold.
 - New: Dashboard Widget - Provide an option to hide Dashboard Widget from all users.
-- Tweak: Dashboard Widget - Add thousand separator for logs count.
-- Tweak: Improve preview of HTML emails.
+- Tweak: Dashboard Widget - Add a thousand separator for logs count.
+- Tweak: Improve the preview of HTML emails.
 - Tweak: Enhanced the output of System Info page.
 - Fix: Deleting logs in bulk was not working.
 - Fix: Added compatibility with wp-ses plugin.
@@ -330,6 +344,12 @@ This Readme file was generated using <a href = 'http://sudarmuthu.com/wordpress/
 - Initial Release
 
 == Upgrade Notice ==
+
+= 2.4.1 =
+Starting v2.4.0 the plugin now captures the error message when an email fails to be delivered.
+
+= 2.4.0 =
+Starting v2.4.0 the plugin now captures the error message when an email fails to be delivered.
 
 = 2.3.0 =
 The 'To' and 'Subject' fields now supports text upto 500 characters.

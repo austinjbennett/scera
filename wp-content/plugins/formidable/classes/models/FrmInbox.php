@@ -32,8 +32,12 @@ class FrmInbox extends FrmFormApi {
 	/**
 	 * @since 4.05
 	 */
-	public function get_messages() {
-		return $this->messages;
+	public function get_messages( $filter = false ) {
+		$messages = $this->messages;
+		if ( $filter === 'filter' ) {
+			$this->filter_messages( $messages );
+		}
+		return $messages;
 	}
 
 	/**
@@ -81,22 +85,15 @@ class FrmInbox extends FrmFormApi {
 			unset( $this->messages[ $message['key'] ] );
 		}
 
-		$message = $this->fill_message( $message );
-		$this->messages[ $message['key'] ] = array(
-			'created' => $message['time'],
-			'message' => $message['message'],
-			'subject' => $message['subject'],
-			'icon'    => $message['icon'],
-			'cta'     => $message['cta'],
-			'expires' => $message['expires'],
-		);
+		$this->fill_message( $message );
+		$this->messages[ $message['key'] ] = $message;
 
 		$this->update_list();
 
 		$this->clean_messages();
 	}
 
-	private function fill_message( $message ) {
+	private function fill_message( &$message ) {
 		$defaults = array(
 			'time'    => time(),
 			'message' => '',
@@ -104,9 +101,14 @@ class FrmInbox extends FrmFormApi {
 			'icon'    => 'frm_tooltip_icon',
 			'cta'     => '',
 			'expires' => false,
+			'who'     => 'all', // use 'free', 'personal', 'business', 'elite', 'grandfathered'
+			'type'    => '',
 		);
 
-		return array_merge( $defaults, $message );
+		$message = array_merge( $defaults, $message );
+
+		$message['created'] = $message['time'];
+		unset( $message['time'] );
 	}
 
 	private function clean_messages() {
@@ -114,7 +116,7 @@ class FrmInbox extends FrmFormApi {
 		foreach ( $this->messages as $t => $message ) {
 			$read    = isset( $message['read'] ) && ! empty( $message['read'] ) && isset( $message['read'][ get_current_user_id() ] ) && $message['read'][ get_current_user_id() ] < strtotime( '-1 month' );
 			$dismissed = isset( $message['dismissed'] ) && ! empty( $message['dismissed'] ) && isset( $message['dismissed'][ get_current_user_id() ] ) && $message['dismissed'][ get_current_user_id() ] < strtotime( '-1 week' );
-			$expired = isset( $message['expires'] ) && ! empty( $message['expires'] ) && $message['expires'] < time();
+			$expired = $this->is_expired( $message );
 			if ( $read || $expired || $dismissed ) {
 				unset( $this->messages[ $t ] );
 				$removed = true;
@@ -124,6 +126,42 @@ class FrmInbox extends FrmFormApi {
 		if ( $removed ) {
 			$this->update_list();
 		}
+	}
+
+	private function filter_messages( &$messages ) {
+		$user_id = get_current_user_id();
+		foreach ( $messages as $k => $message ) {
+			$dismissed = isset( $message['dismissed'] ) && isset( $message['dismissed'][ $user_id ] );
+			if ( $this->is_expired( $message ) || $dismissed ) {
+				unset( $messages[ $k ] );
+			} elseif ( ! $this->is_for_user( $message ) ) {
+				unset( $messages[ $k ] );
+			}
+		}
+		$messages = apply_filters( 'frm_filter_inbox', $messages );
+	}
+
+	private function is_expired( $message ) {
+		return isset( $message['expires'] ) && ! empty( $message['expires'] ) && $message['expires'] < time();
+	}
+
+	/**
+	 * Show different messages for different accounts.
+	 */
+	private function is_for_user( $message ) {
+		if ( ! isset( $message['who'] ) || $message['who'] === 'all' ) {
+			return true;
+		}
+
+		return in_array( $this->get_user_type(), (array) $message['who'] );
+	}
+
+	private function get_user_type() {
+		if ( ! FrmAppHelper::pro_is_installed() ) {
+			return 'free';
+		}
+
+		return FrmAddonsController::license_type();
 	}
 
 	/**
@@ -144,8 +182,26 @@ class FrmInbox extends FrmFormApi {
 
 	/**
 	 * @param string $key
+	 *
+	 * @since 4.05.02
+	 */
+	public function mark_unread( $key ) {
+		$is_read = isset( $this->messages[ $key ] ) && isset( $this->messages[ $key ]['read'] ) && isset( $this->messages[ $key ]['read'][ get_current_user_id() ] );
+		if ( $is_read ) {
+			unset( $this->messages[ $key ]['read'][ get_current_user_id() ] );
+			$this->update_list();
+		}
+	}
+
+	/**
+	 * @param string $key
 	 */
 	public function dismiss( $key ) {
+		if ( $key === 'all' ) {
+			$this->dismiss_all();
+			return;
+		}
+
 		if ( ! isset( $this->messages[ $key ] ) ) {
 			return;
 		}
@@ -158,12 +214,25 @@ class FrmInbox extends FrmFormApi {
 		$this->update_list();
 	}
 
-	private function update_list() {
-		update_option( $this->option, $this->messages, 'no' );
+	/**
+	 * @since 4.06
+	 */
+	private function dismiss_all() {
+		$user_id = get_current_user_id();
+		foreach ( $this->messages as $key => $message ) {
+			if ( ! isset( $message['dismissed'] ) ) {
+				$this->messages[ $key ]['dismissed'] = array();
+			}
+
+			if ( ! isset( $message['dismissed'][ $user_id ] ) ) {
+				$this->messages[ $key ]['dismissed'][ $user_id ] = time();
+			}
+		}
+		$this->update_list();
 	}
 
 	public function unread() {
-		$messages = $this->get_messages();
+		$messages = $this->get_messages( 'filter' );
 		$user_id  = get_current_user_id();
 		foreach ( $messages as $t => $message ) {
 			if ( isset( $message['read'] ) && isset( $message['read'][ $user_id ] ) ) {
@@ -178,7 +247,26 @@ class FrmInbox extends FrmFormApi {
 		$count = count( $this->unread() );
 		if ( $count ) {
 			$html = ' <span class="update-plugins frm_inbox_count"><span class="plugin-count">' . absint( $count ) . '</span></span>';
+
+			/**
+			 * @since 4.06.01
+			 */
+			$html = apply_filters( 'frm_inbox_badge', $html );
 		}
 		return $html;
+	}
+
+	/**
+	 * @since 4.05.02
+	 */
+	public function remove( $key ) {
+		if ( isset( $this->messages[ $key ] ) ) {
+			unset( $this->messages[ $key ] );
+			$this->update_list();
+		}
+	}
+
+	private function update_list() {
+		update_option( $this->option, $this->messages, 'no' );
 	}
 }

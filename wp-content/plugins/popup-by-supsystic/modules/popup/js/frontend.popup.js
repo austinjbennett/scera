@@ -1586,7 +1586,9 @@ jQuery(document).bind('ppsAfterPopupsActionShow', function(e, popup){
             popupWidth = defaultPopupWidth;
             defaultPopupHeight = defaultPopupHeight;
             window.popupDiv[0].style.setProperty('transform', '', '');
-            changeScaleByWidth();
+            if (popup.params.tpl.anim_key == 'none') {
+              changeScaleByWidth();
+            }
          }, 1000);
       }, false);
 
@@ -1597,11 +1599,15 @@ jQuery(document).bind('ppsAfterPopupsActionShow', function(e, popup){
             popupWidth = defaultPopupWidth;
             defaultPopupHeight = defaultPopupHeight;
             window.popupDiv[0].style.setProperty('transform', '', '');
-            changeScaleByWidth();
+            if (popup.params.tpl.anim_key == 'none') {
+              changeScaleByWidth();
+            }
           }, 1000);
       }, false);
 
-		  changeScaleByWidth();
+      if (popup.params.tpl.anim_key == 'none') {
+        changeScaleByWidth();
+      }
 
 			jQuery(window).resize(function() {
 				setTimeout(changeScaleByWidth(), 2000);
@@ -1637,7 +1643,9 @@ jQuery(document).bind('ppsAfterPopupsActionShow', function(e, popup){
 				setTimeout(function(){
 					var resultHeight = jQuery('body').find('div[id*="ppsPopupShell_' + popup['id'] + '"]')[0].getBoundingClientRect().height;
 					if (resultHeight > docHeight) {
-						changeScaleByWidth();
+            if (popup.params.tpl.anim_key == 'none') {
+              changeScaleByWidth();
+            }
 					}
 				}, 1000);
 			}

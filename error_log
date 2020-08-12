@@ -68,3 +68,35 @@ Stack trace:
 #5 /home/skaduusc/public_html/scera/wp-includes/functions.wp-styles.php(53): do_action('wp_print_styles')
 #6 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(287): wp_print_styles(false)
 #7 /home/skaduusc/public_html/scera/wp-includes/class-wp-hook.php(311): WP_Hook->apply_fil in /home/skaduusc/public_html/scera/wp-content/plugins/ubermenu/core/sparkoptions/SparkOptions.class.php on line 660
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:34 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:08:38 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:11:48 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'url' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29
+[11-Aug-2020 23:17:09 UTC] PHP Warning:  Illegal string offset 'target' in /home/skaduusc/public_html/scera/wp-content/themes/sceraTheatre/templates/homeTemplate.php on line 29

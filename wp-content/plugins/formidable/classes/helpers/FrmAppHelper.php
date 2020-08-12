@@ -11,7 +11,7 @@ class FrmAppHelper {
 	/**
 	 * @since 2.0
 	 */
-	public static $plug_version = '4.05.01';
+	public static $plug_version = '4.06.02';
 
 	/**
 	 * @since 1.07.02
@@ -82,6 +82,7 @@ class FrmAppHelper {
 		if ( empty( $page ) ) {
 			$page = 'https://formidableforms.com/lite-upgrade/';
 		} else {
+			$page = str_replace( 'https://formidableforms.com/', '', $page );
 			$page = 'https://formidableforms.com/' . $page;
 		}
 
@@ -201,6 +202,22 @@ class FrmAppHelper {
 		return apply_filters( 'frm_pro_installed', false );
 	}
 
+	/**
+	 * @since 4.06.02
+	 */
+	public static function pro_is_connected() {
+		global $frm_vars;
+		return self::pro_is_installed() && $frm_vars['pro_is_authorized'];
+	}
+
+	/**
+	 * @since 4.06
+	 */
+	public static function is_form_builder_page() {
+		$action = self::simple_get( 'frm_action', 'sanitize_title' );
+		return self::is_admin_page( 'formidable' ) && ( $action === 'edit' || $action === 'settings' || $action === 'duplicate' );
+	}
+
 	public static function is_formidable_admin() {
 		$page          = self::simple_get( 'page', 'sanitize_title' );
 		$is_formidable = strpos( $page, 'formidable' ) !== false;
@@ -250,11 +267,8 @@ class FrmAppHelper {
 		$post_type = self::simple_get( 'post_type', 'sanitize_title' );
 
 		if ( empty( $post_type ) ) {
-			global $post;
-			if ( empty( $post ) ) {
-				$post_id = self::simple_get( 'post', 'absint' );
-				$post    = get_post( $post_id );
-			}
+			$post_id = self::simple_get( 'post', 'absint' );
+			$post    = get_post( $post_id );
 			$post_type = $post ? $post->post_type : '';
 		}
 
@@ -727,6 +741,10 @@ class FrmAppHelper {
 				'width'  => true,
 				'x'      => true,
 				'y'      => true,
+				'rx'     => true,
+				'stroke' => true,
+				'stroke-opacity' => true,
+				'stroke-width'   => true,
 			),
 			'section'    => $allow_class,
 			'span'       => array(
@@ -750,6 +768,7 @@ class FrmAppHelper {
 				'width'   => true,
 				'height'  => true,
 				'style'   => true,
+				'fill'    => true,
 			),
 			'use'        => array(
 				'href'   => true,
@@ -1105,8 +1124,7 @@ class FrmAppHelper {
 	 * @since 4.0
 	 */
 	public static function is_full_screen() {
-		$action       = self::simple_get( 'frm_action', 'sanitize_title' );
-		$full_builder = self::is_admin_page( 'formidable' ) && ( $action === 'edit' || $action === 'settings' || $action === 'duplicate' );
+		$full_builder = self::is_form_builder_page();
 		$styler       = self::is_admin_page( 'formidable-styles' ) || self::is_admin_page( 'formidable-styles2' );
 		$full_entries = self::simple_get( 'frm-full', 'absint' );
 
@@ -2363,6 +2381,7 @@ class FrmAppHelper {
 				'select_a_field'    => __( 'Select a Field', 'formidable' ),
 				'no_items_found'    => __( 'No items found.', 'formidable' ),
 			);
+			$admin_script_strings = apply_filters( 'frm_admin_script_strings', $admin_script_strings );
 
 			$data = $wp_scripts->get_data( 'formidable_admin', 'data' );
 			if ( empty( $data ) ) {
