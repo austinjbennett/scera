@@ -100,7 +100,6 @@
                 'theme_location' => 'headerNav',
                 'items_wrap'     => '<nav id="%1$s" class="%2$s">%3$s</nav>',
                 'echo'           => false,
-                'container'      => 'nav',
             );
             echo strip_tags(wp_nav_menu($menu_parameters), '<a>, <nav>');
             ?>
