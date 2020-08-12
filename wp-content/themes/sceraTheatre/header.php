@@ -35,7 +35,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="body">
 <!--     <header class="keepOpen">
             <div class="row justify-content-between clearfix">
                 <div class="column small-2">
@@ -109,32 +109,6 @@
 <!--            <a href="#"><i class="fas fa-ticket-alt fa-lg"></i></a>-->
 <!--            <a href="#"><i class="fas fa-shopping-bag fa-lg"></i></a>-->
 <!--        </nav>-->
-<!--        <div class="navWrap2">-->
-<!--            <div class="navCol navL">-->
-<!--                <div class="hbMenu" id="hbMenu" onclick="menuClick(this)">-->
-<!--                    <div class="bar1"></div>-->
-<!--                    <div class="bar2"></div>-->
-<!--                    <div class="bar3"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="navCol navM">-->
-<!--                <div class="navLogo">-->
-<!--                    <a href="/" class="templateLink">-->
-<!--                        <p>SCERA</p>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="navCol navR">-->
-<!--                <ul class="icons">-->
-<!--                    <li class="icon tickets">-->
-<!--                        <i class="fas fa-ticket-alt fa-lg icoLgPlus"></i>-->
-<!--                    </li>-->
-<!--                    <li class="icon cart">-->
-<!--                        <i class="fas fa-shopping-bag fa-lg icoLgPlus"></i>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
 
         <!-- <div class='searchWrap'>
             <form id="searchForm" class="form-inline searchArea" method="get" action="/">

@@ -22,6 +22,9 @@ body {
 			position: static;
 		}
 	}
+	&.nav-open {
+		overflow: hidden;
+	}
 }
 
 h3 {

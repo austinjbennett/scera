@@ -30,11 +30,13 @@ function toggleNav() {
 		// shortstack.nextElementSibling.classList.add('open');
 		// fadeIn(nav);
 		nav.classList.add('open');
+		document.getElementById('body').classList.add('nav-open');
 	} else {
 		this.classList.remove('open');
 		// shortstack.nextElementSibling.classList.remove('open');
 		// fadeOut(nav);
 		nav.classList.remove('open');
+		document.getElementById('body').classList.remove('nav-open');
 	}
 }
 document.addEventListener('DOMContentLoaded', () => {

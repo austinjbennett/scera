@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		centeredSlidesBounds: false,
 	});
 	const eventCarousel = new Swiper('.event-carousel', {
+		autoHeight: true,
 		effect: 'slide',
 		allowTouchMove: false,
 		loop: false,
