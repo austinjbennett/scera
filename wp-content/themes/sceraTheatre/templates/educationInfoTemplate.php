@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <div class="education-info-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/education-info-banner.png" alt="">
 
     <section class="title-section-center borderless-section">
         <h2 class="title blue">Quarentine Art Club</h2>

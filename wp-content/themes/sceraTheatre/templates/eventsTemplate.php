@@ -6,6 +6,108 @@ get_header();
 ?>
 
 <div class="events-page-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/events-banner.png" alt="">
+            
+    <section class="events-section bg-red border-section">
+		<div class="top-transition-red"></div>
+
+        <h2 class="title gold">Events</h2>
+        
+        <div class="center">
+            <a href="#" class="scera-btn">Filter & Sort</a>
+        </div>
+
+			<section class="events-container">
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-quarantine-art.png" alt="">
+					<div class="events-outlook">
+						<div class="events-text">
+							<h3>Quarantine Art</h3>
+							<p class="text-section">April 16 - May 9</p>
+						</div>
+						<div class="ticket-section">
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+				</div>
+
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-adult-ballet.png" alt="">
+					<div class="events-outlook">
+					<div class="events-text">
+						<h3>Adult Ballet</h3>
+						<p class="text-section">May 5 - May 23</p>
+					</div>
+					<div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
+					</div>
+				</div>
+		
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-night-of-broadway.png" alt="">
+					<div class="events-outlook">
+					<div class="events-text">
+						<h3>Night of Broaday</h3>
+						<p class="text-section">May 1 - May 7</p>
+					</div>
+					<div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
+					</div>
+				</div>
+
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-the-untold-story.png" alt="">
+					<div class="events-outlook">
+						<div class="events-text">
+							<h3>Adult Ballet</h3>
+							<p class="text-section">April 25 - April 30</p>
+						</div>
+						<div class="ticket-section">
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+                </div>
+                
+                <div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/wilson-phillips-square.png" alt="">
+					<div class="events-outlook">
+						<div class="events-text">
+							<h3>Wilson Phillips</h3>
+							<p class="text-section">May 25</p>
+						</div>
+						<div class="ticket-section">
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+                </div>
+                
+                <div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/willy-wonka-square.png" alt="">
+					<div class="events-outlook">
+						<div class="events-text">
+							<h3>Willy Wonka</h3>
+							<p class="text-section">July 3 - July 18</p>
+						</div>
+						<div class="ticket-section">
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div class="center">
+                <a href="#" class="scera-btn">More</a>
+            </div>
+            
+            <div class="center">
+                <a href="#" class="scera-btn">Go to Auditions</a>
+			</div>
+
+		<div class="bottom-transition-red"></div>
+	</section>
+
     <section class="events-info-section borderless-section">
         <h2 class="title blue">Summer Season</h2>
 

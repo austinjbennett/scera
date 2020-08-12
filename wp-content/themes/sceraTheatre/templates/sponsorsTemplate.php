@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <div class="sponsors-page-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/sponsors-banner.png" alt="">
     
     <section class="sponsors-page-section borderless-section">
 

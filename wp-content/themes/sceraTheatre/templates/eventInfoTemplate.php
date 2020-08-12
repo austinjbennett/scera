@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <div class="event-info-container">
+<img src="<?php echo get_template_directory_uri(); ?>/img/willy-wonka-banner.png" alt="">
     <section class="title-section-center borderless-section">
         <h2 class="title blue">Roald Dahl's Willy Wonka</h2>
 
@@ -79,6 +80,72 @@ get_header();
     <section>
         <h2 class="title blue">Gallery</h2>
     </section>
+
+    <section class="upcoming-events bg-red border-section">
+		<div class="top-transition-red"></div>
+
+		<h2 class="title gold">Upcoming Events</h2>
+
+			<section class="events-container">
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-quarantine-art.png" alt="">
+					<div class="events-outlook">
+						<div class="events-text">
+							<h3>Quarantine Art</h3>
+							<p class="text-section">April 16 - May 9</p>
+						</div>
+						<div class="ticket-section">
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+				</div>
+
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-adult-ballet.png" alt="">
+					<div class="events-outlook">
+					<div class="events-text">
+						<h3>Adult Ballet</h3>
+						<p class="text-section">May 5 - May 23</p>
+					</div>
+					<div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
+					</div>
+				</div>
+		
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-night-of-broadway.png" alt="">
+					<div class="events-outlook">
+					<div class="events-text">
+						<h3>Night of Broaday</h3>
+						<p class="text-section">May 1 - May 7</p>
+					</div>
+					<div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
+					</div>
+				</div>
+
+				<div class="events-info">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-the-untold-story.png" alt="">
+					<div class="events-outlook">
+						<div class="events-text">
+							<h3>Adult Ballet</h3>
+							<p class="text-section">April 25 - April 30</p>
+						</div>
+						<div class="ticket-section">
+							<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div class="center">
+				<a class="scera-btn">SEE SUMMER SEASON</a>
+			</div>
+
+		<div class="bottom-transition-red"></div>
+	</section>
 
     <section class="sponsors-section">
 		<h2 class="title blue">Thanks to our Sponsors</h2>

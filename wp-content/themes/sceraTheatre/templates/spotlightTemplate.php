@@ -14,33 +14,41 @@ get_header();
         <section class="events-container">
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/best-christmas.png"" alt="">
-                <div class="events-text">
-                    <h3>Best Christmas Pageant Ever</h3>
-                    <p class="text-section">Dec, 31 2020</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Best Christmas Pageant Ever</h3>
+                        <p class="text-section">Dec, 31 2020</p>
+                    </div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/costume-shop.png"" alt="">
-                <div class="events-text">
-                    <h3>SCERA Costume Shop</h3>
-                    <p class="text-section">Dec, 7 2018</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>SCERA Costume Shop</h3>
+                        <p class="text-section">Dec, 7 2018</p>
+                    </div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/shes-a-wiz.png"" alt="">
-                <div class="events-text">
-                    <h3>She's A Wiz!</h3>
-                    <p class="text-section">Oct 5, 2018</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>She's A Wiz!</h3>
+                        <p class="text-section">Oct 5, 2018</p>
+                    </div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/bye-birdie.png"" alt="">
-                <div class="events-text">
-                    <h3>Bye Bye, Bye Bye Birdie!</h3>
-                    <p class="text-section">Aug 16, 2018</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Bye Bye, Bye Bye Birdie!</h3>
+                        <p class="text-section">Aug 16, 2018</p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <div class="orem-heritage-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/heritage-banner.png" alt="">
 
     <section class="title-section-center borderless-section">
         <h2 class="title blue">Orem Heritage Museum</h2>

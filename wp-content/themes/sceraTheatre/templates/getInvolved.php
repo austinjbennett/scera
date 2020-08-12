@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <div class="get-involved-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/get-involved-banner.png" alt="">
 
     <section class="title-section borderless-section">
         <h2 class="title blue">Get Involved</h2>

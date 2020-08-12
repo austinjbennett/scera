@@ -7,56 +7,93 @@ get_header();
 
 <div class="movies-page-container">
     <img src="<?php echo get_template_directory_uri(); ?>/img/movies-banner.png" alt="">
-    <section class="spotlight-section bg-red border-section">
+    <section class="movies-section bg-red border-section">
         <div class="top-transition-red"></div>
-        <h2 class="title gold">Scera Spotlight Podcast</h2>
+        
+        <h2 class="title gold">Movies</h2>
 
         <section class="events-container">
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/jumanji.png" alt="">
-                <div class="events-text">
-                    <h3>Jumanji Next Level</h3>
-                    <p class="text-section">July 8</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Jumanji Next Level</h3>
+                        <p class="text-section">July 8</p>
+                    </div>
+
+                    <div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/greatest-showman.png" alt="">
-                <div class="events-text">
-                    <h3>The Greatest Showman</h3>
-                    <p class="text-section">July 15</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>The Greatest Showman</h3>
+                        <p class="text-section">July 15</p>
+                    </div>
+
+                    <div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/frozen-2.png" alt="">
-                <div class="events-text">
-                    <h3>Frozen 2</h3>
-                    <p class="text-section">June 10, Outdoor</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Frozen 2</h3>
+                        <p class="text-section">June 10, Outdoor</p>
+                    </div>
+
+                    <div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/live-aladdin.png" alt="">
-                <div class="events-text">
-                    <h3>Live Action Aladdin</h3>
-                    <p class="text-section">June 17</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Live Action Aladdin</h3>
+                        <p class="text-section">June 17</p>
+                    </div>
+
+                    <div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/toy-story-4.png" alt="">
-                <div class="events-text">
-                    <h3>Toy Story 4</h3>
-                    <p class="text-section">Aug 5</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Toy Story 4</h3>
+                        <p class="text-section">Aug 5</p>
+                    </div>
+
+                    <div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
                 </div>
             </div>
 
             <div class="events-info">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/end-game.png" alt="">
-                <div class="events-text">
-                    <h3>Avengers End Game</h3>
-                    <p class="text-section">Aug 12</p>
+                <div class="events-outlook">
+                    <div class="events-text">
+                        <h3>Avengers End Game</h3>
+                        <p class="text-section">Aug 12</p>
+                    </div>
+
+                    <div class="ticket-section">
+						<img class="golden-ticket" src="<?php echo get_template_directory_uri(); ?>/img/decoratives/ticket.svg" alt="">
+					</div>
                 </div>
             </div>
         </section>
@@ -66,18 +103,6 @@ get_header();
         </div>
 
         <div class="bottom-transition-red"></div>
-    </section>
-
-    <section class="podcast-section borderless-section">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/spotlight-podcast.png"" alt="">
-
-        <h2 class="title blue">Scera Spotlight Podcast</h2>
-
-        <div class="listen-section">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/google-music.png"" alt="">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/itunes-music.png"" alt="">
-        </div>
-        <p class="feed-link">Podcast Feed Link: http://sceraspotlight.libsyn.com/rss</p>
     </section>
 
     <section class="sponsors-section">
