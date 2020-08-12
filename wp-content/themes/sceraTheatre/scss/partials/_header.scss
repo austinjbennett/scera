@@ -125,13 +125,11 @@ $nav-height: 5.6rem;
 	}
 }
 
-.menu-main-menu-container {
-	overflow-y: scroll;
-}
 #menu-main-header-navigation {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem 4.5rem 0;
+	overflow-y: scroll;
 	a {
 		color: $color-white;
 		padding: 1.5rem 0;
