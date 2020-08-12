@@ -6,6 +6,8 @@ get_header();
 ?>
 
 <div class="employment-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/employment-banner.png" alt="">
+
     <section class="hiring-section borderless-section">
         <h2 class="title blue">Now Hiring</h2>
 

@@ -6,6 +6,8 @@ get_header();
 ?>
 
 <div class="gift-card-page-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/gift-card-banner.png" alt="">
+
     <section class="title-section borderless-section">
         <h2 class="title Blue">Gift Cards</h2>
 

@@ -6,6 +6,8 @@ get_header();
 ?>
 
 <div class="auditions-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/auditions-banner.png" alt="">
+
     <section class="title-section-center borderless-section">
         <h2 class="title blue">Auditions: Mama Mia!</h2>
         <p class="text-section">March 12 & 17</p>

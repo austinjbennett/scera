@@ -6,7 +6,8 @@ get_header();
 ?>
 
 <div class="venue-page-container">
-
+	<img src="<?php echo get_template_directory_uri(); ?>/img/venues-banner.png" alt="">
+	
 	<section class="venues-section">
 		
 		<div class="section-corner-decoration"></div>

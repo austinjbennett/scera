@@ -1,3 +1,13 @@
+.events-section {
+    h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    a {
+        margin-bottom: 2rem;
+    }
+}
+
 .events-container {
     display: flex;
     flex-wrap: wrap;
@@ -8,18 +18,32 @@
         padding: 1rem;
         padding-bottom: 2rem;
 
-        .events-text {
-            h3 {
-                color: $color-white;
-                font-size: 1.6rem;
-                margin-block-start: 1rem;
-                margin-block-end: .5rem;
+        .events-outlook {
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+
+            .events-text{
+                padding-right: .5rem;
+                h3 {
+                    color: $color-white;
+                    font-size: 1.6rem;
+                    margin-block-start: 0;
+                    margin-block-end: .5rem;
+                }
+            
+                p {
+                    font-size: 1.4rem;
+                    margin-block-start: 0;
+                    margin-block-end: 0;
+                }
             }
-        
-            p {
-                font-size: 1.4rem;
-                margin-block-start: 0;
-                margin-block-end: 0;
+
+            .ticket-section {
+                .golden-ticket {
+                    min-width: 2.7rem;
+                    max-width: 2.7rem;
+                }
             }
         }
 

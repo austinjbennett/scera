@@ -6,6 +6,7 @@ get_header();
 ?>
 
 <div class="rentals-page-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/scera-center-banner.png" alt="">
     <section class="title-section borderless-section">
         <h2 class="title blue">Scera Rentals</h2>
         <h3>Facilities Rentals</h3>

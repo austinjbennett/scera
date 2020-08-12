@@ -6,7 +6,8 @@ get_header();
 ?>
 
 <div class="contact-page-container">
-
+    <img src="<?php echo get_template_directory_uri(); ?>/img/contact-banner.png" alt="">
+    
     <section class="title-section-center borderless-section">
         <h2 class="title blue">Contact Us</h2>
     
