@@ -1,0 +1,30 @@
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+
+    .events-info {
+        max-width: 50%;
+        padding: 1rem;
+        padding-bottom: 2rem;
+
+        .events-text {
+            h3 {
+                color: $color-white;
+                font-size: 1.6rem;
+                margin-block-start: 1rem;
+                margin-block-end: .5rem;
+            }
+        
+            p {
+                font-size: 1.4rem;
+                margin-block-start: 0;
+                margin-block-end: 0;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
