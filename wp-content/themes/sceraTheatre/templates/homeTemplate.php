@@ -151,7 +151,7 @@ get_header();
 		<div class="top-transition-red">
 		</div>
 		<h2 class="title gold">Upcoming Events</h2>
-			<div class="events-container">
+			<div class="upcoming-events-container">
 				<div class="events-link">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-quarantine-art.png" alt="">
 					<div class="test">
@@ -177,7 +177,7 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<div class="events-container">
+			<div class="upcoming-events-container">
 				<div class="events-link">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/UE-night-of-broadway.png" alt="">
 					<div class="test">

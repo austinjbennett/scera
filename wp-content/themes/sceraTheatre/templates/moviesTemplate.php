@@ -1,46 +1,62 @@
 <?php
 /*
-Template Name: Spotlight Page
+Template Name: Movies Page
 */
 get_header();
 ?>
 
-<div class="spotlight-page-container">
-    <img src="<?php echo get_template_directory_uri(); ?>/img/spotlight-banner.png" alt="">
+<div class="movies-page-container">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/movies-banner.png" alt="">
     <section class="spotlight-section bg-red border-section">
         <div class="top-transition-red"></div>
         <h2 class="title gold">Scera Spotlight Podcast</h2>
 
         <section class="events-container">
             <div class="events-info">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/best-christmas.png"" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/jumanji.png" alt="">
                 <div class="events-text">
-                    <h3>Best Christmas Pageant Ever</h3>
-                    <p class="text-section">Dec, 31 2020</p>
+                    <h3>Jumanji Next Level</h3>
+                    <p class="text-section">July 8</p>
                 </div>
             </div>
 
             <div class="events-info">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/costume-shop.png"" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/greatest-showman.png" alt="">
                 <div class="events-text">
-                    <h3>SCERA Costume Shop</h3>
-                    <p class="text-section">Dec, 7 2018</p>
+                    <h3>The Greatest Showman</h3>
+                    <p class="text-section">July 15</p>
                 </div>
             </div>
 
             <div class="events-info">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/shes-a-wiz.png"" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/frozen-2.png" alt="">
                 <div class="events-text">
-                    <h3>She's A Wiz!</h3>
-                    <p class="text-section">Oct 5, 2018</p>
+                    <h3>Frozen 2</h3>
+                    <p class="text-section">June 10, Outdoor</p>
                 </div>
             </div>
 
             <div class="events-info">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/bye-birdie.png"" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/live-aladdin.png" alt="">
                 <div class="events-text">
-                    <h3>Bye Bye, Bye Bye Birdie!</h3>
-                    <p class="text-section">Aug 16, 2018</p>
+                    <h3>Live Action Aladdin</h3>
+                    <p class="text-section">June 17</p>
+                </div>
+            </div>
+
+            <div class="events-info">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/toy-story-4.png" alt="">
+                <div class="events-text">
+                    <h3>Toy Story 4</h3>
+                    <p class="text-section">Aug 5</p>
+                </div>
+            </div>
+
+            <div class="events-info">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/end-game.png" alt="">
+                <div class="events-text">
+                    <h3>Avengers End Game</h3>
+                    <p class="text-section">Aug 12</p>
                 </div>
             </div>
         </section>
